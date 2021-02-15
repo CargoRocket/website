@@ -1,4 +1,7 @@
-# CargoRocket Website
+<div align="center">
+    <img src="assets/images/cargorocket-logo.svg" width="100">
+    <h1>CargoRocket Website</h1>
+</div>
 
 This is the Homepage (cargorocket.bike) of CargoRocket. It's build with Jekyll. To get started:
 
