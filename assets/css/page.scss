@@ -1,5 +1,6 @@
 ---
 ---
+@import "base";
 @import "variables";
 @import "elements";
 @import "navigation";
@@ -7,20 +8,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
 
-img.member {
-    $portrait-size: 150px;
-    width: $portrait-size;
-    height: $portrait-size;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
 .logo {
     width: 170px;
-}
-
-.present {
-   .background {
-       
-   } 
 }

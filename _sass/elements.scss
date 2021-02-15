@@ -8,10 +8,18 @@
     &.small {
         font-size: 1.9rem;
     }
+}
 
-    &.c {
-        text-align: center;
-    }
+.flex {
+    display: flex;
+}
+
+.c {
+    text-align: center;
+}
+
+.b {
+    font-weight: bold;
 }
 
 .button {

@@ -1,11 +1,33 @@
 @import "variables";
 
+section {
+    padding: 1rem;
+}
+
+header {
+    .present {
+        background-image: url("../../assets/images/present-bg.svg");
+        background-repeat: no-repeat;
+
+        img {
+            width: 80%;
+        }
+    }
+}
+
 section#team {
     background-color: $primary-color;
     color: white;
 
     .members {
-        display: flex;
+        .member {
+            img {
+                width: $portrait-size;
+                height: $portrait-size;
+                border-radius: 50%;
+                border: 2px solid white;
+            }
+        }
     }
 }
 
@@ -14,6 +36,5 @@ section#project {
     color: white;
 
     .products {
-        display: flex;
     }
 }

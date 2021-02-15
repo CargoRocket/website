@@ -6,7 +6,6 @@ logo: cargorocket-logo.svg
 main-headline: Lastenfahrrad Routing
 second-headline: Das Erste seiner Art
 present-img: present-map.jpg
-present-background: present-bg.svg
 main-button: Zum Blog
 team:
     headline: Das Team
