@@ -1,6 +1,11 @@
 ---
 ---
 @import "variables";
+@import "elements";
+@import "navigation";
+@import "home";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
 
 img.member {
     $portrait-size: 150px;
@@ -14,6 +19,8 @@ img.member {
     width: 170px;
 }
 
-.button {
-    background-color: $primary-color;
+.present {
+   .background {
+       
+   } 
 }

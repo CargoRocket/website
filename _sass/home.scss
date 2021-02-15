@@ -1,0 +1,19 @@
+@import "variables";
+
+section#team {
+    background-color: $primary-color;
+    color: white;
+
+    .members {
+        display: flex;
+    }
+}
+
+section#project {
+    background-color: $secondary-color;
+    color: white;
+
+    .products {
+        display: flex;
+    }
+}

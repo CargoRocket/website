@@ -5,7 +5,7 @@
     <title>{{ page.title }}</title>
 
     <link rel="stylesheet" href="../assets/css/page.css">
-    <link rel="icon" href="/favicon.ico">
+    <!--<link rel="icon" href="/favicon.ico">-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ page.description }}">
@@ -19,32 +19,50 @@
         <img src="../assets/images/{{ page.logo }}" class="logo" />
         <nav>
             <ul>
-                <li></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#projekt">Projekt</a></li>
             </ul>
         </nav>
 
         <div>
-
+            <img src="../assets/images/{{ page.present-img }}" />
+            <img src="../assets/images/{{ page.present-background }}" />
         </div>
         <div>
-            <h1>{{ page.main-headline }}</h1>
-            <h1>{{ page.second-headline }}</h1>
+            <div class="headline big bebas">{{ page.main-headline }}</div>
+            <div class="headline small roboto">{{ page.second-headline }}</div>
             <a href="/blog">{{ page.main-button }}</a>
         </div>
     </header>
 
-    <section class="team">
+    <section id="team">
+        <h1 class="headline c bebas">{{ page.team.headline }}</h1>
+        
         <p>{{page.team.description }}</p>
 
         <div class="members">
             {% for member in page.team.members %}
+            <div class="member">
                 <img class="member" src="../assets/images/{{ member.img }}" />
                 <p>{{ member.skills }}</p>
+            </div>
             {% endfor %}
         </div>
     </section>
     
-    <section class="project">
+    <section id="project">
+        <h1 class="headline c bebas">{{ page.project.headline }}</h1>
+        
+        <p>{{page.team.description }}</p>
+
+        <div class="products">
+        {% for product in page.project.products %}
+            <div class="product">
+                <img class="product" src="../assets/images/{{ product.img }}" />
+                <p>{{ product.description }}</p>
+            </div>
+        {% endfor %}
+        </div>
     </section>
     
     <section class="blog">
@@ -53,11 +71,12 @@
     <section class="contact">
     </section>
 
+    <section class="funding">
+    </section>
+
     <footer>
 
     </footer>
-
-    <script src="js/projects.js"></script>
 </body>
 
 </html>

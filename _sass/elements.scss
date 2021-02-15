@@ -1,0 +1,27 @@
+.headline {
+    font-size: 2.5rem;
+
+    &.big {
+        font-size: 3.2rem;
+    }
+
+    &.small {
+        font-size: 1.9rem;
+    }
+
+    &.c {
+        text-align: center;
+    }
+}
+
+.button {
+    background-color: $primary-color;
+}
+
+.bebas {
+    font-family: 'Bebas Neue';
+}
+
+.roboto {
+    font-family: 'Roboto';
+}
