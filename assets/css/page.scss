@@ -1,0 +1,19 @@
+---
+---
+@import "variables";
+
+img.member {
+    $portrait-size: 150px;
+    width: $portrait-size;
+    height: $portrait-size;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.logo {
+    width: 170px;
+}
+
+.button {
+    background-color: $primary-color;
+}

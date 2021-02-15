@@ -4,7 +4,7 @@
 <head>
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" href="stylesheets/page.css">
+    <link rel="stylesheet" href="../assets/css/page.css">
     <link rel="icon" href="/favicon.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <img src="../assets/cargorocket-logo.svg" />
+        <img src="../assets/images/{{ page.logo }}" class="logo" />
         <nav>
             <ul>
                 <li></li>
@@ -29,7 +29,7 @@
         <div>
             <h1>{{ page.main-headline }}</h1>
             <h1>{{ page.second-headline }}</h1>
-            <a href="">{{ page.main-button }}</a>
+            <a href="/blog">{{ page.main-button }}</a>
         </div>
     </header>
 
@@ -38,7 +38,7 @@
 
         <div class="members">
             {% for member in page.team.members %}
-                <img src="{{ member.img }}" />
+                <img class="member" src="../assets/images/{{ member.img }}" />
                 <p>{{ member.skills }}</p>
             {% endfor %}
         </div>
