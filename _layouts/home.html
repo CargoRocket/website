@@ -4,7 +4,7 @@
 <head>
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="stylesheet" href="stylesheets/page.css">
     <link rel="icon" href="/favicon.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <img src="" />
+        <img src="../assets/cargorocket-logo.svg" />
         <nav>
             <ul>
                 <li></li>
@@ -24,23 +24,32 @@
         </nav>
 
         <div>
+
+        </div>
+        <div>
             <h1>{{ page.main-headline }}</h1>
-            <a href="">Zum Blog</a>
+            <h1>{{ page.second-headline }}</h1>
+            <a href="">{{ page.main-button }}</a>
         </div>
     </header>
 
-    {{ content }}
-
     <section class="team">
         <p>{{page.team.description }}</p>
-    </section>
 
+        <div class="members">
+            {% for member in page.team.members %}
+                <img src="{{ member.img }}" />
+                <p>{{ member.skills }}</p>
+            {% endfor %}
+        </div>
+    </section>
+    
     <section class="project">
     </section>
-
+    
     <section class="blog">
     </section>
-
+    
     <section class="contact">
     </section>
 
