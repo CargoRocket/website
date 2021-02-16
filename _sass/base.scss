@@ -1,4 +1,15 @@
+@import "variables";
+
 html, body {
     padding: 0;
     margin: 0;
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+::selection {
+    background-color: $primary-color;
+    color: white;
 }

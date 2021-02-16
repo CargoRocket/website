@@ -12,6 +12,10 @@
 
 .flex {
     display: flex;
+
+    &.c {
+        justify-content: center;
+    }
 }
 
 .c {
@@ -24,6 +28,40 @@
 
 .button {
     background-color: $primary-color;
+    padding: 0.2rem;
+    margin: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 2rem;
+
+    &.big {
+        padding: 0.6rem 1.3rem;
+        font-size: 1.3rem;
+    }
+    
+    &.primary,
+    &.primary:visited,
+    &.primary:active {
+        background-color: $primary-color;
+        border: 3px solid $primary-color;
+        color: white;
+    }
+
+    &.primary:hover {
+        border: 3px solid darken($primary-color, 20%);
+    }
+
+    &.secondary,
+    &.secondary:visited,
+    &.secondary:active {
+        background-color: $secondary-color;
+        border: 3px solid $secondary-color;
+        color: white;
+    }
+    
+    &.secondary:hover {
+        border: 3px solid darken($secondary-color, 20%);
+    }
 }
 
 .bebas {
@@ -32,4 +70,35 @@
 
 .roboto {
     font-family: 'Roboto';
+}
+
+.round {
+    border-radius: 50%;
+}
+
+img.portrait {
+    object-fit: cover;
+
+    width: $portrait-size;
+    height: $portrait-size;
+
+    &.big {
+        width: $portrait-size * 2;
+        height: $portrait-size * 2;
+    }
+
+    &.small {
+        width: $portrait-size / 2;
+        height: $portrait-size / 2;
+    }
+}
+
+img.border {
+    border: 2px solid white;
+}
+
+figcaption {
+    &.big {
+        font-size: 140%;
+    }
 }

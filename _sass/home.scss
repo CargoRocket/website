@@ -4,6 +4,16 @@ section {
     padding: 1rem;
 }
 
+.content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.first-line {
+    display: flex;
+    justify-content: space-around;
+}
+
 header {
     .present {
         background-image: url("../../assets/images/present-bg.svg");
@@ -19,15 +29,8 @@ section#team {
     background-color: $primary-color;
     color: white;
 
-    .members {
-        .member {
-            img {
-                width: $portrait-size;
-                height: $portrait-size;
-                border-radius: 50%;
-                border: 2px solid white;
-            }
-        }
+    ::selection {
+        background-color: $secondary-color;
     }
 }
 
@@ -35,6 +38,7 @@ section#project {
     background-color: $secondary-color;
     color: white;
 
-    .products {
+    ::selection {
+        background-color: $primary-color;
     }
 }

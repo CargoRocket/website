@@ -30,4 +30,8 @@ project:
       - name: CargoBikeIndex
         img: 
         description: Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen in Baden-Württemberg darstellen.
+blog:
+    headline: Blog
+contact:
+    headline: Kontakt
 ---
