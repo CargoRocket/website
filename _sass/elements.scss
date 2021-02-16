@@ -13,6 +13,14 @@
 .flex {
     display: flex;
 
+    &.vertical {
+        flex-direction: column;
+    }
+
+    &.space {
+        justify-content: space-around;
+    }
+
     &.c {
         justify-content: center;
     }
