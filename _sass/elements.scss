@@ -1,12 +1,12 @@
 .headline {
-    font-size: 2.5rem;
+    font-size: $font-lg;
 
     &.big {
-        font-size: 3.2rem;
+        font-size: $font-slg;
     }
 
     &.small {
-        font-size: 1.9rem;
+        font-size: $font-sm;
     }
 }
 
@@ -23,6 +23,12 @@
 
     &.c {
         justify-content: center;
+    }
+
+    &.mobile-v {
+        @media screen and (max-width: 1050px) {    
+            flex-direction: column;
+        }
     }
 }
 

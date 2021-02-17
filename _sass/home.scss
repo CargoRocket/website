@@ -1,7 +1,7 @@
 @import "variables";
 
 section {
-    padding: 1rem;
+    padding: $space-slg;
 }
 
 .content {
@@ -9,12 +9,7 @@ section {
     margin: auto;
 }
 
-.first-line {
-    display: flex;
-    justify-content: space-around;
-}
-
-header {
+#hero {
     .present {
         background-image: url("../../assets/images/present-bg.svg");
         background-repeat: no-repeat;
