@@ -10,12 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - name: Setup Ruby 🛑
+        uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses:  helaili/jekyll-action@v2
+          ruby-version: 2.7.
+      - name: Install Bundler 📦
+        run: |
+          gem install bundler
+      - name: Install Gems 💎
+        run: |
+          bundle install
+      - name: Build 🚧
+        run: |
+          jekyll build
+      - name: Publish 🚲
+        uses: nogsantos/scp-deploy@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          src: ./_site/*
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
