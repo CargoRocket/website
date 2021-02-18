@@ -1,113 +1,112 @@
 <!doctype html>
 <html lang="de">
-
-<head>
-    <title>{{ page.title }}</title>
-
-    <link rel="stylesheet" href="../assets/css/page.css">
-    <!--<link rel="icon" href="/favicon.ico">-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ page.description }}">
-    <meta name="author" content="Alexandra Kapp, David Prenninger, Henri Chilla">
-    <meta http-equiv="content-language" content="de">
-    <meta charset="utf-8">
-</head>
-
-<body>
-    <header>
-        <div class="first-line">
-            <img src="../assets/images/{{ page.logo }}" class="logo" />
-            <nav>
-                <ul>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#project">Projekt</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                    <li><a href="#funding">Förderung</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="flex c">
-            <div class="present">
-                <img src="../assets/images/{{ page.present-img }}" style="transform: scale(1.4)"/>
+    <head>
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="../assets/css/page.css">
+        <link rel="icon" href="../assets/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="Alexandra Kapp, David Prenninger, Henri Chilla">
+        <meta http-equiv="content-language" content="de">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <div class="first-line">
+                <img src="../assets/images/{{ page.logo }}" class="logo" />
+                <nav>
+                    <ul>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#project">Projekt</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="#funding">Förderung</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="flex vertical space">
-                <div class="headline big bebas c">{{ page.main-headline }}</div>
-                <div class="headline small roboto c">{{ page.second-headline }}</div>
-                <a href="/blog" class="button primary big bebas">{{ page.main-button }}</a>
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <section id="team">
-        <div class="content">
-            <h1 class="headline c bebas">{{ page.team.headline }}</h1>
-            
-            <p>{{page.team.description }}</p>
-
-            <div class="members flex c">
-                {% for member in page.team.members %}
-                <div class="c">
-                    <figure>
-                        <img src="../assets/images/{{ member.img }}" class="portrait round border" />
-                        <figcaption class="b bebas big">{{ member.name }}</figcaption>
-                    </figure>
-                    <p>{{ member.skills }}</p>
+        <section id="hero">
+            <div class="flex c mobile-v">
+                <div class="present">
+                    <img src="../assets/images/{{ page.present-img }}" style="transform: scale(1.4)"/>
                 </div>
+                <div class="flex vertical space">
+                    <div class="headline big bebas c">{{ page.main-headline }}</div>
+                    <div class="headline small roboto c">{{ page.second-headline }}</div>
+                    <a href="/blog" class="button primary big bebas">{{ page.main-button }}</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <div class="content">
+                <h1 class="headline c bebas">{{ page.team.headline }}</h1>
+                
+                <p>{{page.team.description }}</p>
+
+                <div class="members flex c mobile-v">
+                    {% for member in page.team.members %}
+                    <div class="c">
+                        <figure>
+                            <img src="../assets/images/{{ member.img }}" class="portrait round border" />
+                            <figcaption class="b bebas big">{{ member.name }}</figcaption>
+                        </figure>
+                        <p>{{ member.skills }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <section id="project">
+            <div class="content">
+                <h1 class="headline c bebas">{{ page.project.headline }}</h1>
+                
+                <p>{{page.team.description }}</p>
+
+                <div class="products flex mobile-v">
+                {% for product in page.project.products %}
+                    <div class="c">
+                        <figure>
+                            {% if product.img %}
+                            <img class="product" src="../assets/images/{{ product.img }}" />
+                            {% endif %}
+                            <figcaption class="b bebas c">{{ product.name }}</figcaption>
+                        </figure>
+                        <p>{{ product.description }}</p>
+                    </div>
                 {% endfor %}
-            </div>
-        </div>
-    </section>
-    
-    <section id="project">
-        <div class="content">
-            <h1 class="headline c bebas">{{ page.project.headline }}</h1>
-            
-            <p>{{page.team.description }}</p>
-
-            <div class="products flex">
-            {% for product in page.project.products %}
-                <div class="c">
-                    <figure>
-                        <img class="product" src="../assets/images/{{ product.img }}" />
-                        <figcaption class="b bebas c">{{ product.name }}</figcaption>
-                    </figure>
-                    <p>{{ product.description }}</p>
                 </div>
-            {% endfor %}
             </div>
-        </div>
-    </section>
-    
-    <section class="blog">
-        <div class="content">
-            <h1 class="headline c bebas">{{ page.blog.headline }}</h1>
+        </section>
+        
+        <section class="blog">
+            <div class="content">
+                <h1 class="headline c bebas">{{ page.blog.headline }}</h1>
 
-            <div class="blog-entries flex c">
-                <p>Hier kommen Blog Artikel</p>
+                <div class="blog-entries flex c mobile-v">
+                    <p>Hier kommen Blog Artikel</p>
+                </div>
+
+                <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
             </div>
+        </section>
+        
+        <section funding="contact">
+            <div class="content">
+                <h1 class="headline c bebas">{{ page.contact.headline }}</h1>
+            </div>
+        </section>
 
-            <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
-        </div>
-    </section>
-    
-    <section funding="contact">
-        <div class="content">
-            <h1 class="headline c bebas">{{ page.contact.headline }}</h1>
-        </div>
-    </section>
+        <section id="funding">
+            <div class="content">
 
-    <section id="funding">
-        <div class="content">
+            </div>
+        </section>
 
-        </div>
-    </section>
+        <footer>
 
-    <footer>
-
-    </footer>
-</body>
-
+        </footer>
+    </body>
 </html>
