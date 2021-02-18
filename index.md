@@ -12,7 +12,7 @@ team:
     description: Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit nachhaltigen Mobilitätsthemen beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet.
     members:
         - name: David Prenninger
-          skills: DevOps Genie, kümmert sich um alle Server & App Themen.
+          skills: Prototyper, kümmert sich um alle DevOps & App Themen.
           img: david.jpg
         - name: Alexandra Kapp
           skills: Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur.
