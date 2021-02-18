@@ -34,4 +34,6 @@ blog:
     headline: Blog
 contact:
     headline: Kontakt
+funding:
+    headline: Förderung
 ---
