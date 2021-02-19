@@ -26,7 +26,7 @@
     }
 
     &.mobile-v {
-        @media screen and (max-width: $breakpoint-xl) {
+        @media screen and (max-width: $breakpoint-lg) {
             flex-direction: column;
         }
     }
@@ -38,6 +38,19 @@
 
 .b {
     font-weight: bold;
+}
+
+/* Normalize links */
+a.n {
+    text-decoration: none;
+    color: black;
+
+    &:active,
+    &:visited,
+    &:hover {
+        color: black;
+        text-decoration: underline;
+    }
 }
 
 .button {
@@ -114,5 +127,25 @@ img.border {
 figcaption {
     &.big {
         font-size: 140%;
+    }
+}
+
+@each $size, $i in $general-sizes {
+    img.size-#{$size}{
+        width: $i * 6;
+        height: $i * 6;
+        min-width: $i * 6;
+        min-height: $i * 6;
+        background-size: cover;
+    }
+}
+
+p {
+    &.small {
+        font-size: 0.8rem;
+    }
+
+    &.big {
+        font-size: 1.5rem;
     }
 }

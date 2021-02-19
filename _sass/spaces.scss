@@ -17,3 +17,9 @@
         padding-right: $i;
     }
 }
+
+@each $size, $i in $general-sizes {
+    .pd-t-#{$size}{
+        padding-top: $i;
+    }
+}
