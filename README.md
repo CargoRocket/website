@@ -9,7 +9,7 @@ This is the Homepage (cargorocket.bike) of CargoRocket. It's build with Jekyll. 
 # Install Jekyll gem and dependencies
 $ bundle
 
-# Start Jekyll serving
+# Start Jekyll serving, for live reload add: --livereload
 $ jekyll serve 
 
 # Go to http://localhost:4000

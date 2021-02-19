@@ -6,7 +6,7 @@
     }
 
     &.small {
-        font-size: $font-sm;
+        font-size: $font-md;
     }
 }
 
@@ -26,7 +26,7 @@
     }
 
     &.mobile-v {
-        @media screen and (max-width: 1050px) {    
+        @media screen and (max-width: $breakpoint-xl) {
             flex-direction: column;
         }
     }

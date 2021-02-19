@@ -6,7 +6,10 @@
 
 nav {
     align-self: center;
-    
+    @media screen and (max-width: $breakpoint-md) {
+        display: none;
+    }
+
     ul {
         list-style: none;
         padding: 0;
@@ -16,13 +19,13 @@ nav {
             margin: 0 $space-md 0 0;
 
             a {
-                color: $secondary-color;
+                color: $primary-color;
                 text-decoration: none;
                 font-size: $font-md;
                 font-family: "Roboto";
 
                 &:hover {
-                    color: darken($secondary-color, 20%);
+                    color: darken($primary-color, 20%);
                     text-decoration: underline;
                 }
             }

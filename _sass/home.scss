@@ -18,13 +18,31 @@ section {
         background-image: url("../../assets/images/present-bg.svg");
         background-repeat: no-repeat;
         background-size: contain;
+        padding: 0 2rem;
 
         img {
             max-width: 100%;
         }
 
+        @media screen and (min-width: $breakpoint-lg){
+            max-width: 80%;
+        }
+
+        @media screen and (max-width: $breakpoint-lg){
+            margin-left: -50%;
+            max-height: 20rem;
+
+            img {
+                max-height: 20rem;
+            }
+        }
+
         @media screen and (max-width: $breakpoint-sm){
-            height: 20%;
+            display: none;
+
+            img {
+                display: none;
+            }
         }
     }
 }
