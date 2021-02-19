@@ -1,0 +1,19 @@
+@import "variables";
+
+@each $size, $i in $general-sizes {
+    .pd-#{$size}{
+        padding: $i;
+    }
+}
+
+@each $size, $i in $general-sizes {
+    .pd-l-#{$size}{
+        padding-left: $i;
+    }
+}
+
+@each $size, $i in $general-sizes {
+    .pd-r-#{$size}{
+        padding-right: $i;
+    }
+}

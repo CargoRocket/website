@@ -72,7 +72,7 @@
                             {% if product.img %}
                             <img class="product" src="../assets/images/{{ product.img }}" />
                             {% endif %}
-                            <figcaption class="b bebas c">{{ product.name }}</figcaption>
+                            <figcaption class="bebas b c big">{{ product.name }}</figcaption>
                         </figure>
                         <p>{{ product.description }}</p>
                     </div>
@@ -83,21 +83,29 @@
         
         <section id="blog">
             <div class="content">
-                <h1 class="headline c bebas">{{ page.blog.headline }}</h1>
+                <h1 class="headline bebas c">{{ page.blog.headline }}</h1>
 
-                <div class="blog-entries flex c mobile-v">
-                    <p>Hier kommen Blog Artikel</p>
+                <div class="blog-entries flex mobile-v">
+                    <div class="entry flex">
+                        <img src="https://picsum.photos/120/180" />
+                        <div class="pd-l-md">
+                            <h2 class="bebas big"><a href="/blog">Überschrift</a></h2>
+                            <p>Lorem ipsum öijsadf ölkj wiuzp kjh asdlkfh liuh jk aslkfh liuqwe rljhfdsaliuhas fljhlkj alskhf kjh fasdflkhweliufh sadlkj h.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
+                <div class="c">
+                    <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
+                </div>
             </div>
         </section>
         
         <section id="contact">
-            <div class="content">
-                <h1 class="headline c bebas">{{ page.contact.headline }}</h1>
+            <div class="content c">
+                <h1 class="headline bebas">{{ page.contact.headline }}</h1>
 
-                <div class="flex">
+                <div class="flex mobile-v">
                     <div>
                         <p>Du hast Ideen, Anregungen oder Lust auf Zusammenarbeit?
                             Schreib uns!</p>
