@@ -9,7 +9,7 @@ present-img: present-map.png
 main-button: Zum Blog
 team:
     headline: Das Team
-    description: Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit nachhaltigen Mobilitätsthemen beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet.
+    description: Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit verschiedenen Themen zur nachhaltigen Mobilität beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet.
     members:
         - name: David Prenninger
           skills: Prototyper, kümmert sich um alle DevOps & App Themen.
@@ -34,6 +34,7 @@ blog:
     headline: Blog
 contact:
     headline: Kontakt
+    email: team@lastenrad-routing.de
 funding:
     headline: Förderung
 ---
