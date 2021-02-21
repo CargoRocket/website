@@ -43,12 +43,12 @@
 /* Normalize links */
 a.n {
     text-decoration: none;
-    color: black;
+    color: inherit;
 
     &:active,
     &:visited,
     &:hover {
-        color: black;
+        color: inherit;
         text-decoration: underline;
     }
 }
