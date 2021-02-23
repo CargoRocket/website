@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+
+    {%- include head.html -%}
+
+    <body>
+        <header>
+            <div class="first-line">
+                <img src="../assets/images/{{ page.logo }}" class="logo" />
+                <nav>
+                    <ul>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#project">Projekt</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        
+        <section id="hero">
+            <div class="flex c">
+                <div class="present">
+                    <img src="../assets/images/{{ page.present-img }}"/>
+                </div>
+                <div class="flex vertical c">
+                    <div class="headline big bebas c">{{ page.main-headline }}</div>
+                    <div class="headline small roboto c">{{ page.second-headline }}</div>
+                    <!-- <a href="/blog" class="button primary big bebas">{{ page.main-button }}</a> -->
+                </div>
+            </div>
+        </section>
+        
+
+        {{ content }}
+
+        {%- include footer.html -%}
+    </body>
+</html>
