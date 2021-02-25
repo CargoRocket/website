@@ -6,23 +6,23 @@
     <body>
         <header>
             <div class="first-line">
-                <img src="../assets/images/{{ page.logo }}" class="logo" />
+                <img src="/assets/images/cargorocket-logo.svg" class="logo" />
                 <nav>
                     <ul>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#project">Projekt</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="/#team">Team</a></li>
+                        <li><a href="/#project">Projekt</a></li>
+                        <li><a href="/#contact">Kontakt</a></li>
                         <li><a href="/blog">Blog</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        
+        {% if page.hero %}
         <section id="hero">
             <div class="flex c">
                 <div class="present">
-                    <img src="../assets/images/{{ page.present-img }}"/>
+                    <img src="/assets/images/{{ page.present-img }}"/>
                 </div>
                 <div class="flex vertical c">
                     <div class="headline big bebas c">{{ page.main-headline }}</div>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </section>
-        
+        {% endif %}
 
         {{ content }}
 

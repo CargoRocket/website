@@ -43,25 +43,33 @@ layout: default
     </div>
 </section>
 
+{% assign posts = site.posts %}
+{%- if posts.size > 0 -%}
 <section id="blog">
     <div class="content">
         <h1 class="headline bebas c">{{ page.blog.headline }}</h1>
 
         <div class="blog-entries mobile-v">
+            {%- for post in posts -%}
             <div class="flex">
                 <img class="size-md" src="https://picsum.photos/120/180" />
                 <div class="pd-l-md">
-                    <h2 class="bebas big"><a class="n" href="/blog">Die Tücken des Lastenradfahrens</a></h2>
-                    <p>Dieser Artikel wird hier bald abrufbar sein...</p>
+                    <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.title | escape }}</a></h2>
+                    {%- if site.show_excerpts -%}
+                    <p>{{ post.excerpt }}</p>
+                    {%- endif -%}
+                    <span class="post-meta">{{ page.date | date_to_string }}</span>
                 </div>
             </div>
+            {%- endfor -%}
         </div>
-
+        
         <div class="c">
             <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
         </div>
     </div>
 </section>
+{%- endif -%}
 
 <section id="contact">
     <div class="content c">
