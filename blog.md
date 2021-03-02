@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: CargoRocket
+title: CargoRocket Blog
+subpage-title: Blog
 
-main-headline: Lastenfahrrad Routing
-second-headline: Das Erste seiner Art
+show-subpage-title: true
 ---

@@ -3,7 +3,7 @@ layout: home
 title: CargoRocket
 
 main-headline: Lastenfahrrad Routing
-second-headline: Das Erste seiner Art
+second-headline: Für eine nachhaltige Mobilität
 present-img: present-map.png
 hero: true
 main-button: Zum Blog
