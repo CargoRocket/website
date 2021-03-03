@@ -25,6 +25,10 @@
         justify-content: center;
     }
 
+    &.vertical-c {
+        align-items: center;
+    }
+
     &.mobile-v {
         @media screen and (max-width: $breakpoint-lg) {
             flex-direction: column;
@@ -140,12 +144,16 @@ figcaption {
     }
 }
 
-p {
+p, span {
     &.small {
         font-size: 0.8rem;
     }
 
     &.big {
         font-size: 1.5rem;
+    }
+
+    &.xxl {
+        font-size: 2rem;
     }
 }
