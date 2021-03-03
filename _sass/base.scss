@@ -17,6 +17,16 @@ a {
     }
 }
 
+section,
+article,
+main {
+    padding: $space-lg $space-slg;
+
+    @media screen and (max-width: $breakpoint-md){
+        padding: $space-md $space-lg;
+    }
+}
+
 ::selection {
     background-color: $primary-color;
     color: white;
