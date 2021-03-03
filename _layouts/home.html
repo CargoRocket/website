@@ -4,7 +4,6 @@ layout: default
 <section id="team">
     <div class="content">
         <h1 class="headline c bebas">{{ page.team.headline }}</h1>
-
         <p>{{page.team.description }}</p>
 
         <div class="members flex c mobile-v">
@@ -48,7 +47,6 @@ layout: default
 <section id="blog">
     <div class="content">
         <h1 class="headline bebas c">{{ page.blog.headline }}</h1>
-
         <div class="blog-entries mobile-v">
             {%- for post in posts -%}
             <div class="flex">
@@ -63,7 +61,6 @@ layout: default
             </div>
             {%- endfor -%}
         </div>
-        
         <div class="c">
             <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
         </div>
@@ -89,3 +86,17 @@ layout: default
         </div>
     </div>
 </section>
+
+<section id="funding">
+    <div class="content">
+        <h1 class="headline c bebas">{{ page.funding.headline }}</h1>
+
+        <p class="c">Das Projekt CargoRocket wird vom Verkehrsministerium Baden-Württemberg gefördert im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020”.</p>
+
+        <div>
+            <img />
+            <img />
+        </div>
+    </div>
+</section>
+
