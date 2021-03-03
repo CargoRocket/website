@@ -29,7 +29,7 @@ layout: default
 
         <div class="products flex mobile-v">
             {% for product in page.project.products %}
-            <div class="c">
+            <div class="c half pd-lr-lg">
                 <figure>
                     {% if product.img %}
                     <img class="product" src="../assets/images/{{ product.img }}" />
@@ -75,12 +75,12 @@ layout: default
     <div class="content c">
         <h1 class="headline bebas">{{ page.contact.headline }}</h1>
         <div class="flex mobile-v">
-            <div class="pd-md">
+            <div class="pd-md half">
                 <img src="../assets/icons/{{ page.contact.contact-icon }}" height="40" />
                 <p>{{ page.contact.contactText }}</p>
                 <a class="bebas big n" href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a>
             </div>
-            <div class="pd-md">
+            <div class="pd-md half">
                 <img src="../assets/icons/{{ page.contact.twitter-icon }}" height="40" />
                 <p>Wir sind auf Twitter!</p>
                 <a class="bebas big n" href="https://twitter.com/{{ page.contact.twitter }}">{{ page.contact.twitter

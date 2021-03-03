@@ -9,6 +9,14 @@ p {
     font-family: 'Roboto';
 }
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 ::selection {
     background-color: $primary-color;
     color: white;

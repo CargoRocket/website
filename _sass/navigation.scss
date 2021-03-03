@@ -2,6 +2,16 @@
 .first-line {
     display: flex;
     justify-content: space-around;
+
+    .logo a {
+        color: black;
+
+        &:active,
+        &:visited,
+        &:hover {
+            color: black;
+        }
+    }
 }
 
 nav {
