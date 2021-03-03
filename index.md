@@ -18,7 +18,7 @@ team:
           skills: Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur.
           img: alexandra.jpg
         - name: Henri Chilla
-          skills: Fahrrad Enthusiast und OpenStreetMap Experte.
+          skills: Fahrrad Enthusiast und OpenStreetMap Integrator.
           img: henri.jpg
 project:
     headline: Das Projekt
@@ -35,8 +35,10 @@ blog:
 contact:
     headline: Kontakt
     email: team@lastenrad-routing.de
-    twitter: "@cargo_rocket"
+    twitter: "cargo_rocket"
     contactText: Du hast Anregungen, eine Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
+    contact-icon: mail.png
+    twitter-icon: twitter.png
 funding:
     headline: Förderung
 ---
