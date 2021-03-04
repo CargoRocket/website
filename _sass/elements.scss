@@ -124,6 +124,13 @@ img.portrait {
     }
 }
 
+img.sponsor {
+    width: 50%;
+    @media screen and (min-width: $breakpoint-sm){
+        width: 30%;   
+    }
+}
+
 img.border {
     border: 2px solid white;
 }
