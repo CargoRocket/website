@@ -12,7 +12,7 @@ layout: default
 
         <div class="blog-entries mobile-v">
             {%- for post in posts -%}
-            <article class="flex">
+            <div class="flex">
                 <img class="size-md" src="https://picsum.photos/120/180" />
                 <div class="pd-l-md">
                     <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.title | escape }}</a></h2>
@@ -21,7 +21,7 @@ layout: default
                     {%- endif -%}
                     <span class="post-meta">{{ page.date | date_to_string }}</span>
                 </div>
-            </article>
+            </div>
             {%- endfor -%}
         </div>
     </div>

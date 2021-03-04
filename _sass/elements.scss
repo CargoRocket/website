@@ -157,3 +157,9 @@ p, span {
         font-size: 2rem;
     }
 }
+
+.flex .half {
+    @media screen and (min-width: $breakpoint-lg){
+        width: 50%;   
+    }
+}

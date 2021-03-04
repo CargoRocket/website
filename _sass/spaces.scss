@@ -7,6 +7,13 @@
 }
 
 @each $size, $i in $general-sizes {
+    .pd-lr-#{$size}{
+        padding-left: $i;
+        padding-right: $i;
+    }
+}
+
+@each $size, $i in $general-sizes {
     .pd-l-#{$size}{
         padding-left: $i;
     }

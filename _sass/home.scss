@@ -1,13 +1,5 @@
 @import "variables";
 
-section {
-    padding: $space-lg $space-slg;
-
-    @media screen and (max-width: $breakpoint-md){
-        padding: $space-md $space-lg;
-    }
-}
-
 .content {
     max-width: 900px;
     margin: auto;
@@ -63,10 +55,6 @@ section#project {
     ::selection {
         background-color: $primary-color;
     }
-}
-
-section#blog {
-    
 }
 
 section#contact {
