@@ -68,4 +68,12 @@ section#contact {
 
 footer {
     height: 4rem;
+    color: $primary-color;
+
+    a,
+    a:hover,
+    a:visited,
+    a:active {
+        color: $primary-color;
+    }
 }

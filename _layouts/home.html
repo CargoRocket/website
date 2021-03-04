@@ -13,7 +13,7 @@ layout: default
                     <img src="../assets/images/{{ member.img }}" class="portrait round border" />
                     <figcaption class="b bebas big">{{ member.name }}</figcaption>
                 </figure>
-                <p>{{ member.skills }}</p>
+                <p class="pd-lr-sm">{{ member.skills }}</p>
             </div>
             {% endfor %}
         </div>
@@ -50,7 +50,7 @@ layout: default
         <div class="blog-entries mobile-v">
             {%- for post in posts -%}
             <div class="flex">
-                <img class="size-md" src="https://picsum.photos/120/180" />
+                {% if post.image %}<img class="size-md pd-t-md" src="https://picsum.photos/120/180" />{% endif %}
                 <div class="pd-l-md">
                     <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.title | escape }}</a></h2>
                     {%- if site.show_excerpts -%}
@@ -95,7 +95,7 @@ layout: default
             <img class="sponsor" src="../assets/images/BWVMLogo.png" />
             <img class="sponsor" src="../assets/images/MobiDataLogo.jpg" />
         </div>
-        <p class="c">Das Projekt CargoRocket wird vom Verkehrsministerium Baden-Württemberg gefördert im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020”.</p>
+        <p class="c">Das Projekt CargoRocket wird vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” gefördert.</p>
     </div>
 </section>
 
