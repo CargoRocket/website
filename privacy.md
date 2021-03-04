@@ -1,0 +1,5 @@
+---
+layout: simple
+title: Datenschutzerklärung
+---
+
