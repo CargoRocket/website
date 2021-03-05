@@ -34,7 +34,7 @@ blog:
     headline: Blog
 contact:
     headline: Kontakt
-    email: team@lastenrad-routing.de
+    email: team@cargorocket.de
     twitter: "cargo_rocket"
     contactText: Du hast Anregungen, eine Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
     contact-icon: mail.png
