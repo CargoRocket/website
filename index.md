@@ -36,7 +36,7 @@ contact:
     headline: Kontakt
     email: team@cargorocket.de
     twitter: "cargo_rocket"
-    contactText: Du hast Anregungen, eine Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
+    contactText: Du hast Anregungen, ein Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
     contact-icon: mail.png
     twitter-icon: twitter.png
 funding:
