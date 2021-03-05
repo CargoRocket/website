@@ -50,7 +50,7 @@ layout: default
         <div class="blog-entries mobile-v">
             {%- for post in posts -%}
             <div class="flex">
-                {% if post.image %}<img class="size-md pd-t-md" src="https://picsum.photos/120/180" />{% endif %}
+                {% if post.image %}<img class="size-md pd-t-md" src="{{ post.image }}" />{% endif %}
                 <div class="pd-l-md">
                     <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.title | escape }}</a></h2>
                     {%- if site.show_excerpts -%}
