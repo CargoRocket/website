@@ -11,6 +11,14 @@ Der Verantwortliche im Sinne der Datenschutz-Grundverordnung und anderer nationa
 * 70499 Stuttgart
 * Mail: webmaster@cargorocket.de
 
+## Name und Anschrift des Datenschutzbeauftragten
+Die Datenschutzbeauftragte des Verantwortlichen ist:
+
+* Alexandra Kapp
+* Drostestraße 28
+* 70499 Stuttgart
+* Mail: datenschutz@cargorocket.de
+
 ## Allgemeines zur Datenverarbeitung
 ### Umfang der Verarbeitung personenbezogener Daten
 Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung personenbezogener Daten unserer Nutzer erfolgt regelmäßig nur nach Einwilligung des Nutzers. Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist. 
