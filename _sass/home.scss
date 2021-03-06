@@ -9,11 +9,12 @@
     .present {
         background-image: url("../../assets/images/present-bg.svg");
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 95%;
+        background-position: center;
         padding: 0 2rem;
 
         img {
-            max-width: 100%;
+            max-width: 90%;
         }
 
         @media screen and (min-width: $breakpoint-lg){
