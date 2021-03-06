@@ -165,8 +165,16 @@ p, span {
     }
 }
 
-.flex .half {
-    @media screen and (min-width: $breakpoint-lg){
-        width: 50%;   
+.flex {
+    .half {
+        @media screen and (min-width: $breakpoint-lg){
+            width: 50%;   
+        }
+    }
+
+    .third {
+        @media screen and (min-width: $breakpoint-lg){
+            width: 33.3%;   
+        }
     }
 }

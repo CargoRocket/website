@@ -39,6 +39,10 @@ contact:
       handle: "cargo_rocket"
       description: Wir sind auf Twitter!
       icon: twitter.png
+    github:
+      icon: github.png
+      url: https://github.com/CargoRocket
+      description: Wir entwickeln offen auf GitHub.
     contactText: Du hast Anregungen, ein Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
     contact-icon: mail.png
 funding:

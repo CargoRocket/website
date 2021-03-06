@@ -72,15 +72,20 @@ layout: default
     <div class="content c">
         <h1 class="headline bebas">{{ page.contact.headline }}</h1>
         <div class="flex mobile-v">
-            <div class="pd-md half">
+            <div class="pd-md third">
                 <img src="../assets/icons/{{ page.contact.contact-icon }}" height="40" />
                 <p>{{ page.contact.contactText }}</p>
                 <a class="bebas big n" href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a>
             </div>
-            <div class="pd-md half">
+            <div class="pd-md third">
                 <img src="../assets/icons/{{ page.contact.twitter.icon }}" height="40" />
                 <p>{{ page.contact.twitter.description }}</p>
                 <a class="bebas big n" href="https://twitter.com/{{ page.contact.twitter.handle }}">@{{ page.contact.twitter.handle }}</a>
+            </div>
+            <div class="pd-md third">
+                <img src="../assets/icons/{{ page.contact.github.icon }}" height="40" />
+                <p>{{ page.contact.github.description }}</p>
+                <a class="bebas big n" href="{{ page.contact.github.url }}">Github</a>
             </div>
         </div>
     </div>
