@@ -3,16 +3,14 @@
     <h1>CargoRocket Website</h1>
 </div>
 
-This is the Homepage (cargorocket.bike) of CargoRocket. It's build with Jekyll. To get started:
+This is the Website of CargoRocket. It's build with Jekyll. To get started [you'll need Ruby](https://jekyllrb.com/docs/installation/). First install Jekyll:
 
 ```sh
 # Install Jekyll gem and dependencies
 $ bundle
 
-# Start Jekyll serving, for live reload add: --livereload
-$ jekyll serve 
+# Start Jekyll server 
+$ jekyll serve -livereload
 
 # Go to http://localhost:4000
 ```
-
-Before install Jekyll as described on their Website: https://jekyllrb.com/docs/installation/
