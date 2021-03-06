@@ -35,10 +35,13 @@ blog:
 contact:
     headline: Kontakt
     email: team@cargorocket.de
-    twitter: "cargo_rocket"
+    twitter:
+      handle: "cargo_rocket"
+      description: Wir sind auf Twitter!
+      icon: twitter.png
     contactText: Du hast Anregungen, ein Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
     contact-icon: mail.png
-    twitter-icon: twitter.png
 funding:
     headline: Förderung
+    description: Das Projekt CargoRocket wird vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.
 ---
