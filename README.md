@@ -10,7 +10,7 @@ This is the Website of CargoRocket. It's build with Jekyll. To get started [you'
 $ bundle
 
 # Start Jekyll server 
-$ jekyll serve -livereload
+$ jekyll serve --livereload
 
 # Go to http://localhost:4000
 ```

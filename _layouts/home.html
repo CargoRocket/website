@@ -48,7 +48,7 @@ layout: default
     <div class="content">
         <h1 class="headline bebas c">{{ page.blog.headline }}</h1>
         <div class="blog-entries mobile-v">
-            {%- for post in posts -%}
+            {%- for post in posts limit:4 -%}
             <div class="flex">
                 {% if post.image %}<img class="size-md pd-t-md" src="{{ post.image }}" />{% endif %}
                 <div class="pd-l-md">
