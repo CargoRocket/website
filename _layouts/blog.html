@@ -15,7 +15,7 @@ layout: default
             <div class="flex">
                 {% if post.image %}<img class="size-md pd-t-md" src="{{ post.image }}" />{% endif %}
                 <div class="pd-l-md">
-                    <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.title | escape }}</a></h2>
+                    <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.date | date_to_string }} - {{ post.title | escape }}</a></h2>
                     {%- if site.show_excerpts -%}
                     <p>{{ post.excerpt }}</p>
                     {%- endif -%}
