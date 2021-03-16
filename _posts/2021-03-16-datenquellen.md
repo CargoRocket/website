@@ -22,6 +22,10 @@ Zuerst die grundlegendste Information: auf welchen Straßen gibt es Radwege, Rad
 Die Radwegsbreite kann über den Tag `width` theoretisch ebenfalls spezifiziert werden, jedoch ist dieser Tag nur spärlich vergeben. Diese Information ist jedoch notwendig, um Radwege die zu schmal für breite Lastenräder sind zu identifizieren. 
 Der [RadNETZ BW Datensatz](https://www.mobidata-bw.de/dataset/radnetz-bw) von MobiData BW liefert hierzu detaillierte Informationen, jedoch handelt es sich hier um [Landesradfernwege zwischen Gemeinden](https://www.aktivmobil-bw.de/radverkehr/radnetz/das-radnetz/) und einzelne Radwege innerhalb einer Stadt sind nicht verzeichnet.
 
+![RadNETZ BW in Baden-Württemberg und Zoom auf den Ausschnitt für Stuttgart.](/assets/images/RadNETZ.jpg)
+
+*RadNETZ BW in Baden-Württemberg und Zoom auf den Ausschnitt für Stuttgart.*
+
 ### Ebenheit der Fahrbahn
 
 Mit dem Fahrrad über Wurzeln und Kopfsteinpflaster zu fahren ist unangenehm. Wer schon einmal voll bepackt mit dem Wocheneinkauf über holprige Straßen gefahren ist weiß, dass dies mit schwerer Last nochmal problematischer ist und wesentlich langsamer gefahren werden muss.
@@ -29,6 +33,11 @@ Mit dem Fahrrad über Wurzeln und Kopfsteinpflaster zu fahren ist unangenehm. We
 OSM bietet auch hierfür Daten: Die Oberflächenbeschaffenheit - Asphalt oder Kopfsteinplaster? - wird mit [`surface`](https://wiki.openstreetmap.org/wiki/DE:Key:surface) getaggt und sogar fast 60% der baden-württembergischen Straßen haben hierfür einen Eintrag. Doch auch ein asphaltierter Radweg kann durch Wurzeln und Schlaglöcher uneben sein. Dies wird über den Tag [`smoothness`](https://wiki.openstreetmap.org/wiki/DE:Key:smoothness) erfasst, der ist jedoch schon deutlich seltener    vergeben - für nur 4% der baden-württembergischen Straßen.
 
 Eine zusätzliche Datenquelle stellt hier [Mapillary](https://www.mapillary.com/) dar: Eine Plattform über die Straßenbilder (ähnlich wie Google Street View) durch einen Crowd-Sourcing Ansatz gesammelt und zur Verfügung gestellt werden. Auf diesen Bildern lässt sich der Zustand der Straße erkennen. Dies könnte nun über einen Bilderkennungsalgorithmus automatisiert werden. Das ist kein triviales Problem, daher freuen wir uns, dass sich ein Projekt-Team von [CorrelAid](https://correlaid.org) diesem Thema in Kooperation mit uns in den kommenden Monaten annehmen wird.  
+
+![MapilScreenshot der Mapillary Plattform](/assets/images/mapillary_screenshot.jpg)
+
+*Screenshot der Mapillary Plattform.*
+
 
 ### Barrieren
 
