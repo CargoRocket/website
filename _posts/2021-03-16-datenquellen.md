@@ -30,7 +30,7 @@ Der [RadNETZ BW Datensatz](https://www.mobidata-bw.de/dataset/radnetz-bw) von Mo
 
 Mit dem Fahrrad über Wurzeln und Kopfsteinpflaster zu fahren ist unangenehm. Wer schon einmal voll bepackt mit dem Wocheneinkauf über holprige Straßen gefahren ist weiß, dass dies mit schwerer Last nochmal problematischer ist und wesentlich langsamer gefahren werden muss.
 
-OSM bietet auch hierfür Daten: Die Oberflächenbeschaffenheit - Asphalt oder Kopfsteinplaster? - wird mit [`surface`](https://wiki.openstreetmap.org/wiki/DE:Key:surface) getaggt und sogar fast 60% der baden-württembergischen Straßen haben hierfür einen Eintrag. Doch auch ein asphaltierter Radweg kann durch Wurzeln und Schlaglöcher uneben sein. Dies wird über den Tag [`smoothness`](https://wiki.openstreetmap.org/wiki/DE:Key:smoothness) erfasst, der ist jedoch schon deutlich seltener    vergeben - für nur 4% der baden-württembergischen Straßen.
+OSM bietet auch hierfür Daten: Die Oberflächenbeschaffenheit - Asphalt oder Kopfsteinplaster? - wird mit [`surface`](https://wiki.openstreetmap.org/wiki/DE:Key:surface) getaggt und gut 40% der baden-württembergischen Straßen[^1] haben hierfür einen Eintrag. Doch auch ein asphaltierter Radweg kann durch Wurzeln und Schlaglöcher uneben sein. Dies wird über den Tag [`smoothness`](https://wiki.openstreetmap.org/wiki/DE:Key:smoothness) erfasst, der ist jedoch schon deutlich seltener    vergeben - für nur 5% der baden-württembergischen Straßen.
 
 Eine zusätzliche Datenquelle stellt hier [Mapillary](https://www.mapillary.com/) dar: Eine Plattform über die Straßenbilder (ähnlich wie Google Street View) durch einen Crowd-Sourcing Ansatz gesammelt und zur Verfügung gestellt werden. Auf diesen Bildern lässt sich der Zustand der Straße erkennen. Dies könnte nun über einen Bilderkennungsalgorithmus automatisiert werden. Das ist kein triviales Problem, daher freuen wir uns, dass sich ein Projekt-Team von [CorrelAid](https://correlaid.org) diesem Thema in Kooperation mit uns in den kommenden Monaten annehmen wird.  
 
@@ -42,7 +42,7 @@ Eine zusätzliche Datenquelle stellt hier [Mapillary](https://www.mapillary.com/
 ### Barrieren
 
 Poller verhindern die Durchfahrt von Kraftfahrzeugen, zum Beispiel in Fußgängerzonen. Umlauf- oder Drängelgitter zwingen Fahrradfahrende abzubremsen, beispielweise an Parkeingängen oder bei Gleisübergängen. Beide Arten der Barrieren sollten für Fahrradverkehr die Durchfahrt ermöglichen. Lastenräder sind zum Teil jedoch zu breit und können hier nur noch sehr schwer oder gar nicht mehr passieren.
-In [OSM sind Barrieren](https://wiki.openstreetmap.org/wiki/DE:Key:barrier) sehr gut verzeichnet. Es wird nach `bollard` (Poller), `cycle_barrier` (Umlaufgitter) und einigen weiteren Barrierearten unterschieden. Neben der Art der Barriere kann zusätzlich die maximale Breite `width` oder `maxwidth:physical` getaggt werden, diese Information ist jedoch leider nur für weniger als 1% der Barrieren in Baden-Württemberg vorhanden.
+In [OSM sind Barrieren](https://wiki.openstreetmap.org/wiki/DE:Key:barrier) sehr gut verzeichnet. Es wird nach `bollard` (Poller), `cycle_barrier` (Umlaufgitter) und einigen weiteren Barrierearten unterschieden. Neben der Art der Barriere kann zusätzlich die maximale Breite `width` oder `maxwidth:physical` getaggt werden, diese Information ist jedoch leider nur für ca. 1% der Barrieren in Baden-Württemberg vorhanden.
 
 ### Autoverkehr
 
@@ -52,15 +52,17 @@ Alternativ gibt es auch eine [API von TomTom](https://developer.here.com/documen
 
 ### Fußgängerverkehr
 
-Fußgängerzonen sind über das [Taggingschema](https://wiki.openstreetmap.org/wiki/DE:Bicycle/Radverkehrsanlagen_kartieren) `highway=pedestrian` mit `bicycle=yes` und geteilte Geh- und Radwege über `bicycle=use_sidepath` mit `segregated=no` verzeichnet. 
+Fußgängerzonen sind über das [Taggingschema](https://wiki.openstreetmap.org/wiki/DE:Bicycle/Radverkehrsanlagen_kartieren) `highway=pedestrian` mit `bicycle=yes` und geteilte Geh- und Radwege mit `segregated=no` verzeichnet. 
 Genaue Daten, wann die Fußgängerzonen mit vielen Menschen gefüllt sind, sind schwer zu bekommen. Hier könnte mit Heuristiken gearbeitet werden: [morgens sind weniger Menschen einkaufen, nachmittags füllen sich die Läden und damit die Straßen](https://de.statista.com/infografik/7503/bestellzeiten-handel-e-commerce/).
 
 Eine Zusätzliche Information können hier Uhrzeiten und Orte von Wochenmärkten sein: der Stuttgarter Marktplatz lässt sich normalerweise entspannt mit dem Lastenrad überqueren, jedoch nicht dienstags, donnerstags und samstags zu Marktzeiten. Hierzu gibt es leider keine guten maschinenlesbaren, offenen Daten. Das Open Data Projekt ["Wo ist Markt?"](https://wo-ist-markt.de/#stuttgart) könnte hierfür eine guter Startpunkt sein, da hier für viele Städte die Daten bereits gesammelt sind.
 
 ### Steigung
 
-Steigungen sind für Lastentransporte von nicht unerheblicher Wichtigkeit. Jenachdem welche Last transportiert werden soll, kann hierdurch bspw. die Geschwindigkeit stark verringert werden oder die Batterie-Ladung schwindet bei Pedelecs/E-Bikes schneller. Auch wenn durch elektrifizierte Lastenräder Steigungen besser überwindet werden können, ist es von Vorteile weniger steile Abschnitte zu wählen oder Steigungen gänzlich zu vermeiden. Auch wenn OpenStreetMap mit [`incline`](https://wiki.openstreetmap.org/wiki/DE:Key:incline) einen Tag anbietet, ist dieser unbrauchbar, weil dieser nicht ausreichend gemappt ist. Anstattdessen bietet es sich an global verfügbare Satelliten Höhenmodelle zu verwenden. Hier wird häufig das [SRTM](https://de.wikipedia.org/wiki/SRTM-Daten) Höhenmodell verwendet, dessen Version 3 eine Auflösung von einer Bogensekunde, also etwa 30 Metern für die ganze Welt bereitstellt. Dieses Modell kann für (Vektor-)Karten als auch für Routing verwendet werden.
+Steigungen sind für Lastentransporte von nicht unerheblicher Wichtigkeit. Jenachdem welche Last transportiert werden soll, kann hierdurch bspw. die Geschwindigkeit stark verringert werden oder die Batterie-Ladung schwindet bei Pedelecs/E-Bikes schneller. Auch wenn durch elektrifizierte Lastenräder Steigungen besser überwunden werden können, ist es von Vorteile weniger steile Abschnitte zu wählen oder Steigungen gänzlich zu vermeiden. Auch wenn OpenStreetMap mit [`incline`](https://wiki.openstreetmap.org/wiki/DE:Key:incline) einen Tag anbietet, ist dieser unbrauchbar, weil dieser nicht ausreichend gemappt ist. Stattdessen bietet es sich an global verfügbare Satelliten Höhenmodelle zu verwenden. Hier wird häufig das [SRTM](https://de.wikipedia.org/wiki/SRTM-Daten) Höhenmodell verwendet, dessen Version 3 eine Auflösung von einer Bogensekunde, also etwa 30 Metern für die ganze Welt bereitstellt. Dieses Modell kann für (Vektor-)Karten als auch für Routing verwendet werden.
 
 ### Bordsteine
 
 Nicht abgesenkte Bordsteine können je nach Lastenradmodell ein unangenehmes Hindernis darstellen. Mit odem [OSM Tag `kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb) kann dies über den Wert `raised` oder `lowered` abgebildet werden, jedoch sind auch hier die Tags nur kaum gesetzt.
+
+[^1]: Hierfür haben relevante OSM Tags in Baden-Württemberg analysiert. [Hier kann die Analyse](https://cargorocket.github.io/OsmAnalysis/docs/OSM_Analysis_BW.html) bzw. [hier das zugrundeliegende R Markdown File](https://github.com/CargoRocket/OsmAnalysis/blob/main/R/OSM_Analysis_BW.Rmd) eingesehen werden.
