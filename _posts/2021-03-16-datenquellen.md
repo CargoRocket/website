@@ -19,7 +19,7 @@ Zuerst die grundlegendste Information: auf welchen Straßen gibt es Radwege, Rad
 
 **Radwegsbereite**
 
-Die Radwegsbreite kann über den Tag `width` theoretisch ebenfalls spezifiziert werden, jedoch ist dieser Tag nur spärlich vergeben. Diese Information ist jedoch notwendig, um Radwege die zu schmal für breite Lastenräder sind zu identifizieren. 
+Die Radwegsbreite kann über den Tag [`width`](https://wiki.openstreetmap.org/wiki/Key:width) bzw. über Sub-Keys wie bspw. `cycleway:left:width` theoretisch ebenfalls spezifiziert werden, jedoch ist dieser Tag nur spärlich vergeben. Diese Information ist jedoch notwendig, um Radwege die zu schmal für breite Lastenräder sind zu identifizieren. 
 Der [RadNETZ BW Datensatz](https://www.mobidata-bw.de/dataset/radnetz-bw) von MobiData BW liefert hierzu detaillierte Informationen, jedoch handelt es sich hier um [Landesradfernwege zwischen Gemeinden](https://www.aktivmobil-bw.de/radverkehr/radnetz/das-radnetz/) und einzelne Radwege innerhalb einer Stadt sind nicht verzeichnet.
 
 ![RadNETZ BW in Baden-Württemberg und Zoom auf den Ausschnitt für Stuttgart.](/assets/images/RadNETZ.jpg)
@@ -42,7 +42,7 @@ Eine zusätzliche Datenquelle stellt hier [Mapillary](https://www.mapillary.com/
 ### Barrieren
 
 Poller verhindern die Durchfahrt von Kraftfahrzeugen, zum Beispiel in Fußgängerzonen. Umlauf- oder Drängelgitter zwingen Fahrradfahrende abzubremsen, beispielweise an Parkeingängen oder bei Gleisübergängen. Beide Arten der Barrieren sollten für Fahrradverkehr die Durchfahrt ermöglichen. Lastenräder sind zum Teil jedoch zu breit und können hier nur noch sehr schwer oder gar nicht mehr passieren.
-In [OSM sind Barrieren](https://wiki.openstreetmap.org/wiki/DE:Key:barrier) sehr gut verzeichnet. Es wird nach `bollard` (Poller), `cycle_barrier` (Umlaufgitter) und einigen weiteren Barrierearten unterschieden. Neben der Art der Barriere kann zusätzlich die maximale Breite `width` oder `maxwidth` getaggt werden, diese Information ist jedoch leider nur für weniger als 1% der Barrieren in Baden-Württemberg vorhanden.
+In [OSM sind Barrieren](https://wiki.openstreetmap.org/wiki/DE:Key:barrier) sehr gut verzeichnet. Es wird nach `bollard` (Poller), `cycle_barrier` (Umlaufgitter) und einigen weiteren Barrierearten unterschieden. Neben der Art der Barriere kann zusätzlich die maximale Breite `width` oder `maxwidth:physical` getaggt werden, diese Information ist jedoch leider nur für weniger als 1% der Barrieren in Baden-Württemberg vorhanden.
 
 ### Autoverkehr
 
@@ -59,7 +59,7 @@ Eine Zusätzliche Information können hier Uhrzeiten und Orte von Wochenmärkten
 
 ### Steigung
 
-@Henri - kannst du hier zwei Sätze schreiben?
+Steigungen sind für Lastentransporte von nicht unerheblicher Wichtigkeit. Jenachdem welche Last transportiert werden soll, kann hierdurch bspw. die Geschwindigkeit stark verringert werden oder die Batterie-Ladung schwindet bei Pedelecs/E-Bikes schneller. Auch wenn durch elektrifizierte Lastenräder Steigungen besser überwindet werden können, ist es von Vorteile weniger steile Abschnitte zu wählen oder Steigungen gänzlich zu vermeiden. Auch wenn OpenStreetMap mit [`incline`](https://wiki.openstreetmap.org/wiki/DE:Key:incline) einen Tag anbietet, ist dieser unbrauchbar, weil dieser nicht ausreichend gemappt ist. Anstattdessen bietet es sich an global verfügbare Satelliten Höhenmodelle zu verwenden. Hier wird häufig das [SRTM](https://de.wikipedia.org/wiki/SRTM-Daten) Höhenmodell verwendet, dessen Version 3 eine Auflösung von einer Bogensekunde, also etwa 30 Metern für die ganze Welt bereitstellt. Dieses Modell kann für (Vektor-)Karten als auch für Routing verwendet werden.
 
 ### Bordsteine
 
