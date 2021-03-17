@@ -14,3 +14,7 @@ $ jekyll serve --livereload
 
 # Go to http://localhost:4000
 ```
+
+
+Setup Jekyll for Mac M1:
+[Workaround needed](https://keng.blog/blog/jekyll-on-apple-silicon)
