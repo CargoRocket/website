@@ -67,6 +67,20 @@ section#contact {
     }
 }
 
+article {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 0.1rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .article-infos {
+        margin-top: 0.1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 footer {
     height: 4rem;
     color: $primary-color;
