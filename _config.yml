@@ -1,2 +1,5 @@
+plugins:
+  - jekyll-feed
+
 show_excerpts: true
 future: false
