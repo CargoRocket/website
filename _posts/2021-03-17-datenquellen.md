@@ -17,9 +17,9 @@ Als Hauptdatenquelle verwenden wir [OpenStreetMap (OSM)](https://www.openstreetm
 
 Zuerst die grundlegendste Information: auf welchen Straßen gibt es Radwege, Radfahrstreifen oder Schutzstreifen und auf welchen Straßen wird sich die Fahrbahn mit dem Autoverkehr oder dem Fußverkehr geteilt? Diese Information ist gut in OSM erfasst und kann [sehr spezifisch getaggt](https://wiki.openstreetmap.org/wiki/DE:Key:cycleway) werden.
 
-**Radwegsbereite**
+**Radweg-Breite**
 
-Die Radwegsbreite kann über den Tag [`width`](https://wiki.openstreetmap.org/wiki/Key:width) bzw. über Sub-Keys wie bspw. `cycleway:left:width` theoretisch ebenfalls spezifiziert werden, jedoch ist dieser Tag nur spärlich vergeben. Diese Information ist jedoch notwendig, um Radwege die zu schmal für breite Lastenräder sind zu identifizieren. 
+Die Radweg-Breite kann über den Tag [`width`](https://wiki.openstreetmap.org/wiki/Key:width) bzw. über Sub-Keys wie bspw. `cycleway:left:width` theoretisch ebenfalls spezifiziert werden, jedoch ist dieser Tag nur spärlich vergeben. Diese Information ist jedoch notwendig, um Radwege die zu schmal für breite Lastenräder sind zu identifizieren. 
 Der [RadNETZ BW Datensatz](https://www.mobidata-bw.de/dataset/radnetz-bw) von MobiData BW liefert hierzu detaillierte Informationen, jedoch handelt es sich hier um [Landesradfernwege zwischen Gemeinden](https://www.aktivmobil-bw.de/radverkehr/radnetz/das-radnetz/) und einzelne Radwege innerhalb einer Stadt sind nicht verzeichnet.
 
 ![RadNETZ BW in Baden-Württemberg und Zoom auf den Ausschnitt für Stuttgart.](/assets/images/RadNETZ.jpg)
