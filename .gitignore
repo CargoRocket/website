@@ -2,3 +2,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+workspace.code-workspace
+
+# mac specific
+.DS_Store
