@@ -3,6 +3,7 @@ layout: post
 title: Datenquellen
 author: Alexandra Kapp
 excerpt: Phantastische Daten und wo sie zu finden sind.
+description: Phantastische Daten und wo sie zu finden sind.
 ---
 
 Während die Auswertung unserer Umfrage noch läuft, beschäftigen wir uns parallel mit der nächsten Frage: 

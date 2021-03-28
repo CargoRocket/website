@@ -1,6 +1,7 @@
 ---
 layout: home
 title: CargoRocket
+description: Ein Projekt zur Datensammlung und Verbesserung von Routinglösungen für den Lastenradverkehr.
 
 main-headline: Lastenfahrrad Routing
 second-headline: Für eine nachhaltige Mobilität
