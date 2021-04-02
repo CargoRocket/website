@@ -1,0 +1,45 @@
+kreis_name,count_cycleways,count_barriers,perc_width,perc_surface,perc_smoothness,perc_barrier,perc_total
+Karlsruhe Stadt,1575,1704,1,78,18,2,24
+Schwarzwald-Baar-Kreis,423,204,17,55,8,5,24
+Tübingen,460,543,3,81,16,1,24
+Mannheim,942,1259,3,59,36,0,23
+Ravensburg,678,415,11,68,0,3,22
+Stuttgart,992,2208,5,84,9,6,21
+Heilbronn Stadt,175,287,0,93,1,1,20
+Neckar-Odenwald-Kreis,87,144,3,60,23,3,20
+Rottweil,235,75,12,48,3,11,20
+Böblingen,714,576,3,53,14,1,19
+Freiburg,1406,467,1,59,3,2,19
+Konstanz,872,968,3,59,10,1,18
+Rastatt,462,555,15,59,3,0,18
+Sigmaringen,114,72,5,59,0,0,18
+Heidelberg,349,782,1,62,28,0,17
+Main-Tauber-Kreis,157,141,7,48,7,2,17
+Ostalbkreis,504,283,5,54,2,1,17
+Pforzheim,81,220,38,60,0,0,17
+Reutlingen,752,278,4,49,4,3,17
+Biberach,196,297,22,47,3,0,16
+Breisgau-Hochschwarzwald,426,258,12,40,6,3,16
+Calw,65,187,18,46,31,0,16
+Emmendingen,407,242,4,47,6,0,16
+Ortenaukreis,1190,579,9,45,0,2,16
+Rems-Murr-Kreis,589,520,5,55,3,0,16
+Zollernalbkreis,180,83,9,43,4,0,16
+Göppingen,311,259,5,54,0,0,15
+Ludwigsburg,426,1148,5,53,4,8,15
+Rhein-Neckar-Kreis,706,1562,3,47,26,1,15
+Enzkreis,169,419,12,56,4,3,14
+Ulm,264,640,3,75,0,0,14
+Bodenseekreis,676,376,5,36,2,4,13
+Freudenstadt,45,119,16,47,11,1,13
+Lörrach,377,176,4,40,0,2,13
+Baden-Baden,82,174,5,55,1,0,12
+Esslingen,602,766,1,50,1,0,12
+Heidenheim,131,212,4,49,1,0,12
+Karlsruhe,729,991,1,37,11,2,12
+Tuttlingen,129,131,0,47,0,1,12
+Waldshut,128,163,1,41,2,4,11
+Heilbronn,86,850,8,62,12,4,10
+Schwäbisch Hall,231,153,2,30,3,1,10
+Alb-Donau-Kreis,197,306,3,34,0,0,8
+Hohenlohekreis,99,251,0,26,0,0,5

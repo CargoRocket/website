@@ -1,0 +1,104 @@
+---
+layout: default
+subpage-title: Ranking
+---
+<script>
+  const handleElementClick = (index) => {
+    console.log(index);
+    const shownElements = [...document.getElementsByClassName('shown')].forEach((element) => {
+      element.classList.add('hidden');
+      element.classList.remove('shown');
+    });
+    elementToShow = document.getElementById(`details-${index}`)
+    elementToShow.classList.remove('hidden');
+    elementToShow.classList.add('shown');
+  }
+</script>
+<div class="ranking">
+  <h1 class="title">{{page.title}}</h1>
+  <div class="info">
+    <p class="description">
+      {{page.description}}
+    </p>
+    <a> Zum vorläufigen Lastenrad-Index -></a>
+  </div>
+  <div class="rank-table">
+    <div class="rank-table__city-list">
+      {% for cityData in site.data.ranking %}
+      {% capture number %}{{ forloop.length }}{% endcapture %}
+      {% assign index = {{forloop.index}} %}
+        <div class="list-entry" onclick="handleElementClick({{index}})">
+          <div class="list-entry__header">
+            <div class="list-entry__header__icon">
+              {% if index == 1 %}
+                {% include icons/icon-first.html %}
+              {% elsif index == 2 %}
+                {% include icons/icon-second.html %}
+              {% elsif index == 3 %}
+                {% include icons/icon-third.html %}
+              {% else %}
+                <span>{{index}}</span>
+              {% endif %}
+            </div>
+            <div class="spacer"></div>
+            <span>{{cityData.kreis_name}}</span>
+            <div class="spacer"></div>
+            <span>{{cityData.perc_total}}%</span>
+          </div>
+          <div id="details-{{index}}" class="list-entry__details hidden">
+            <table class="key-table">
+              <tr>
+                <th>Objekt</th>
+                <th>{{cityData.kreis_name}}</th>
+                <th v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].kreis_name}}</th>
+              </tr>
+              <tr>
+                <td>cycleways</td>
+                <td>{{cityData.count_cycleways}}</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].count_cycleways}}</td>
+              </tr>
+              <tr>
+                <td>barrier %</td>
+                <td>{{cityData.perc_barrier}}%</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].perc_barrier}}%</td>
+              </tr>
+              <tr>
+                <td>barrier no.</td>
+                <td>{{cityData.count_barriers}}</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].count_barriers}}</td>
+              </tr>
+              <tr>
+                <td>smoothness</td>
+                <td>{{cityData.perc_smoothness}}%</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].perc_smoothness}}%</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>{{cityData.perc_width}}%</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].perc_width}}%</td>
+              </tr>
+              <tr>
+                <td>surface</td>
+                <td>{{cityData.perc_surface}}%</td>
+                <td v-if="cityData !== site.data.ranking[0]">{{site.data.ranking[0].perc_surface}}%</td>
+              </tr>
+            </table>
+            <span class="contribution__title">Start Contributing:</span>
+            <div class="contribution">
+              <a href="https://github.com/streetcomplete/StreetComplete/#screenshots">
+                <img src="../assets/images/street-complete.png">
+              </a>
+              <a href="https://www.openstreetmap.org/edit">
+                <img src="../assets/images/osm.svg">
+              </a>
+              <a href="https://vespucci.io/">
+                <img src="../assets/images/vespucci.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="copyright">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</div>
