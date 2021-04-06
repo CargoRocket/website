@@ -37,7 +37,6 @@
   .list-entry {
     display: flex;
     flex-direction: column;
-    margin: 1px 0;
     color: $text-color;
     cursor: pointer;
   
@@ -59,6 +58,7 @@
       &__icon {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
         height: 80px;
         padding: $space-sm;
@@ -76,6 +76,7 @@
       align-items: center;
       width: 100%;
       border-top: 1px solid darken(white, 10);
+      border-bottom: 1px solid darken(white, 10);
       padding: $space-sm;
       background-color: white;
       box-sizing: border-box;
@@ -94,9 +95,28 @@
       }
     }
   }
+
+  .check-button {
+    width: 100%;
+    background-color: $footer-color;
+    font-size: $font-md;
+    padding: $space-md;
+    color: white;
+    margin-bottom: $space-md;
+    border: none;
+  }
+
+  .contribute-button {
+    width: 100%;
+    background-color: $primary-color;
+    font-size: $font-md;
+    padding: $space-md;
+    color: white;
+    margin-bottom: $space-md;
+    border: none;
+  }
   
   .contribution {
-  
     &__title {
       font-weight: bold;
     }
@@ -141,8 +161,8 @@
   }
   
   .spacer {
-    height: 100%;
-    border-left: 1px solid $footer-color;
+    height: 50%;
+    border-left: 1px solid darken(white, 10);
   }
 
   .copyright {
