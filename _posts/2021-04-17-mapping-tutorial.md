@@ -12,13 +12,16 @@ Um an unserem Mapathon teilzunehmen, ist nicht viel notwendig! Hier gehen wir ku
 Für einen guten Index und ein gutes Routing sind gute Daten notwendig. Hierfür beziehen wir unsere Daten von [OpenStreetMap](https://www.openstreetmap.org) (OSM). An diesem Open-Source Projekt kann sich nach dem Wikipedia-Prinzip jede Person beteiligen und beliebige Daten eintragen. Dementsprechend ist es möglich, wichtige Daten für Lastenräder zu erfassen. Diese nützen dann aber auch allen anderen Nutzer:innen, die auf die Daten zugreifen, bspw. auch Rollstuhlfahrenden.
 
 ## Einführung OSM
+
 *Wenn du bereits bei OSM aktiv bist, kannst du diesen Abschnitt vermutlich überspringen.*
+
 Für das Eintragen der Daten wird zunächst ein OSM-Nutzerkonto benötigt, welcher [hier](https://www.openstreetmap.org/user/new) erstellt werden kann. Für das Bearbeiten existieren verschiedenste Editoren. Für den Einstieg sind folgende am besten geeignet: [ID-Editor](https://learnosm.org/de/beginner/id-editor/) und [StreetComplete](https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete). Für unterwegs auf dem Smartphone existieren auch [Vespucci](https://play.google.com/store/apps/details?id=de.blau.android&hl=de&gl=US) (Android) und [Go Map!!](https://apps.apple.com/de/app/go-map/id592990211) (iOS) um eine Auswahl zu erwähnen.
 
-Eine allgemeine Einführung gibt es bei [LearnOSM](https://learnosm.org/de/), denn dies soll keine Anleitung für OSM sein.
+Eine allgemeine Einführung gibt es bei [LearnOSM](https://learnosm.org/de/), denn dies soll keine Anleitung für OSM selbst sein.
 
 ## Tags
-Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS-Applikationen sind. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende generellen Tags:
+
+Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS-Applikationen sind. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende Tags, welche die Eigenschaften von Wegen und Barrieren beschreiben:
 
 * Radwege
   *  [`surface=*`](https://wiki.openstreetmap.org/wiki/DE:Key:surface)
@@ -36,22 +39,23 @@ Für das ausmessen von Breiten der Wege bzw. Barrieren sollte entweder ein klass
 Falls das Maß nur geschätzt werden kann, könnte [est_width=*](https://wiki.openstreetmap.org/wiki/Key:est_width) verwendet werden. Dies wird allerdings nicht von uns ausgewertet.
 
 ## Beispiel Szenarien
+Im folgenden sollen verschiedene real-existierende Szenarien in Form von Tags beschrieben werden.
 
 ### Einrichtungs-Radweg
 
-<img alt="Einrichtungsradweg mit exzelletem Untergrund und grüner Markierung" src="/assets/images/cycleway.jpg" width= "200" style="float: right; margin-left: 2rem;">
+<img alt="Einrichtungsradweg mit exzelletem Untergrund und grüner Markierung" src="/assets/images/cycleway.jpg" width= "200" class="float right">
 
 Einen abgetrennter, beschildeter Radweg könnte bspw. folgende Tags enthalten:
 * `highway=cycleway`
 * `surface=asphalt`
 * `smoothness=excellent`
-* `width=3.0`
+* `width=2.0` (in Metern)
 * `traffic_sign=DE:237`
 
 
 ### Zweirichtungs-Radweg
 
-<img alt="Zweirichtungsradweg mit exzelletem Untergrund" src="/assets/images/bidirectional-cycleway.jpg" width= "200" style="float: left; margin-right: 2rem;">
+<img alt="Zweirichtungsradweg mit exzelletem Untergrund" src="/assets/images/bidirectional-cycleway.jpg" width= "200" class="float left">
 
 Einen abgetrennter, exklusiver Radweg hätte bspw. folgende Tags:
 * `highway=cycleway`
@@ -63,11 +67,11 @@ Einen abgetrennter, exklusiver Radweg hätte bspw. folgende Tags:
 
 ### Radstreifen
 
-<img alt="Radstreifen in mäßigem Zustand" src="/assets/images/cycleway:lane.jpg" width= "200" style="float: right;">
 
 > **Vorsicht**! Das `right` in `cycleway:right` bezieht sich immer auf die Laufrichtung des OSM Weges.
 > Und hier bezieht sich `smoothness` auf die Fahrbahn und `cycleway:right:smoothness` auf den Radstreifen.
 
+<img alt="Radstreifen in mäßigem Zustand" src="/assets/images/cycleway:lane.jpg" width= "200" class="float right">
 
 Eine Straße mit Radstreifen, der parallel zur Fahrbahn verläuft, hat möglicherweise folgende Tags:
 * `highway=residential`
@@ -76,19 +80,19 @@ Eine Straße mit Radstreifen, der parallel zur Fahrbahn verläuft, hat mögliche
 * `cycleway:right:lane=exclusive`
 * `cycleway:right:smoothness=good`
 * `cycleway:right:width=1.7`
+* `cycleway:right:traffic_sign=DE:237` (nur, wenn beschildert)
 * `smoothness=excellent` (bezieht sich auf die Fahrbahn)
-* `traffic_sign=DE:237` (nur, wenn beschildert)
 
 
 ### Getrennter Rad-& Fußweg
 
-<img alt="Getrennter, ausgeschilderter Radweg und Fußweg" src="/assets/images/separated-cycleway.jpg" width= "200" style="float: left; margin-right: 2rem;">
+<img alt="Getrennter, ausgeschilderter Radweg und Fußweg" src="/assets/images/separated-cycleway.jpg" width= "200" class="float left">
 
 Ein ausgewiesener, getrennter Rad- und Fußweg könnte folgende Tags enthalten:
 * `highway=path`
 * `bicycle=designated`
 * `foot=designated`
-* `traffic_sign=DE:241`
+* `traffic_sign=DE:241` (nur wenn beschildert)
 * `segregated=yes`
 * `surface=paving_stones`
 * `cycleway:surface=*` (nur, falls sich vom Rest des Weges unterscheiden würde)
@@ -99,10 +103,10 @@ Ein ausgewiesener, getrennter Rad- und Fußweg könnte folgende Tags enthalten:
 
 Bordsteine können insbesondere für Schwerlast-Lastenräder eine erhebliche Barriere darstellen und sollten deshalb in OpenStreetMap eingetragen werden. Sie werden als Punkt auf Wegen getaggt. In Baden-Württemberg existieren auch von behördlicher Seite keine flächendeckenden Informationen über Bordsteine. 
 
-<img alt="Bordsteine an Kreuzung an Verkehrsinseln" src="/assets/images/kerb.jpg" width= "300" style="float: right;">
+<img alt="Bordsteine an Kreuzung an Verkehrsinseln" src="/assets/images/kerb.jpg" width= "300" class="float right">
 
 * [`barrier=kerb`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=kerb)
-* [`kerb`](https://wiki.openstreetmap.org/wiki/DE:kerb)`=raised`
+* [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb)`=raised`
 * `height=0.07` (in Metern)
 
 Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
@@ -113,13 +117,13 @@ Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
 
 ### Poller
 
-<img alt="Beispiel für schmale Pollerdurchfahrt vor Brücke" src="/assets/images/bollard.jpg" width= "300" style="float: right;">
+<img alt="Beispiel für schmale Pollerdurchfahrt vor Brücke" src="/assets/images/bollard.jpg" width= "300" class="float right">
 
 An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden.
 
 * [`barrier=bollard`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard)
 * [`bollard`](https://wiki.openstreetmap.org/wiki/DE:Key:bollard)`=foldable`
-* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical)`=1.1`
+* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)`=1.1`
 * `bicycle=yes`
 * `foot=yes` (wenn für Fußverkehrerlaubt)
 
