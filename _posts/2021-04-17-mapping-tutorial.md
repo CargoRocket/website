@@ -19,6 +19,17 @@ Für das Eintragen der Daten wird zunächst ein OSM-Nutzerkonto benötigt, welch
 
 Eine allgemeine Einführung gibt es bei [LearnOSM](https://learnosm.org/de/), denn dies soll keine Anleitung für OSM selbst sein.
 
+## Mitmachen
+
+**Wie kann ich jetzt also teilnehmen?**
+
+Jeder aktualisierte oder hinzugefügte Tag, Punkt oder Weg hilft CargoRocket und allen anderen der OSM-Community! Ziel ist es möglichst gute, akkurate und nachvollziehbare Daten einzutragen. Ganz konkret kann das folgendermaßen erfolgen:
+
+Durch Hinzufügen & Aktualisieren...
+* von Wegen (bspw. ein nicht eingetragener Radweg)
+* von Punkten (bspw. ein neuer Poller)
+* von Tags (bspw. von Durchfahrtsbreiten an Pollern)
+
 ## Tags
 
 Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS-Applikationen sind. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende Tags, welche die Eigenschaften von Wegen und Barrieren beschreiben:
@@ -27,8 +38,11 @@ Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS
   *  [`surface=*`](https://wiki.openstreetmap.org/wiki/DE:Key:surface)
   *  [`smoothness=*`](https://wiki.openstreetmap.org/wiki/DE:Key:smoothness)
   *  [`width=*`](https://wiki.openstreetmap.org/wiki/DE:Key:width)
-*  Poller
-   *  [`maxwidth:physical=*`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)
+* Poller & Umlaufgitter
+  * [`maxwidth:physical=*`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)
+* Bordstein
+  *  [`height`](https://wiki.openstreetmap.org/wiki/DE:Key:height)
+  *  [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb) [derzeit nur auf Englisch verfügbar]
 
 > **Vorsicht**: Es gibt allerdings viele verschiedene Möglichkeiten und entsprechende [Sub-Tags (Namespaces)](https://wiki.openstreetmap.org/wiki/DE:Attribut#Schl.C3.BCssel_und_Werte), die bspw. den Radstreifen neben der Fahrbahn (`cycleway:right=lane`). Diese werden bevorzugt, wenn vorhanden.
 
@@ -36,7 +50,7 @@ Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS
 
 Für das ausmessen von Breiten der Wege bzw. Barrieren sollte entweder ein klassisches Maßband oder eine entprechende App (bspw. [Android](https://play.google.com/store/apps/details?id=com.google.tango.measure) bzw. [iOS](https://play.google.com/store/apps/details?id=com.google.tango.measure&hl=de&gl=US)) verwendet werden. Somit ist eine hohe Genauigkeit gewährleistet.
 
-Falls das Maß nur geschätzt werden kann, könnte [est_width=*](https://wiki.openstreetmap.org/wiki/Key:est_width) verwendet werden. Dies wird allerdings nicht von uns ausgewertet.
+Falls das Maß nur geschätzt werden kann, könnte [est_width=*](https://wiki.openstreetmap.org/wiki/Key:est_width) verwendet werden. Alternativ ist auch [source:width=estimated](https://wiki.openstreetmap.org/wiki/DE:Key:source) möglich. Beide Tags werden (derzeit) allerdings nicht von uns ausgewertet.
 
 ## Beispiel Szenarien
 Im folgenden sollen verschiedene real-existierende Szenarien in Form von Tags beschrieben werden.
@@ -75,7 +89,7 @@ Einen abgetrennter, exklusiver Radweg hätte bspw. folgende Tags:
 
 Eine Straße mit Radstreifen, der parallel zur Fahrbahn verläuft, hat möglicherweise folgende Tags:
 * `highway=residential`
-* `surface=asphalt`
+* `surface=asphalt` (Falls gleich für Fahrbahn als auch Radstreifen)
 * `cycleway:right=lane`
 * `cycleway:right:lane=exclusive`
 * `cycleway:right:smoothness=good`
@@ -83,6 +97,7 @@ Eine Straße mit Radstreifen, der parallel zur Fahrbahn verläuft, hat mögliche
 * `cycleway:right:traffic_sign=DE:237` (nur, wenn beschildert)
 * `smoothness=excellent` (bezieht sich auf die Fahrbahn)
 
+> Falls der Radstreifen einen anderen Untergrund hat, als die Fahrbahn, kann dies durch `cycleway:right:surface=*` angezeigt werden.
 
 ### Getrennter Rad-& Fußweg
 
@@ -101,7 +116,9 @@ Ein ausgewiesener, getrennter Rad- und Fußweg könnte folgende Tags enthalten:
 
 ### Bordsteine
 
-Bordsteine können insbesondere für Schwerlast-Lastenräder eine erhebliche Barriere darstellen und sollten deshalb in OpenStreetMap eingetragen werden. Sie werden als Punkt auf Wegen getaggt. In Baden-Württemberg existieren auch von behördlicher Seite keine flächendeckenden Informationen über Bordsteine. 
+Bordsteine können insbesondere für Schwerlast-Lastenräder eine erhebliche Barriere darstellen und sollten deshalb in OpenStreetMap eingetragen werden. Sie werden als Punkt auf Wegen getaggt. Für den Mapathon sind Bordsteine entscheidend, welche als Punkte auf Radwegen liegen. Poller als Linien oder Poller, die nicht auf Radwegen liegen werden von uns nicht weiter beachtet.
+
+In Baden-Württemberg existieren auch von behördlicher Seite keine flächendeckenden Informationen über Bordsteine.
 
 <img alt="Bordsteine an Kreuzung an Verkehrsinseln" src="/assets/images/kerb.jpg" width= "300" class="float right">
 
@@ -119,19 +136,27 @@ Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
 
 <img alt="Beispiel für schmale Pollerdurchfahrt vor Brücke" src="/assets/images/bollard.jpg" width= "300" class="float right">
 
-An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden.
+An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle auf dem Weg sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden. Die Breite sollte sich auf den (in der Regel asphalitierten) Bereich des Weges beziehen. Falls die physikalische Begrenzung nicht durch Zäune, Hecken oder andere Barrieren hergestellt ist, sondern bspw. ein Durchkommen über einen Grünstreifen möglich ist, schlagen wir vor zusätzlich den Tag `maxwidth:physical:definite=no` vor. Dieser soll anzeigen, dass ein überwinden der Barriere durch Ausholen über jenen Grünstreifen möglich ist. Umgekehrt würde `maxwidth:physical:definite=yes` ein Durchkommen als *definitiv* unmöglich angezeigt werden.
 
 * [`barrier=bollard`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard)
 * [`bollard`](https://wiki.openstreetmap.org/wiki/DE:Key:bollard)`=foldable`
-* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)`=1.1`
+* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)`=1.1` (F)
 * `bicycle=yes`
 * `foot=yes` (wenn für Fußverkehrerlaubt)
 
 ### Umlaufgitter
 
-Für Umlaufgitter, oder auch Drängelgitter genannt, existieren derzeit noch keine gut verwendbare Tags um diese sinnvoll zu beschreiben. Nichtsdestotrotz sollten auch diese in OpenStreetMap eingetragen werden. Diese werden als Punkt auf einem Weg getaggt.
+<div class="flex c">
+  <img alt="Horizontales Maß bei Umlaufgitter" src="/assets/images/umlaufgitter_meter.jpg" width="300">
+  <img alt="Vertikales Maß bei Umlaufgitter" src="/assets/images/umlaufgitter_meter2.jpg" width= "300">
+</div>
+
+Für Umlaufgitter, oder auch Drängelgitter genannt, sollte die engste Stelle gemessen und als maxwidth:physical angegeben werden. Dies kann entweder der Abstand zwischen den beiden Gittern sein, als auch der Abstand vom Gitter zu einer möglichen seitlichen Begrenzung (siehe Bilder).
+Diese Angabe reicht zwar nur bedingt, um ein Durchkommen für Lastenräder festzustellen, da auch bei ausreichender Breite die Kurve zu eng für ein Durchkommen sein kann, allerdings gibt die Breite zumindest einen gewissen Anhaltspunkt.
+Zusätzlich bietet diese Breitenangabe beispielsweise für Rollstuhlfahrende eine ausreichende, wichtige Information.
 
 * [`barrier=cycle_barrier`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard)
+* `maxwidth:physical=*`
 * `bicycle=yes` oder `bicycle=no`, falls nicht für Radverkehr erlaubt
 * `foot=yes` (in aller Regel auch für Fußverkehr erlaubt)
 
