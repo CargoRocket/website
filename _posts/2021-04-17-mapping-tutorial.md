@@ -42,7 +42,7 @@ Wir haben verschiedene Faktoren identifiziert, die die Lastenrad-Tauglichkeit vo
   * [`maxwidth:physical=*`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)
 * Bordstein (`barrier=kerb`)
   *  [`height`](https://wiki.openstreetmap.org/wiki/DE:Key:height)
-  *  [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb) [derzeit nur auf Englisch verfügbar]
+  *  [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb) [Im OSM Wiki derzeit nur auf Englisch verfügbar]
 
 > **Vorsicht**: Es gibt allerdings viele verschiedene Möglichkeiten und entsprechende [Sub-Tags (Namespaces)](https://wiki.openstreetmap.org/wiki/DE:Attribut#Schl.C3.BCssel_und_Werte), die bspw. den Radstreifen neben der Fahrbahn (`cycleway:right=lane`). Diese werden bevorzugt, wenn vorhanden.
 
@@ -145,7 +145,7 @@ In Baden-Württemberg existieren auch von behördlicher Seite keine flächendeck
 * [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb)`=raised`
 * `height=0.07` (in Metern)
 
-Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
+Führt der Radweg über einen Bordstein, ist jedoch bspw. als `cycleway:right=track` nur als Tag einer Straße vorhanden, kann hier nicht ein Bordstein hinzugefügt werden, der auf der Straße liegt. Das würde sonst bedeuten, dass auch die Autos von dieser Barriere betroffen wären. Daher schlagen wir hier dieses Tagging vor:
 
 * `cycleway:left:barrier=kerb`
 * [`kerb`](https://wiki.openstreetmap.org/wiki/DE:kerb)`=lowered`
@@ -155,13 +155,13 @@ Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
 
 <img alt="Beispiel für schmale Pollerdurchfahrt vor Brücke" src="/assets/images/bollard.jpg" width= "300" class="float right">
 
-An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle auf dem Weg sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden. Die Breite sollte sich auf den (in der Regel asphalitierten) Bereich des Weges beziehen. Falls die physikalische Begrenzung nicht durch Zäune, Hecken oder andere Barrieren hergestellt ist, sondern bspw. ein Durchkommen über einen Grünstreifen möglich ist, schlagen wir vor zusätzlich den Tag `maxwidth:physical:definite=no` vor. Dieser soll anzeigen, dass ein überwinden der Barriere durch Ausholen über jenen Grünstreifen auch mit breiteren Fahrzeugen als durch `maxwidth:physical` angegeben, möglich ist. Umgekehrt würde `maxwidth:physical:definite=yes` ein Durchkommen mit breiteren Fahrzeugen als *definitiv* unmöglich anzeigen.
+An Pollern ist vor allem eines interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle auf dem Weg sollte dann gemessen werden und mit `maxwidth:physical` in Metern (ohne Einheit anhängen) getaggt werden. Die Breite sollte sich auf den (in der Regel asphalitierten) Bereich des Weges beziehen. Falls die physikalische Begrenzung nicht durch Zäune, Hecken oder andere Barrieren hergestellt ist, sondern bspw. ein Durchkommen über einen Grünstreifen möglich ist, schlagen wir vor zusätzlich den Tag `maxwidth:physical:definite=no` vor. Dieser soll anzeigen, dass ein überwinden der Barriere durch Ausholen über jenen Grünstreifen auch mit breiteren Fahrzeugen als durch `maxwidth:physical` angegeben, möglich ist. Umgekehrt würde `maxwidth:physical:definite=yes` ein Durchkommen mit breiteren Fahrzeugen als *definitiv* unmöglich anzeigen.
 
 * [`barrier=bollard`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard)
 * [`bollard`](https://wiki.openstreetmap.org/wiki/DE:Key:bollard)`=foldable`
-* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)`=1.1` (F)
+* [`maxwidth:physical`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)`=1.1`
 * `bicycle=yes`
-* `foot=yes` (wenn für Fußverkehrerlaubt)
+* `foot=yes` (wenn für Fußverkehr erlaubt)
 
 ### Umlaufgitter
 
@@ -189,5 +189,6 @@ Wenn du Vorschläge hast, was bspw. neue Tags betrifft um das Beschreiben von Ba
 * Einen guten Überblick über umfassendes, generelles taggen von Radinfrastruktur in OSM gibt es von [Verkehrswende Berlin](https://wiki.openstreetmap.org/wiki/Berlin/Verkehrswende/Radwege).
 * Die Allgemeinen Kartierungsempfehlungen sind ebenfalls im OSM Wiki auf der Seite [Radverkehrsanlagen kartieren](https://wiki.openstreetmap.org/wiki/DE:Bicycle/Radverkehrsanlagen_kartieren) zu finden.
 * Für das Bewerten der Untergrundebenheit bietet diese [OSM Wiki Seite](https://wiki.openstreetmap.org/wiki/Berlin/Verkehrswende/smoothness) von Berlin Verkehrswende einen guten Überblick.
+* Für die Eintragung von Verkehrszeichen lohnt sich die Verwendung des [Vekehrszeichen Tool](https://osmtools.de/traffic_signs/index.html)s
 
 > Dieser Text und diese Bilder stehen unter der Lizenz **CC BY 4.0**.
