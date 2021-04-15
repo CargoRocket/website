@@ -38,9 +38,9 @@ Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS
   *  [`surface=*`](https://wiki.openstreetmap.org/wiki/DE:Key:surface)
   *  [`smoothness=*`](https://wiki.openstreetmap.org/wiki/DE:Key:smoothness)
   *  [`width=*`](https://wiki.openstreetmap.org/wiki/DE:Key:width)
-* Poller & Umlaufgitter
+* Poller (`barrier=bollard`) & Umlaufgitter (`barrier=cycle_barrier`)
   * [`maxwidth:physical=*`](https://wiki.openstreetmap.org/wiki/DE:Key:maxwidth:physical)
-* Bordstein
+* Bordstein (`barrier=kerb`)
   *  [`height`](https://wiki.openstreetmap.org/wiki/DE:Key:height)
   *  [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb) [derzeit nur auf Englisch verfügbar]
 
@@ -120,7 +120,26 @@ Bordsteine können insbesondere für Schwerlast-Lastenräder eine erhebliche Bar
 
 In Baden-Württemberg existieren auch von behördlicher Seite keine flächendeckenden Informationen über Bordsteine.
 
-<img alt="Bordsteine an Kreuzung an Verkehrsinseln" src="/assets/images/kerb.jpg" width= "300" class="float right">
+<div class="flex c">
+  <figure role="group">
+    <img alt="Raised kerb" src="/assets/images/kerb_raised.jpg" width="200">
+    <figcaption>
+      <code>raised</code>
+    </figcaption>
+  </figure>
+    <figure role="group">
+    <img alt="lowered kerb" src="/assets/images/kerb_lowered.jpg" width= "200">
+    <figcaption>
+      <code>lowered</code>
+    </figcaption>
+  </figure>
+  <figure role="group">
+    <img alt="Flushed kerb" src="/assets/images/kerb_flushed.jpg" width="200">
+    <figcaption>
+      <code>flushed</code>
+    </figcaption>
+  </figure>
+</div>
 
 * [`barrier=kerb`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=kerb)
 * [`kerb`](https://wiki.openstreetmap.org/wiki/Key:kerb)`=raised`
@@ -159,6 +178,10 @@ Zusätzlich bietet diese Breitenangabe beispielsweise für Rollstuhlfahrende ein
 * `maxwidth:physical=*`
 * `bicycle=yes` oder `bicycle=no`, falls nicht für Radverkehr erlaubt
 * `foot=yes` (in aller Regel auch für Fußverkehr erlaubt)
+
+## Vorschläge?
+
+Wenn du Vorschläge hast, was bspw. neue Tags betrifft um das Beschreiben von Barrieren zu verbessern, schreib uns gerne an [team@cargorocket.de](mailto:team@cargorocket.de) oder markiere uns auf Twitter [@cargo_rocket](https://twitter.com/cargo_rocket/)! 
 
 ## Weiterführende Informationen
 
