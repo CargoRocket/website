@@ -32,7 +32,7 @@ Durch Hinzufügen & Aktualisieren...
 
 ## Tags
 
-Wir haben verschiedene Faktoren identifiziert, welche wichtig für Lastenrad-GIS-Applikationen sind. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende Tags, welche die Eigenschaften von Wegen und Barrieren beschreiben:
+Wir haben verschiedene Faktoren identifiziert, die die Lastenrad-Tauglichkeit von Straßen ausmachen. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende Tags, welche die Eigenschaften von Wegen und Barrieren beschreiben:
 
 * Radwege
   *  [`surface=*`](https://wiki.openstreetmap.org/wiki/DE:Key:surface)
@@ -136,7 +136,7 @@ Und auf Straßen, bei denen der Radweg auf diesen Wegen gemappt ist:
 
 <img alt="Beispiel für schmale Pollerdurchfahrt vor Brücke" src="/assets/images/bollard.jpg" width= "300" class="float right">
 
-An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle auf dem Weg sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden. Die Breite sollte sich auf den (in der Regel asphalitierten) Bereich des Weges beziehen. Falls die physikalische Begrenzung nicht durch Zäune, Hecken oder andere Barrieren hergestellt ist, sondern bspw. ein Durchkommen über einen Grünstreifen möglich ist, schlagen wir vor zusätzlich den Tag `maxwidth:physical:definite=no` vor. Dieser soll anzeigen, dass ein überwinden der Barriere durch Ausholen über jenen Grünstreifen möglich ist. Umgekehrt würde `maxwidth:physical:definite=yes` ein Durchkommen als *definitiv* unmöglich angezeigt werden.
+An Pollern ist vor allem eines Interessant: Das Durchkommen zwischen mehreren Pollern/Steinen oder Poller und Wegerand. Die breitest mögliche Stelle auf dem Weg sollte dann gemessen werden und mit maxwidth:physical in Metern (ohne Einheit anhängen) getaggt werden. Die Breite sollte sich auf den (in der Regel asphalitierten) Bereich des Weges beziehen. Falls die physikalische Begrenzung nicht durch Zäune, Hecken oder andere Barrieren hergestellt ist, sondern bspw. ein Durchkommen über einen Grünstreifen möglich ist, schlagen wir vor zusätzlich den Tag `maxwidth:physical:definite=no` vor. Dieser soll anzeigen, dass ein überwinden der Barriere durch Ausholen über jenen Grünstreifen auch mit breiteren Fahrzeugen als durch `maxwidth:physical` angegeben, möglich ist. Umgekehrt würde `maxwidth:physical:definite=yes` ein Durchkommen mit breiteren Fahrzeugen als *definitiv* unmöglich anzeigen.
 
 * [`barrier=bollard`](https://wiki.openstreetmap.org/wiki/DE:Tag:barrier=bollard)
 * [`bollard`](https://wiki.openstreetmap.org/wiki/DE:Key:bollard)`=foldable`
