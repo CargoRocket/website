@@ -14,11 +14,7 @@ subpage-title: Ranking
     const listRoot = document.getElementById('city-list');
     listRoot.innerHTML = '';
     if (rankingCategory === 'ord-new') {
-      cities.sort((a,b) => (
-          parseInt(b.added_barriers) + parseInt(b.added_cycleways) + parseInt(b.added_kerbs)
-        ) - (
-          parseInt(a.added_barriers) + parseInt(a.added_cycleways) + parseInt(a.added_kerbs)
-        ));
+      cities.sort((a,b) => parseInt(b.added_total) - parseInt(a.added_total));
     } else {
       cities.sort((a,b) => b.perc_total - a.perc_total);
     }
@@ -115,7 +111,7 @@ subpage-title: Ranking
           <div class="spacer"></div>
           <span>
             ${rankingCategory === 'ord-new'
-              ? parseInt(city.added_barriers) + parseInt(city.added_cycleways) + parseInt(city.added_kerbs)
+              ? parseInt(city.added_total)
               : `${city.perc_total}%`
             }
           </span>
@@ -193,6 +189,18 @@ subpage-title: Ranking
                   <span>Neu Erfasst: ${city.added_kerbs}</span>
                 </div>
               </th>
+              <th>
+                <div class="key-table__column">
+                  <span class="key-table__column__value"><span class="key-table__column__key">height measured:</span> ${city.perc_with_kerb_height}%</span>
+                </div>
+              </th>
+              ${city != first ? `
+                <th>
+                  <div class="key-table__column">
+                    <span class="key-table__column__value"><span class="key-table__column__key">height measured:</span> ${first.perc_with_kerb_height}%</span>
+                  </div>
+                </th>
+              ` : ''}
             </tr>
           </table>
           <button class="contribute-button" onclick="openContributionModal()">Beitragen ></button>
@@ -223,7 +231,7 @@ subpage-title: Ranking
     <p class="description">
       {{page.description}}
     </p>
-    <!-- <a> Zum vorläufigen Lastenrad-Index -></a> -->
+    <a href="/2021/04/17/mapping-tutorial.html"> Zum Starter-Guide -></a>
   </div>
   <div class="ranking-select">
     <button class="ranking-select__button left" id="ord-new" onclick="selectRanking(this)">
