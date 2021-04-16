@@ -37,6 +37,7 @@
   .list-entry {
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: $text-color;
     cursor: pointer;
   
@@ -48,6 +49,7 @@
       padding: $space-sm;
       background-color: white;
       font-size: $font-md;
+      border-bottom: 1px solid darken(white, 10);
   
       @media screen and (max-width: $breakpoint-sm) {
         width: 350px;
@@ -65,7 +67,7 @@
         box-sizing: border-box;
   
         @media screen and (max-width: $breakpoint-sm) {
-          height: 50px;
+          height: 80px;
         }
       }
     }
@@ -75,23 +77,26 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      border-top: 1px solid darken(white, 10);
-      border-bottom: 1px solid darken(white, 10);
       padding: $space-sm;
       background-color: white;
-      box-sizing: border-box;
-      @media screen and (max-width: $breakpoint-sm) {
-        font-size: $font-ssm;
-      }
+      width: 450px;
       transition: all .5s;
 
+      @media screen and (max-width: $breakpoint-sm) {
+        font-size: $font-ssm;
+        width: 350px;
+      }
+
       &.shown {
+        position: relative;
         height: auto;
+        border-top: 1px solid darken(white, 10);
+        border-bottom: 1px solid darken(white, 10);
       }
 
       &.hidden {
         height: 0;
-        padding: 0;
+        padding: 0 $space-sm;
       }
     }
   }
@@ -136,10 +141,36 @@
     border-collapse: collapse;
     padding: $space-sm;
   }
+
+  th {
+    min-width: 30%;
+  }
   
   .key-table {
     width: 100%;
     margin-bottom: $space-sm;
+
+    &__column {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      font-weight: normal;
+      text-align: left;
+      font-size: $font-ssm;
+
+      &__key {
+        font-size: $font-ssm;
+      }
+
+      &__value {
+        font-weight: bold;
+        font-size: $font-sm;
+      }
+
+      .title {
+        font-size: $font-sm;
+      }
+    }
   }
   
   .spacer {
@@ -219,4 +250,38 @@
       }
     }
   }
+}
+
+.ranking-select {
+  background-color: white;
+  border-radius: $space-sm;
+  box-shadow: 0px 2px 0px 2px darken(white, 10);
+  display: flex;
+  margin: $space-md auto;
+  width: 350px;
+
+  &__button {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin: 0;
+    padding: $space-sm $space-md;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &.left {
+      border-top-left-radius: $space-sm;
+      border-bottom-left-radius: $space-sm;
+    }
+
+    &.right {
+      border-top-right-radius: $space-sm;
+      border-bottom-right-radius: $space-sm;
+    }
+
+    &--active {
+      background-color: darken(white, 5);
+    }
+  } 
 }

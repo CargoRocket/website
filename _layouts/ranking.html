@@ -4,9 +4,30 @@ subpage-title: Ranking
 ---
 <script src="https://unpkg.com/papaparse@5.3.0/papaparse.min.js" ></script>
 <script>
+  let rankingCategory = 'ord-percentage';
+  let cities = [];
+
+  const selectRanking = (element) => {
+    document.getElementById(rankingCategory).classList.remove('ranking-select__button--active');
+    element.classList.add('ranking-select__button--active');
+    rankingCategory = element.id;
+    const listRoot = document.getElementById('city-list');
+    listRoot.innerHTML = '';
+    if (rankingCategory === 'ord-new') {
+      cities.sort((a,b) => (
+          parseInt(b.added_barriers) + parseInt(b.added_cycleways) + parseInt(b.added_kerbs)
+        ) - (
+          parseInt(a.added_barriers) + parseInt(a.added_cycleways) + parseInt(a.added_kerbs)
+        ));
+    } else {
+      cities.sort((a,b) => b.perc_total - a.perc_total);
+    }
+    cities.forEach((city, index) => {
+      listRoot.innerHTML =  listRoot.innerHTML + renderCityElement(city, cities[0], index);
+    });
+  }
 
   const handleElementClick = (index) => {
-    console.log(index);
     const shownElements = [...document.getElementsByClassName('shown')].forEach((element) => {
       element.classList.add('hidden');
       element.classList.remove('shown');
@@ -17,7 +38,6 @@ subpage-title: Ranking
   }
 
   const showMap = (cityName) => {
-    console.log(cityName);
     window.location = `https://api.cargorocket.de/dr/docs/datenrennen_maps/${cityName}_map.html`;
   }
 
@@ -93,45 +113,86 @@ subpage-title: Ranking
           <div class="spacer"></div>
           <span>${city.kreis_name}</span>
           <div class="spacer"></div>
-          <span>${city.perc_total}%</span>
+          <span>
+            ${rankingCategory === 'ord-new'
+              ? parseInt(city.added_barriers) + parseInt(city.added_cycleways) + parseInt(city.added_kerbs)
+              : `${city.perc_total}%`
+            }
+          </span>
         </div>
         <div id="details-${index}" class="list-entry__details hidden">
           <button class="check-button" onclick="showMap('${city.kreis_name}')">Daten-Karte ></button>
           <table class="key-table">
             <tr>
-              <th>Objekt</th>
+              <th>Tag</th>
               <th>${city.kreis_name}</th>
               ${city != first ? `<th>${first.kreis_name}</th>` : ''}
             </tr>
+
             <tr>
-              <td>cycleways</td>
-              <th>${city.count_cycleways}</th>
-              ${city != first ? `<th>${first.count_cycleways}</th>` : ''}
+              <th>
+                <div class="key-table__column">
+                  <span class="title">Radwege</span>
+                  <span>(Tag: <a href="https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway">cycleway</a>)</span>
+                  <span>Anzahl: ${city.count_cycleways}</span>
+                  <span>Neu Erfasst: ${city.added_cycleways}</span>
+                </div>
+              </th>
+              <th>
+                <div class="key-table__column">
+                  <span class="key-table__column__value"><span class="key-table__column__key">Surface:</span> ${city.perc_with_surface}%</span>
+                  <span class="key-table__column__value"><span class="key-table__column__key">Smoothness:</span> ${city.perc_with_smoothness}%</span>
+                  <span class="key-table__column__value"><span class="key-table__column__key">Width:</span> ${city.perc_with_width}%</span>
+                </div>
+              </th>
+              ${city != first ? `
+                <th>
+                  <div class="key-table__column">
+                    <span class="key-table__column__value"><span class="key-table__column__key">Surface:</span> ${first.perc_with_surface}%</span>
+                    <span class="key-table__column__value"><span class="key-table__column__key">Smoothness:</span> ${first.perc_with_smoothness}%</span>
+                    <span class="key-table__column__value"><span class="key-table__column__key">Width:</span> ${first.perc_with_width}%</span>
+                  </div>
+                </th>
+              ` : ''}
+            </tr>
+
+            <tr>
+              <th>
+                <div class="key-table__column">
+                  <span class="title">Barrieren</span>
+                  <span>
+                    (Tag:
+                      <a href="https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard">
+                        barrier=bollard, block, cycle_barrier
+                      </a>
+                    )
+                  </span>
+                  <span>Anzahl: ${city.count_barriers}</span>
+                  <span>Neu Erfasst: ${city.added_barriers}</span>
+                </div>
+              </th>
+              <th>
+                <div class="key-table__column">
+                  <span class="key-table__column__value"><span class="key-table__column__key">Maxwidth:</span> ${city.perc_with_barrier_maxwidth}%</span>
+                </div>
+              </th>
+              ${city != first ? `
+                <th>
+                  <div class="key-table__column">
+                    <span class="key-table__column__value"><span class="key-table__column__key">Maxwidth:</span> ${first.perc_with_barrier_maxwidth}%</span>
+                  </div>
+                </th>
+              ` : ''}
             </tr>
             <tr>
-              <td>maxwidth (barrier)</td>
-              <th>${city.perc_with_barrier_maxwidth}%</th>
-              ${city != first ? `<th>${first.perc_with_barrier_maxwidth}%</th>` : ''}
-            </tr>
-            <tr>
-              <td>barriers</td>
-              <th>${city.count_barriers}</th>
-              ${city != first ? `<th>${first.count_barriers}</th>` : ''}
-            </tr>
-            <tr>
-              <td>smoothness</td>
-              <th>${city.perc_with_smoothness}%</th>
-              ${city != first ? `<th>${first.perc_with_smoothness}%</th>` : ''}
-            </tr>
-            <tr>
-              <td>width</td>
-              <th>${city.perc_with_width}%</th>
-              ${city != first ? `<th>${first.perc_with_width}%</th>` : ''}
-            </tr>
-            <tr>
-              <td>surface</td>
-              <th>${city.perc_with_surface}%</th>
-              ${city != first ? `<th>${first.perc_with_surface}%</th>` : ''}
+              <th>
+                <div class="key-table__column">
+                  <span class="title">Bordsteine</span>
+                  <span>(Tag: <a href="https://wiki.openstreetmap.org/wiki/Key:kerb">kerbs</a>)</span>
+                  <span>Anzahl: ${city.count_kerbs}</span>
+                  <span>Neu Erfasst: ${city.added_kerbs}</span>
+                </div>
+              </th>
             </tr>
           </table>
           <button class="contribute-button" onclick="openContributionModal()">Beitragen ></button>
@@ -143,11 +204,10 @@ subpage-title: Ranking
     // Fetch CSV Data
     fetch('https://api.cargorocket.de/dr/data/ranking.csv').then((rawData) => rawData.text()).then((data) => {
       // Parse CSV data
-      const cities = Papa.parse(data, {
+      cities = Papa.parse(data, {
         header: true,
         skipEmptyLines: true,
       }).data.sort((a, b) => b.perc_total - a.perc_total);
-      console.log(cities);
       // Setup Table
       const listRoot = document.getElementById('city-list');
       cities.forEach((city, index) => {
@@ -164,6 +224,16 @@ subpage-title: Ranking
       {{page.description}}
     </p>
     <!-- <a> Zum vorläufigen Lastenrad-Index -></a> -->
+  </div>
+  <div class="ranking-select">
+    <button class="ranking-select__button left" id="ord-new" onclick="selectRanking(this)">
+      <span>Neue Elemente</span>
+      {%- include icons/icon-add.html -%}
+    </button>
+    <button class="ranking-select__button right ranking-select__button--active" id="ord-percentage" onclick="selectRanking(this)">
+      {%- include icons/icon-percentage.html -%}
+      <span>Daten Qualität</span>
+    </button>
   </div>
   <div class="rank-table">
     <div class="rank-table__city-list" id="city-list">
