@@ -18,7 +18,7 @@ subpage-title: Ranking
 
   const showMap = (cityName) => {
     console.log(cityName);
-    window.location = `https://api.cargorocket.de/dr/docs/datenrennen_maps/${cityName}%20_map.html`;
+    window.location = `https://api.cargorocket.de/dr/docs/datenrennen_maps/${cityName}_map.html`;
   }
 
   const renderContribute = () => {
@@ -31,19 +31,25 @@ subpage-title: Ranking
             Alle deine Beiträge stehen dann auch für die Allgemeinheit über OpenStreetMap zur Verfügung.<br>
             Unser Ranking wird jeden Tag aktualisiert! Bringe deine Region auf das Siegerpodest!
           </p>
-          <span class="contribution__modal__links">Zum Einstieg Nützliche Links findest du hier:</span>
+          <span class="contribution__modal__links">Zum Einstieg findest du Nützliche Links hier:</span>
           <div class="contribution__options">
-            <a href="https://wiki.openstreetmap.org/wiki/DE:Cargobike">
-              <img src="/assets/images/osm.svg"> OpenStreetMap Wiki (Tag Informationen)
+            <a href="https://cargorocket.de/2021/04/17/mapping-tutorial.html">
+              <img src="/assets/images/cargorocket-logo.svg">Unser Mapathon Tutorial
             </a>
-            <a href="https://github.com/streetcomplete/StreetComplete/#screenshots">
-              <img src="/assets/images/street-complete.png"> Street Complete App (Android / IOS)
+            <a href="https://wiki.openstreetmap.org/wiki/DE:Cargobike">
+              <img src="/assets/images/osm.svg">OpenStreetMap Wiki (Tag Informationen)
             </a>
             <a href="https://www.openstreetmap.org/edit">
-              <img src="/assets/images/osm.svg"> OpenStreetMap ID (Web)
+              <img src="/assets/images/osm.svg">ID Editor (Web)
             </a>
             <a href="https://vespucci.io/">
-              <img src="/assets/images/vespucci.png"> Vespucci App (Android / IOS)
+              <img src="/assets/images/vespucci.png">Vespucci App (Android)
+            </a>
+            <a href="https://apps.apple.com/app/id592990211">
+              <img src="/assets/images/gomap.png">Go Map!! (iOS)
+            </a>
+            <a href="https://github.com/streetcomplete/StreetComplete/#screenshots">
+              <img src="/assets/images/street-complete.png">Street Complete App (Android)
             </a>
           </div>
     `
