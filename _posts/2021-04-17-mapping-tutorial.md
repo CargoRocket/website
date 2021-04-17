@@ -30,6 +30,10 @@ Durch Hinzufügen & Aktualisieren...
 * von Punkten (bspw. ein neuer Poller)
 * von Tags (bspw. von Durchfahrtsbreiten an Pollern)
 
+<div class="c">
+  <a href="/ranking" class="button secondary big bebas">Jetzt Mithelfen</a>
+</div>
+
 ## Tags
 
 Wir haben verschiedene Faktoren identifiziert, die die Lastenrad-Tauglichkeit von Straßen ausmachen. Daraus haben wir dann die entsprechenden OSM-Tags abgeleitet. Für unsere Auswertungen verwenden wir folgende Tags, welche die Eigenschaften von Wegen und Barrieren beschreiben:
@@ -178,6 +182,10 @@ Zusätzlich bietet diese Breitenangabe beispielsweise für Rollstuhlfahrende ein
 * `maxwidth:physical=*`
 * `bicycle=yes` oder `bicycle=no`, falls nicht für Radverkehr erlaubt
 * `foot=yes` (in aller Regel auch für Fußverkehr erlaubt)
+
+<div class="c">
+  <a href="/ranking" class="button secondary big bebas c">Jetzt Beitragen!</a>
+</div>
 
 ## Vorschläge?
 
