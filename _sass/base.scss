@@ -37,3 +37,11 @@ main {
     background-color: $primary-color;
     color: white;
 }
+
+blockquote {
+    display: flex;
+}
+
+h1:first-child {
+    margin-top: 0.7rem;
+}
