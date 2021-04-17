@@ -169,13 +169,13 @@ subpage-title: Ranking
               </th>
               <th>
                 <div class="key-table__column">
-                  <span class="key-table__column__value"><span class="key-table__column__key">Maxwidth:</span> ${city.perc_with_barrier_maxwidth}%</span>
+                  <span class="key-table__column__value"><span class="key-table__column__key">max-width:</span> ${city.perc_with_barrier_maxwidth}%</span>
                 </div>
               </th>
               ${city != first ? `
                 <th>
                   <div class="key-table__column">
-                    <span class="key-table__column__value"><span class="key-table__column__key">Maxwidth:</span> ${first.perc_with_barrier_maxwidth}%</span>
+                    <span class="key-table__column__value"><span class="key-table__column__key">max-width:</span> ${first.perc_with_barrier_maxwidth}%</span>
                   </div>
                 </th>
               ` : ''}
@@ -191,13 +191,13 @@ subpage-title: Ranking
               </th>
               <th>
                 <div class="key-table__column">
-                  <span class="key-table__column__value"><span class="key-table__column__key">height measured:</span> ${city.perc_with_kerb_height}%</span>
+                  <span class="key-table__column__value"><span class="key-table__column__key">height:</span> ${city.perc_with_kerb_height}%</span>
                 </div>
               </th>
               ${city != first ? `
                 <th>
                   <div class="key-table__column">
-                    <span class="key-table__column__value"><span class="key-table__column__key">height measured:</span> ${first.perc_with_kerb_height}%</span>
+                    <span class="key-table__column__value"><span class="key-table__column__key">height:</span> ${first.perc_with_kerb_height}%</span>
                   </div>
                 </th>
               ` : ''}
@@ -231,7 +231,7 @@ subpage-title: Ranking
     <p class="description">
       {{page.description}}
     </p>
-    <a href="/2021/04/17/mapping-tutorial.html"> Zum Starter-Guide -></a>
+    <a href="/2021/04/17/mapping-tutorial.html"> Zum Starter-Guide ➜</a>
   </div>
   <div class="ranking-select">
     <button class="ranking-select__button left" id="ord-new" onclick="selectRanking(this)">
@@ -240,7 +240,7 @@ subpage-title: Ranking
     </button>
     <button class="ranking-select__button right ranking-select__button--active" id="ord-percentage" onclick="selectRanking(this)">
       {%- include icons/icon-percentage.html -%}
-      <span>Daten Qualität</span>
+      <span>Datenqualität</span>
     </button>
   </div>
   <div class="rank-table">
