@@ -184,7 +184,7 @@ Zusätzlich bietet diese Breitenangabe beispielsweise für Rollstuhlfahrende ein
 * `foot=yes` (in aller Regel auch für Fußverkehr erlaubt)
 
 <div class="c">
-  <a href="/ranking" class="button secondary big bebas c">Jetzt Beitragen!</a>
+  <a href="/ranking" class="button secondary big bebas">Jetzt Beitragen!</a>
 </div>
 
 ## Vorschläge?
