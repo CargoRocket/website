@@ -1,0 +1,325 @@
+@import "variables";
+.ranking {
+  text-align: center;
+  background-color: $footer-color;
+  color: white;
+  font-family: 'Roboto';
+  padding-top: $space-lg;
+
+  .title {
+    margin-top: 0;
+  }
+
+  .info {
+    width: 350px;
+    margin: 0 auto $space-md;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+  
+  .description {
+    max-width: 350px;
+    text-align: start;
+    white-space: pre-line;
+  }
+  
+  .rank-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    &__city-list {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+  
+  .list-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text-color;
+    cursor: pointer;
+  
+    &__header {
+      display: grid;
+      width: 450px;
+      grid-template-columns: 80px 0 250px 0 120px;
+      align-items: center;
+      padding: $space-sm;
+      background-color: white;
+      font-size: $font-md;
+      border-bottom: 1px solid darken(white, 10);
+  
+      @media screen and (max-width: $breakpoint-sm) {
+        width: 350px;
+        grid-template-columns: 80px 0 150px 0 120px;
+        font-size: $font-sm;
+      }
+  
+      &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        padding: $space-sm;
+        box-sizing: border-box;
+  
+        @media screen and (max-width: $breakpoint-sm) {
+          height: 80px;
+        }
+      }
+    }
+  
+    &__details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: $space-sm;
+      background-color: white;
+      width: 450px;
+      transition: all .5s;
+
+      @media screen and (max-width: $breakpoint-sm) {
+        font-size: $font-ssm;
+        width: 350px;
+      }
+
+      &.shown {
+        position: relative;
+        height: auto;
+        border-top: 1px solid darken(white, 10);
+        border-bottom: 1px solid darken(white, 10);
+      }
+
+      &.hidden {
+        height: 0;
+        padding: 0 $space-sm;
+      }
+    }
+  }
+
+  .check-button {
+    width: 100%;
+    background-color: $footer-color;
+    font-size: $font-md;
+    padding: $space-md;
+    color: white;
+    margin-bottom: $space-md;
+    border: none;
+  }
+
+  .contribute-button {
+    width: 100%;
+    background-color: $primary-color;
+    font-size: $font-md;
+    padding: $space-md;
+    color: white;
+    margin-bottom: $space-md;
+    border: none;
+  }
+  
+  .fade-enter-active {
+    animation: expand-in .5s;
+  }
+  .fade-leave-active {
+    animation: expand-in .5s reverse;
+  }
+  @keyframes expand-in {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 300px;
+    }
+  }
+  
+  .key-table, th, td {
+    border: 1px solid darken(white, 10);
+    border-collapse: collapse;
+    padding: $space-sm;
+  }
+
+  th {
+    min-width: 30%;
+  }
+  
+  .key-table {
+    width: 100%;
+    margin-bottom: $space-sm;
+
+    &__column {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      font-weight: normal;
+      text-align: left;
+      font-size: $font-ssm;
+
+      &__key {
+        font-size: $font-ssm;
+      }
+
+      &__value {
+        font-weight: bold;
+        font-size: $font-sm;
+      }
+
+      .title {
+        font-size: $font-sm;
+      }
+    }
+  }
+  
+  .spacer {
+    height: 50%;
+    border-left: 1px solid darken(white, 10);
+  }
+
+  .copyright {
+    padding: $space-sm;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+  
+.contribution {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.3);
+  display: block;
+  overflow-y: auto;
+  font-family: 'Roboto';
+
+  @media screen and (max-width: $breakpoint-md) {
+    font-size: $font-ssm;
+  }
+
+  &__modal {
+    position: relative;
+    margin: $space-lg auto;
+    background-color: white;
+    max-width: 600px;
+    min-width: 320px;
+    width: 60%;
+    border-radius: $space-sm;
+    padding: $space-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .backButton{
+      position: absolute;
+      top: $space-sm;
+      left: $space-sm;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: $font-lg;
+      margin-bottom: $space-sm;
+    }
+
+    &__description {
+      max-width: 400px;
+      margin-bottom: $space-lg;
+    }
+
+    &__links {
+      font-weight: bold;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: $space-md;
+    & > * {
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $space-md;
+      color: $text-color;
+      text-decoration: none;
+      text-align: right;
+      
+      @media screen and (max-width: $breakpoint-sm) {
+        padding: $space-sm;
+      }
+
+      & > * {
+        width: 50px;
+        border-radius: $space-sm;
+        box-shadow: 0px 2px 2px 2px darken(white, 5);
+
+        @media screen and (max-width: $breakpoint-sm) {
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+.ranking-select {
+  background-color: white;
+  border-radius: $space-sm;
+  box-shadow: 0px 2px 0px 2px darken(white, 10);
+  display: flex;
+  margin: $space-md auto;
+  width: 350px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin: 0;
+    padding: $space-sm $space-md;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      font-size: $font-md;
+    }
+
+    &.left {
+      border-top-left-radius: $space-sm;
+      border-bottom-left-radius: $space-sm;
+    }
+
+    &.right {
+      border-top-right-radius: $space-sm;
+      border-bottom-right-radius: $space-sm;
+    }
+
+    &--active {
+      background-color: darken(white, 5);
+    }
+  } 
+}
