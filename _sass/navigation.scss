@@ -16,9 +16,6 @@
 
 nav {
     align-self: center;
-    @media screen and (max-width: $breakpoint-md) {
-        display: none;
-    }
 
     ul {
         list-style: none;
@@ -27,6 +24,12 @@ nav {
         li {
             display: inline-block;
             margin: 0 $space-md 0 0;
+
+            &.no-mobile {
+                @media screen and (max-width: $breakpoint-md) {
+                    display: none;
+                }
+            }
 
             a {
                 color: $primary-color;
@@ -39,6 +42,16 @@ nav {
                     text-decoration: underline;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .first-line {
+        flex-direction: column;
+
+        .logo {
+            margin: auto;
         }
     }
 }
