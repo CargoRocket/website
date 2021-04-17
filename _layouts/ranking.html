@@ -40,7 +40,7 @@ subpage-title: Ranking
   const renderContribute = () => {
     return `
         <div class="contribution__modal">
-          <button class="backButton" onClick="closeContributionModal">← Zurück</button>
+          <button class="backButton" id="backButton" onClick="closeContributionModal()">← Zurück</button>
           <h3 class="contribution__modal__title">Werde Datenspender!</h3>
           <p class="contribution__modal__description">
             Unterstütze deine Region beim Lastenradrouting mit OpenData.<br>
@@ -73,7 +73,10 @@ subpage-title: Ranking
   }
 
   const closeContributionModal = (event) => {
-    if (event.target === document.getElementById('contribution')) {
+    if (
+      event.target === document.getElementById('contribution')
+      || event.target === document.getElementById('backButton')
+    ) {
       document.getElementById('contribution').remove();
     }
   }

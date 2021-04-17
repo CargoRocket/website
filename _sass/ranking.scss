@@ -230,6 +230,7 @@
       left: $space-sm;
       background-color: transparent;
       border: none;
+      cursor: pointer;
     }
 
     &__title {
@@ -293,6 +294,8 @@
 
   &__button {
     display: flex;
+    align-items: center;
+    font-weight: bold;
     flex-grow: 1;
     justify-content: space-between;
     margin: 0;
@@ -300,6 +303,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    svg {
+      font-size: $font-md;
+    }
 
     &.left {
       border-top-left-radius: $space-sm;
