@@ -30,6 +30,8 @@ Durch Hinzufügen & Aktualisieren...
 * von Punkten (bspw. ein neuer Poller)
 * von Tags (bspw. von Durchfahrtsbreiten an Pollern)
 
+Wenn du magst, kannst du im Changeset Kommentar den Hashtag `#CargoRocket` hinzufügen. Dann sind alle Änderungen von allen Nutzer:innen sichtbar.
+
 <div class="c">
   <a href="/ranking" class="button secondary big bebas">Jetzt Mithelfen</a>
 </div>
