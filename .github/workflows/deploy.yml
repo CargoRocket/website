@@ -16,14 +16,11 @@ jobs:
           ruby-version: 2.7.
           bundler-cache: true
       - name: Install Bundler 📦
-        run: |
-          gem install bundler
+        run: gem install bundler
       - name: Install Gems 💎
-        run: |
-          bundle install
+        run: bundle install
       - name: Build 🚧
-        run: |
-          jekyll build
+        run: bundle exec jekyll build
       - name: Publish 🚲
         uses: nogsantos/scp-deploy@master
         with:
