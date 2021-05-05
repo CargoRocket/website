@@ -46,6 +46,10 @@ contact:
       description: Wir entwickeln offen auf GitHub.
     contactText: Du hast Anregungen, ein Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
     contact-icon: mail.png
+business:
+    headline: Interesse?
+    description: Sie möchten ein Lastenradrouting in Ihre Applikation integrieren? Oder einfach nur mal unsere API ausprobieren? Sie haben Fragen zu unserem Bewertungsschema für die Lastenradfreundlichkeit? Kontaktieren Sie uns einfach und wir finden eine Lösung.
+    email: business@cargorocket.de
 funding:
     headline: Förderung
     description: Das Projekt CargoRocket wird vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.
