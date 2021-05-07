@@ -1,6 +1,9 @@
 @import "variables";
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 900px;
     margin: auto;
 }
@@ -9,13 +12,9 @@
     .present {
         background-image: url("../../assets/images/present-bg.svg");
         background-repeat: no-repeat;
-        background-size: 85%;
+        background-size: 95%;
         background-position: center;
-        padding: 0 2rem;
-
-        img {
-            max-width: 90%;
-        }
+        padding: 0 3rem;
 
         @media screen and (min-width: $breakpoint-lg){
             max-width: 80%;
@@ -95,6 +94,10 @@ footer {
     a:active {
         color: $primary-color;
     }
+}
+
+.blog-image {
+    height: 300px;
 }
 
 blockquote {
