@@ -1,5 +1,7 @@
 plugins:
   - jekyll-feed
 
+title: CargoRocket
 show_excerpts: true
 future: false
+url: https://cargorocket.de
