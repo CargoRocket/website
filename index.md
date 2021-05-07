@@ -5,7 +5,7 @@ description: Ein Projekt zur Datensammlung und Verbesserung von Routinglösungen
 
 main-headline: Lastenfahrrad Routing
 second-headline: Für eine nachhaltige Mobilität
-present-img: present-map.png
+present-img: index_2.png
 hero: true
 main-button: Zum Blog
 team:
