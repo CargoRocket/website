@@ -95,12 +95,22 @@ a.n {
     }
 }
 
+.icon {
+    &.md {
+        height: $font-lg;
+    }
+}
+
 .bebas {
     font-family: 'Bebas Neue';
 }
 
 .roboto {
     font-family: 'Roboto';
+}
+
+.container {
+    max-width: 100%;
 }
 
 .round {
