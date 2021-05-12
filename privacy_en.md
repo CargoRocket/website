@@ -1,0 +1,86 @@
+---
+layout: simple
+title: Privacy Policy
+---
+
+## Responsible
+The responsible person within the meaning of the General Data Protection Regulation and other national data protection laws of the member states as well as other data protection regulations is:
+
+* Kapp Prenninger Chilla GbR
+* Drostestraße 28
+* 70499 Stuttgart
+* Mail: webmaster@cargorocket.de
+
+## Name and address of the data protection officer
+The data protection officer of the responsible party is:
+
+* Alexandra Kapp
+* Drostestraße 28
+* 70499 Stuttgart
+* Mail: datenschutz@cargorocket.de
+
+## General information on data processing
+### Scope of the processing of personal data
+As a matter of principle, we process personal data of our users only insofar as this is necessary for the provision of a functional website as well as our contents and services. The processing of personal data of our users is regularly only carried out with the consent of the user. An exception applies in those cases in which obtaining prior consent is not possible for actual reasons and the processing of the data is permitted by legal regulations. 
+
+### Legal basis for the processing of personal data
+Insofar as we obtain the consent of the data subject for processing operations of personal data, Art. 6 (1) lit. a EU General Data Protection Regulation (DSGVO) serves as the legal basis.
+When processing personal data that is necessary for the performance of a contract to which the data subject is a party, Art. 6 (1) (b) DSGVO serves as the legal basis. This also applies to processing operations that are necessary for the performance of pre-contractual measures.
+Insofar as the processing of personal data is necessary for the fulfilment of a legal obligation to which our company is subject, Art. 6 (1) c DSGVO serves as the legal basis.
+In the event that vital interests of the data subject or another natural person make processing of personal data necessary, Art. 6 (1) (d) DSGVO serves as the legal basis.
+If the processing is necessary to protect a legitimate interest of our company or a third party and the interests, fundamental rights and freedoms of the data subject do not override the first-mentioned interest, Art. 6 (1) lit. f DSGVO serves as the legal basis for the processing.
+
+### Data deletion and storage period
+The personal data of the data subject will be deleted or blocked as soon as the purpose of the storage no longer applies. Storage may take place in addition if this has been provided for by the European or national legislator in Union regulations, laws or other provisions to which the controller is subject. Data will also be blocked or deleted if a storage period prescribed by the aforementioned norms expires, unless there is a necessity for the continued storage of the data for the conclusion or fulfilment of a contract.
+
+## Provision of the website and creation of log files
+### Description and scope of data processing
+Each time our website is accessed, our system automatically collects data and information from the computer system of the accessing computer. 
+The following data is collected:
+
+* The IP address of the user
+* Date and time of access
+* Websites from which the user's system accesses our website
+* Websites that are accessed by the user's system via our website.
+
+This data is also stored in the log files of our system. This data is not stored together with other personal data of the user.
+
+### Legal basis for data processing 
+The legal basis for the temporary storage of the data and the log files is Art. 6 (1) lit. f DSGVO.
+
+#### Purpose of data processing
+The temporary storage of the IP address by the system is necessary to enable delivery of the website to the user's computer. For this purpose, the user's IP address must remain stored for the duration of the session. 
+
+The storage in log files is done to ensure the functionality of the website. In addition, we use the data to optimise the website and to ensure the security of our information technology systems. An evaluation of the data for marketing purposes does not take place in this context.
+
+These purposes are also our legitimate interest in data processing according to Art. 6 Para. 1 lit. f DSGVO.
+
+### Duration of storage
+The data is deleted as soon as it is no longer required to achieve the purpose for which it was collected. In the case of the collection of data for the provision of the website, this is the case when the respective session has ended. 
+
+### Possibility of objection and removal
+The collection of data for the provision of the website and the storage of the data in log files is absolutely necessary for the operation of the website. Consequently, there is no possibility for the user to object.
+
+## Contact form and e-mail contact
+### Description and scope of data processing
+It is possible to contact us via the e-mail address provided. In this case, the user's personal data transmitted with the e-mail will be stored. 
+
+In this context, the data is not passed on to third parties. The data is used exclusively for processing the conversation.
+
+## Legal basis for data processing 
+The legal basis for the processing of the data is Art. 6 para. 1 lit. a DSGVO if the user has given his consent.
+
+The legal basis for the processing of data transmitted in the course of sending an e-mail is Art. 6 para. 1 lit. f DSGVO. If the e-mail contact aims at the conclusion of a contract, the additional legal basis for the processing is Art. 6 para. 1 lit. b DSGVO.
+
+### Purpose of the data processing
+The processing of personal data by contacting us by e-mail is based on the necessary legitimate interest in processing the data.
+The other personal data processed during the sending process serve to prevent misuse of the contact form and to ensure the security of our information technology systems.
+
+### Duration of storage
+The data is deleted as soon as it is no longer required to achieve the purpose for which it was collected. For the personal data from the input mask of the contact form and those sent by e-mail, this is the case when the respective conversation with the user has ended. The conversation is ended when the circumstances indicate that the matter in question has been conclusively clarified. 
+
+The additional personal data collected during the sending process will be deleted after a period of seven days at the latest.
+### Possibility of objection and removal
+The user has the option of revoking his or her consent to the processing of personal data at any time. If the user contacts us by e-mail, he or she can object to the storage of his or her personal data at any time. In such a case, the conversation cannot be continued.
+
+All personal data stored in the course of contacting us will be deleted in this case.
