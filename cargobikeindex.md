@@ -4,51 +4,20 @@ title: CargoBikeIndex
 subpage-title: Map
 description: Wir bewerten die Lastenradfreundlichkeit der Straßen in Deutschland.
 show-map: true
-published: false
+published: true
 ---
 
-<style>
-    .mapboxgl-popup {
-        max-width: 400px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    }
-    .map-container,
-    #map {
-        height: calc(100vh - 75px);
-    }
-    .info_window {
-        background-color: white;
-        width: 250px;
-        position: absolute;
-        top: 100px;
-        left: 20px;
-        z-index: 200;
-        padding: 15px;
-        border-radius: 10px;
-    }
-    #object_info_wrapper {
-        background-color: white;
-        width: 300px;
-        position: absolute;
-        top: 100px;
-        right: 80px;
-        z-index: 200;
-        padding: 15px;
-        border-radius: 10px;
-    }
-    #object_info ul {
-        list-style: none;
-        padding: 0;
-    }
-</style>
 <div class="map-container">
     <div class="info_window roboto">
-    <h2 class="bebas">CargoBikeIndex</h2>
-    Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt
+        <h2 class="bebas">CargoBikeIndex</h2>
+        <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt</p>
     </div>
     <div id="object_info_wrapper">
         <h2 class="bebas">Wege-Informationen</h2>
         <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    </div>
+    <div id="object_info_mobile_wrapper">
+        <div id="object_info_mobile" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
     </div>
     <div id="map"></div>
 </div>
@@ -64,7 +33,29 @@ published: false
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
     let cbi_layer_id= "cbi-standard"
-    const attributes_description_mapping = {"car_traffic": "Autoverkehrs", "cbindex": "CargoBikeIndex", "cbindex_cycleways": "CBI Radweg", "cbindex_street_quality": "CBI Straßenqualität", "cbindex_surface": "CBI Straßenoberfläche", "cbindex_barrier": "CBI Barrieren","highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam", "which_barrier": "Barriere", "dismount_necessary": "Absteigen notwendig", "min_maxwidth": "Maximal mögliche Breite", "pedestrian_traffic": "Fußverkehrsfaktor", "segregated": "Getrennter Fuß-/Radweg", "smoothness_combined": "Straßenoberfläche gemeinsam", "cycleway_combined": "Radweg kombiniert", "cycleway_width_combined": "Radwegsbreite", "cycleway_oneway_combined": "???"}
+    const attributes_description_mapping = {
+        "car_traffic": "Autoverkehrs",
+        "cbindex": "CargoBikeIndex",
+        "cbindex_cycleways": "CBI Radweg",
+        "cbindex_street_quality": "CBI Straßenqualität",
+        "cbindex_surface": "CBI Straßenoberfläche",
+        "cbindex_barrier": "CBI Barrieren",
+        "highway": "Wegeart",
+        "maxspeed": "Höchstgeschwindigkeit",
+        "name": "Straßenname",
+        "osm_id": "OpenStreetMap ID",
+        "surface_combined":
+        "Straßenoberfläche Gemeinsam",
+        "which_barrier": "Barriere",
+        "dismount_necessary": "Absteigen notwendig",
+        "min_maxwidth": "Maximal mögliche Breite",
+        "pedestrian_traffic": "Fußverkehrsfaktor",
+        "segregated": "Getrennter Fuß-/Radweg",
+        "smoothness_combined": "Straßenoberfläche gemeinsam",
+        "cycleway_combined": "Radweg kombiniert",
+        "cycleway_width_combined": "Radwegsbreite",
+        "cycleway_oneway_combined": "???"
+    }
     map.on('load', function () {
         map.on('click', function (e) {
             var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
@@ -87,7 +78,7 @@ published: false
             if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
             attributes_list += '</ul>';
             document.getElementById('object_info').innerHTML = attributes_list
-            console.warn(JSON.stringify(displayFeatures))
+            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbindex']
         });
         var popup = new mapboxgl.Popup({
             closeButton: false,
@@ -103,13 +94,18 @@ published: false
                 description = street_name + ": " + e.features[0].properties.cbindex;}
             else {
                 description = e.features[0].properties.highway + ": " + e.features[0].properties.cbindex; }
-            console.log(coordinates)
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
-            console.log(e.features[0])
         });
         map.on('mouseleave', cbi_layer_id, function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
     });
+    let map_element = document.querySelector('#map');
+    let info_window = document.querySelector('.info_window');
+    hide_info_window = event => {
+        document.querySelector('.info_window').style.display = "none";
+    }
+    map_element.addEventListener('click', hide_info_window);
+    info_window.addEventListener('click', hide_info_window);
 </script>
