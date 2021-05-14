@@ -57,33 +57,45 @@ show-map: true
         zoom: 13.2
     });
     let cbi_layer_id= "cbi-standard"
-    map.on('click', function (e) {
-        var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
-        // Limit the number of properties we're displaying for
-        // legibility and performance
-        var displayProperties = ['properties'];
-        var displayFeatures = features.map(function (feat) {
-        var displayFeat = {};
-        displayProperties.forEach(function (prop) {
-        displayFeat[prop] = feat[prop];
+    map.on('load', function () {
+        map.on('click', function (e) {
+            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
+            // Limit the number of properties we're displaying for
+            // legibility and performance
+            var displayProperties = ['properties'];
+            var displayFeatures = features.map(function (feat) {
+            var displayFeat = {};
+            displayProperties.forEach(function (prop) {
+            displayFeat[prop] = feat[prop];
+            });
+                return displayFeat;
+            });
+            let map_element = displayFeatures[0].properties;
+            let attributes_list = '<ul>';
+            for(element in map_element){
+                if (map_element[element] != undefined && map_element[element] != "")
+                attributes_list += '<li>' + element + ': ' + map_element[element]+'</li>'
+            }
+            if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
+            attributes_list += '</ul>';
+            document.getElementById('object_info').innerHTML = attributes_list
+            console.warn(JSON.stringify(displayFeatures))
         });
-            return displayFeat;
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
         });
-        let map_element = displayFeatures[0].properties;
-        let attributes_list = '<ul>';
-        for(element in map_element){
-            attributes_list += '<li>' + element + ': ' + map_element[element]+'</li>'
-        }
-        if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
-        attributes_list += '</ul>';
-        document.getElementById('object_info').innerHTML = attributes_list
-        console.warn(JSON.stringify(displayFeatures))
-    });
-    map.on('mouseenter', cbi_layer_id, function (e) {
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
-    });
-    map.on('mouseleave', cbi_layer_id, function () {
-        map.getCanvas().style.cursor = '';
+        map.on('mouseenter', cbi_layer_id, function (e) {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+            let coordinates = e.features[0].geometry.coordinates[0];
+            let description = e.features[0].properties.name;
+            console.log(coordinates)
+            popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        });
+        map.on('mouseleave', cbi_layer_id, function () {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
     });
 </script>
