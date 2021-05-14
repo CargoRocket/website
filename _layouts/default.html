@@ -7,10 +7,10 @@
         <header>
             <div class="first-line">
                 <span class="logo flex vertical-c c">
-                    <a href="/" ><img src="/assets/images/cargorocket-logo.svg" class="logo" /></a>
+                    <a href="/"><span title="CargoRocket" class="logo-bg"></span></a>
                     {% if page.subpage-title %}{% assign subpage-title = page.subpage-title  %}{% endif %}
                     {% if layout.subpage-title %}{% assign subpage-title = layout.subpage-title  %}{% endif %}
-                    {% if subpage-title %}<span class="bebas xxl"><a href="/blog">{{ subpage-title }}</a></span>{% endif %}
+                    {% if subpage-title %}<span class="subpage_title bebas xxl"><a href="/blog">{{ subpage-title }}</a></span>{% endif %}
                 </span>
                 <nav>
                     <ul>
@@ -27,7 +27,7 @@
 
         {% if page.hero %}
         <section id="hero">
-            <div class="flex c">
+            <div class="flex c mobile-v">
                 <div class="present">
                     <img src="/assets/images/{{ page.present-img }}"/>
                 </div>
