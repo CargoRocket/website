@@ -1,5 +1,5 @@
 ---
-layout: map
+layout: blank
 title: CargoBikeIndex
 subpage-title: Map
 description: Wir bewerten die Lastenradfreundlichkeit der Straßen in Deutschland.
@@ -17,7 +17,7 @@ show-map: true
     }
     .info_window {
         background-color: white;
-        width: 200px;
+        width: 250px;
         position: absolute;
         top: 100px;
         left: 20px;
@@ -25,11 +25,27 @@ show-map: true
         padding: 10px;
         border-radius: 10px;
     }
+    #object_info {
+        background-color: white;
+        width: 300px;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        z-index: 200;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #object_info ul {
+        list-style: none;
+        padding: 0;
+    }
 </style>
 <div class="map-container">
-    <div class="info_window">
+    <div class="info_window roboto">
+    <h2 class="bebas">CargoBikeIndex</h2>
     Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt
     </div>
+    <div id="object_info">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
     <div id="map"></div>
 </div>
 <script>
@@ -40,36 +56,34 @@ show-map: true
         center: [9.1783, 48.7761],
         zoom: 13.2
     });
-
-    map.on('load', function () {
-        // Create a popup, but don't add it to the map yet.
-        var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
+    let cbi_layer_id= "cbi-standard"
+    map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
+        // Limit the number of properties we're displaying for
+        // legibility and performance
+        var displayProperties = ['properties'];
+        var displayFeatures = features.map(function (feat) {
+        var displayFeat = {};
+        displayProperties.forEach(function (prop) {
+        displayFeat[prop] = feat[prop];
         });
-
-        map.on('mouseenter', 'stuttgart_streets_vculijy', function (e) {
-            // Change the cursor style as a UI indicator.
-            map.getCanvas().style.cursor = 'pointer';
-
-            var coordinates = e.features[0].geometry.coordinates.slice();
-            var description = e.features[0].properties.description;
-
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-
-            // Populate the popup and set its coordinates
-            // based on the feature found.
-            popup.setLngLat(coordinates).setHTML(description).addTo(map);
+            return displayFeat;
         });
-
-        map.on('mouseleave', 'places', function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove();
-        });
+        let map_element = displayFeatures[0].properties;
+        let attributes_list = '<ul>';
+        for(element in map_element){
+            attributes_list += '<li>' + element + ': ' + map_element[element]+'</li>'
+        }
+        if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
+        attributes_list += '</ul>';
+        document.getElementById('object_info').innerHTML = attributes_list
+        console.warn(JSON.stringify(displayFeatures))
+    });
+    map.on('mouseenter', cbi_layer_id, function (e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', cbi_layer_id, function () {
+        map.getCanvas().style.cursor = '';
     });
 </script>
