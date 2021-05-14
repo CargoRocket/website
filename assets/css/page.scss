@@ -12,4 +12,9 @@
 
 .logo {
     width: 120px;
+    margin: 0 0.4rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 50px;
+    }
 }
