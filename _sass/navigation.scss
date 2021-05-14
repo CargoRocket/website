@@ -4,6 +4,20 @@
     justify-content: space-around;
     box-shadow: 0px 0px 4px 4px aliceblue;
 
+    .logo-bg {
+        background-image: url('/assets/images/cargorocket-logo.png');
+        display: inline-block;
+        width: 80px;
+        height: 45px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media screen and (max-width: $breakpoint-md) {
+            background-image: url('/assets/images/iconLogo_alt.svg');
+        }
+    }
+
     .logo a {
         color: black;
 
@@ -11,6 +25,12 @@
         &:visited,
         &:hover {
             color: black;
+        }
+
+    }
+    .logo .subpage_title {
+        @media screen and (max-width: $breakpoint-sm) {
+            display: none;
         }
     }
 }
@@ -49,10 +69,6 @@ nav {
 
 @media screen and (max-width: $breakpoint-md) {
     .first-line {
-        flex-direction: column;
-
-        .logo {
-            margin: auto;
-        }
+        justify-content: center;
     }
 }

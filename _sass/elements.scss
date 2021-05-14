@@ -2,7 +2,11 @@
     font-size: $font-lg;
 
     &.big {
-        font-size: $font-slg;
+        font-size: $font-xxl;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            font-size: $font-slg;
+        }
     }
 
     &.small {
@@ -33,6 +37,12 @@
         @media screen and (max-width: $breakpoint-lg) {
             flex-direction: column;
         }
+    }
+}
+
+.no-flex-mobile {
+    @media screen and (max-width: $breakpoint-sm) {
+        display: block;
     }
 }
 
