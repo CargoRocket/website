@@ -4,6 +4,7 @@ title: CargoBikeIndex
 subpage-title: Map
 description: Wir bewerten die Lastenradfreundlichkeit der Straßen in Deutschland.
 show-map: true
+published: false
 ---
 
 <style>
