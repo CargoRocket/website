@@ -30,7 +30,7 @@ show-map: true
         width: 300px;
         position: absolute;
         top: 100px;
-        right: 20px;
+        right: 80px;
         z-index: 200;
         padding: 10px;
         border-radius: 10px;
@@ -56,7 +56,10 @@ show-map: true
         center: [9.1783, 48.7761],
         zoom: 13.2
     });
+    let nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
     let cbi_layer_id= "cbi-standard"
+    const attributes_description_mapping = {"car_traffic": "Autoverkehrs","cbindex": "CargoBikeIndex", "cbindex_cycleways": "Bike-Index", "cbindex_street_quality": "Straßenqualität", "cbindex_surface": "Straßenoberfläche", "highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam"}
     map.on('load', function () {
         map.on('click', function (e) {
             var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
@@ -74,7 +77,7 @@ show-map: true
             let attributes_list = '<ul>';
             for(element in map_element){
                 if (map_element[element] != undefined && map_element[element] != "")
-                attributes_list += '<li>' + element + ': ' + map_element[element]+'</li>'
+                attributes_list += '<li>' + attributes_description_mapping[element] + ': ' + map_element[element]+'</li>'
             }
             if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
             attributes_list += '</ul>';
@@ -89,9 +92,15 @@ show-map: true
             // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
             let coordinates = e.features[0].geometry.coordinates[0];
-            let description = e.features[0].properties.name;
+            const street_name = e.features[0].properties.name
+            let description = "";
+            if(street_name){
+                description = street_name + ": " + e.features[0].properties.cbindex;}
+            else {
+                description = e.features[0].properties.highway + ": " + e.features[0].properties.cbindex; }
             console.log(coordinates)
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
+            console.log(e.features[0])
         });
         map.on('mouseleave', cbi_layer_id, function () {
             map.getCanvas().style.cursor = '';
