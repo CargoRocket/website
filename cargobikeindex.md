@@ -22,17 +22,17 @@ show-map: true
         top: 100px;
         left: 20px;
         z-index: 200;
-        padding: 10px;
+        padding: 15px;
         border-radius: 10px;
     }
-    #object_info {
+    #object_info_wrapper {
         background-color: white;
         width: 300px;
         position: absolute;
         top: 100px;
         right: 80px;
         z-index: 200;
-        padding: 10px;
+        padding: 15px;
         border-radius: 10px;
     }
     #object_info ul {
@@ -45,7 +45,10 @@ show-map: true
     <h2 class="bebas">CargoBikeIndex</h2>
     Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt
     </div>
-    <div id="object_info">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    <div id="object_info_wrapper">
+        <h2 class="bebas">Wege-Informationen</h2>
+        <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    </div>
     <div id="map"></div>
 </div>
 <script>
@@ -59,7 +62,7 @@ show-map: true
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
     let cbi_layer_id= "cbi-standard"
-    const attributes_description_mapping = {"car_traffic": "Autoverkehrs","cbindex": "CargoBikeIndex", "cbindex_cycleways": "Bike-Index", "cbindex_street_quality": "Straßenqualität", "cbindex_surface": "Straßenoberfläche", "highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam"}
+    const attributes_description_mapping = {"car_traffic": "Autoverkehrs","cbindex": "CargoBikeIndex", "cbindex_cycleways": "Bike-Index", "cbindex_street_quality": "Straßenqualität", "cbindex_surface": "Straßenoberfläche", "highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam", "which_barrier": "Barriere", "dismount_necessary": "Absteigen notwendig"}
     map.on('load', function () {
         map.on('click', function (e) {
             var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
