@@ -57,12 +57,13 @@ show-map: true
         container: 'map',
         style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
         center: [9.1783, 48.7761],
-        zoom: 13.2
+        zoom: 13.2,
+        hash: true
     });
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
     let cbi_layer_id= "cbi-standard"
-    const attributes_description_mapping = {"car_traffic": "Autoverkehrs","cbindex": "CargoBikeIndex", "cbindex_cycleways": "Bike-Index", "cbindex_street_quality": "Straßenqualität", "cbindex_surface": "Straßenoberfläche", "highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam", "which_barrier": "Barriere", "dismount_necessary": "Absteigen notwendig"}
+    const attributes_description_mapping = {"car_traffic": "Autoverkehrs", "cbindex": "CargoBikeIndex", "cbindex_cycleways": "CBI Radweg", "cbindex_street_quality": "CBI Straßenqualität", "cbindex_surface": "CBI Straßenoberfläche", "cbindex_barrier": "CBI Barrieren","highway": "Wegeart", "maxspeed": "Höchstgeschwindigkeit", "name": "Straßenname", "osm_id": "OpenStreetMap ID", "surface_combined": "Straßenoberfläche Gemeinsam", "which_barrier": "Barriere", "dismount_necessary": "Absteigen notwendig", "min_maxwidth": "Maximal mögliche Breite", "pedestrian_traffic": "Fußverkehrsfaktor", "segregated": "Getrennter Fuß-/Radweg", "smoothness_combined": "Straßenoberfläche gemeinsam", "cycleway_combined": "Radweg kombiniert", "cycleway_width_combined": "Radwegsbreite", "cycleway_oneway_combined": "???"}
     map.on('load', function () {
         map.on('click', function (e) {
             var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
