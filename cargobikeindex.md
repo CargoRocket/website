@@ -15,6 +15,14 @@ published: true
         </details>
         <h2 class="roboto big">Wege-Informationen</h2>
         <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+        <div id="city_list">
+            <h2 class="roboto big">Städte</h2>
+            <ul class="roboto">
+                <li>Stuttgart <button onclick="fly('Stuttgart')">Zeige</button></li>
+                <li>Augsburg <button onclick="fly('Augsburg')">Zeige</button></li>
+                <li>Berlin <button onclick="fly('Berlin')">Zeige</button></li>
+            </ul>
+        </div>
     </div>
     <div id="object_info_mobile_wrapper">
         <div id="object_info_mobile" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
@@ -35,18 +43,18 @@ published: true
     let cbi_layer_id= "cbi-standard"
     const attributes_description_mapping = {
         "car_traffic": "Autoverkehrs",
-        "cbindex": "CargoBikeIndex",
+        "cbi": "CargoBikeIndex",
         "cbindex_cycleways": "CBI Radweg",
-        "cbindex_street_quality": "CBI Straßenqualität",
+        "cbi_sq": "Straßenqualitäts-Index",
         "cbindex_surface": "CBI Straßenoberfläche",
-        "cbindex_barrier": "CBI Barrieren",
-        "highway": "Wegeart",
+        "cbi_b": "Barriere-Index",
+        "label_sq": "Wegeart",
+        "label_b": "Barriere-Art",
         "maxspeed": "Höchstgeschwindigkeit",
         "name": "Straßenname",
         "osm_id": "OpenStreetMap ID",
         "surface_combined":
         "Straßenoberfläche Gemeinsam",
-        "which_barrier": "Barriere",
         "dismount_necessary": "Absteigen notwendig",
         "min_maxwidth": "Maximal mögliche Breite",
         "pedestrian_traffic": "Fußverkehrsfaktor",
@@ -78,7 +86,7 @@ published: true
             if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
             attributes_list += '</ul>';
             document.getElementById('object_info').innerHTML = attributes_list
-            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbindex'] + "/5"
+            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbi'] + "/5"
         });
         var popup = new mapboxgl.Popup({
             closeButton: false,
@@ -91,9 +99,9 @@ published: true
             const street_name = e.features[0].properties.name
             let description = "";
             if(street_name){
-                description = street_name + ": " + e.features[0].properties.cbindex;}
+                description = street_name + ": " + e.features[0].properties.cbi;}
             else {
-                description = e.features[0].properties.highway + ": " + e.features[0].properties.cbindex; }
+                description = e.features[0].properties.label_sq + ": " + e.features[0].properties.cbi; }
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
         });
         map.on('mouseleave', cbi_layer_id, function () {
@@ -102,4 +110,19 @@ published: true
         });
     });
     let map_element = document.querySelector('#map');
+    function fly(city){
+        let coordinates = []
+        switch (city) {
+            case 'Stuttgart':
+                coordinates = [9.1783, 48.7761]
+                break;
+            case 'Augsburg':
+                coordinates = [10.89475, 48.36541]
+                break;
+            case 'Berlin':
+                coordinates = [13.3796, 52.5161]
+                break;
+        }
+        if (coordinates.length !== 0) map.flyTo({ center: coordinates, zoom: 12})
+    }
 </script>

@@ -30,9 +30,15 @@
 
     }
     .logo .subpage_title {
-        @media screen and (max-width: $breakpoint-sm) {
+        margin-left: 1rem;
+
+        @media screen and (max-width: $breakpoint-lg) {
             display: none;
         }
+    }
+
+    @media screen and (max-width: $breakpoint-lg) {
+        justify-content: center;
     }
 }
 
