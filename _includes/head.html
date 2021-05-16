@@ -12,10 +12,15 @@
     <!-- Social Media -->
     <meta property="og:title" content="CargoRocket - Lastenradrouting">
     <meta property="og:description" content="{{ page.description }}">
-    <meta property="og:image" content="https://cargorocket.de/assets/images/cargorocket_social_media_banner.png">
-    <meta property="og:url" content="https://cargorocket.de/{{ page.url }}">
+    <meta property="og:url" content="https://cargorocket.de{{ page.url }}">
     <meta property="og:site_name" content="CargoRocket - Lastenradrouting">
+    {% if page.socialmedia-banner %}
+    <meta property="og:image" content="https://cargorocket.de/assets/images/{{ page.socialmedia-banner }}">
+    <meta name="twitter:card" content="https://cargorocket.de/assets/images/{{ page.socialmedia-banner }}">
+    {% else %}
+    <meta property="og:image" content="https://cargorocket.de/assets/images/cargorocket_social_media_banner.png">
     <meta name="twitter:card" content="https://cargorocket.de/assets/images/cargorocket_social_media_banner.png">
+    {% endif %}
     <meta name="twitter:image:alt" content="CargoRocket - Lastenradrouting">
     <meta name="twitter:site" content="@cargo_rocket">
     <!-- / Sozial Media -->

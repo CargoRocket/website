@@ -4,6 +4,7 @@ title: CargoBikeIndex
 author: Alexandra Kapp
 excerpt: Bewertung der Lastenradtauglichkeit für die Indexberechnung.
 description: Bewertung der Lastenradtauglichkeit für die Indexberechnung.
+socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
 ---
 
 In einem **[OpenStreetMap (OSM) Wiki zum Lastenrad](https://wiki.openstreetmap.org/wiki/DE:Cargobike) Artikel haben wir alle relevanten OSM Tags für das Lastenrad** gesammelt (z.B. Poller (*barrier*), Straßenbelag (*surface*) oder Radwegsbreite (*width*)).
