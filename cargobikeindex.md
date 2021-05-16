@@ -14,19 +14,26 @@ published: true
             <summary class="roboto big">CargoBikeIndex Infos</summary>
             <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder.</p>
         </details>
+        <div id="city_list">
+        <select id="cities">
+            <option value="Stuttgart">Stuttgart</option>
+            <option value="Augsburg">Augsburg</option>
+            <option value="Berlin">Berlin</option>
+        </select>
+        <button class="button small secondary" onclick="fly(document.querySelector('#cities').value)">Flieg dorthin &#128640;</button>
+        </div>
         <h2 class="roboto big">Wege-Informationen</h2>
         <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
-        <div id="city_list">
-            <h2 class="roboto big">Städte</h2>
-            <ul class="roboto">
-                <li>Stuttgart <button class="button small secondary" onclick="fly('Stuttgart')">Flieg dorthin &#128640;</button></li>
-                <li>Augsburg <button class="button small secondary" onclick="fly('Augsburg')">Flieg dorthin &#128640;</button></li>
-                <li>Berlin <button class="button small secondary" onclick="fly('Berlin')">Flieg dorthin &#128640;</button></li>
-            </ul>
-        </div>
     </div>
     <div id="object_info_mobile_wrapper">
         <div id="object_info_mobile" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    </div>
+    <div id="city_list_mobile_wrapper">
+        <div id="city_list_mobile" class="roboto">
+            <button class="button small secondary" onclick="fly('Stuttgart')">Suttgart &#128640;</button>
+            <button class="button small secondary" onclick="fly('Augsburg')">Augsburg &#128640;</button>
+            <button class="button small secondary" onclick="fly('Berlin')">Berlin &#128640;</button>
+        </div>
     </div>
     <div id="map"></div>
 </div>
