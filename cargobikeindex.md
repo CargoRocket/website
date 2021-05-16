@@ -1,35 +1,39 @@
 ---
-layout: map
+layout: blank
 title: CargoBikeIndex
-subpage-title: Map
+subpage-title: CargoBikeIndex
+subpage_link: "/cargobikeindex"
 description: Wir bewerten die Lastenradfreundlichkeit der Straßen in Deutschland.
 show-map: true
-published: false
+published: true
 ---
 
-<style>
-    .mapboxgl-popup {
-        max-width: 400px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    }
-    .map-container,
-    #map {
-        height: calc(100vh - 75px);
-    }
-    .info_window {
-        background-color: white;
-        width: 200px;
-        position: absolute;
-        top: 100px;
-        left: 20px;
-        z-index: 200;
-        padding: 10px;
-        border-radius: 10px;
-    }
-</style>
 <div class="map-container">
-    <div class="info_window">
-    Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt
+    <div id="object_info_wrapper">
+        <details>
+            <summary class="roboto big">CargoBikeIndex Infos</summary>
+            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder.</p>
+        </details>
+        <div id="city_list">
+        <select id="cities">
+            <option value="Stuttgart">Stuttgart</option>
+            <option value="Augsburg">Augsburg</option>
+            <option value="Berlin">Berlin</option>
+        </select>
+        <button class="button small secondary" onclick="fly(document.querySelector('#cities').value)">Flieg dorthin &#128640;</button>
+        </div>
+        <h2 class="roboto big">Wege-Informationen</h2>
+        <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    </div>
+    <div id="object_info_mobile_wrapper">
+        <div id="object_info_mobile" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+    </div>
+    <div id="city_list_mobile_wrapper">
+        <div id="city_list_mobile" class="roboto">
+            <button class="button small secondary" onclick="fly('Stuttgart')">Suttgart &#128640;</button>
+            <button class="button small secondary" onclick="fly('Augsburg')">Augsburg &#128640;</button>
+            <button class="button small secondary" onclick="fly('Berlin')">Berlin &#128640;</button>
+        </div>
     </div>
     <div id="map"></div>
 </div>
@@ -39,38 +43,94 @@ published: false
         container: 'map',
         style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
         center: [9.1783, 48.7761],
-        zoom: 13.2
+        zoom: 13.2,
+        hash: true
     });
-
+    let nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+    let cbi_layer_id= "cbi-standard"
+    const attributes_description_mapping = {
+        "car_traffic": "Autoverkehrs",
+        "cbi": "CargoBikeIndex",
+        "cbindex_cycleways": "CBI Radweg",
+        "cbi_sq": "Straßenqualitäts-Index",
+        "cbindex_surface": "CBI Straßenoberfläche",
+        "cbi_b": "Barriere-Index",
+        "label_sq": "Wegeart",
+        "label_b": "Barriere-Art",
+        "maxspeed": "Höchstgeschwindigkeit",
+        "name": "Straßenname",
+        "osm_id": "OpenStreetMap ID",
+        "surface_combined":
+        "Straßenoberfläche Gemeinsam",
+        "dismount_necessary": "Absteigen notwendig",
+        "min_maxwidth": "Maximal mögliche Breite",
+        "pedestrian_traffic": "Fußverkehrsfaktor",
+        "segregated": "Getrennter Fuß-/Radweg",
+        "smoothness_combined": "Straßenoberfläche gemeinsam",
+        "cycleway_combined": "Radweg kombiniert",
+        "cycleway_width_combined": "Radwegsbreite",
+        "cycleway_oneway_combined": "???"
+    }
     map.on('load', function () {
-        // Create a popup, but don't add it to the map yet.
+        map.on('click', function (e) {
+            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
+            // Limit the number of properties we're displaying for
+            // legibility and performance
+            var displayProperties = ['properties'];
+            var displayFeatures = features.map(function (feat) {
+            var displayFeat = {};
+            displayProperties.forEach(function (prop) {
+            displayFeat[prop] = feat[prop];
+            });
+                return displayFeat;
+            });
+            let map_element = displayFeatures[0].properties;
+            let attributes_list = '<ul>';
+            for(element in map_element){
+                if (map_element[element] != undefined && map_element[element] != "")
+                attributes_list += '<li>' + attributes_description_mapping[element] + ': ' + map_element[element]+'</li>'
+            }
+            if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
+            attributes_list += '</ul>';
+            document.getElementById('object_info').innerHTML = attributes_list
+            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbi'] + "/5"
+        });
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
         });
-
-        map.on('mouseenter', 'stuttgart_streets_vculijy', function (e) {
+        map.on('mouseenter', cbi_layer_id, function (e) {
             // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
-
-            var coordinates = e.features[0].geometry.coordinates.slice();
-            var description = e.features[0].properties.description;
-
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-
-            // Populate the popup and set its coordinates
-            // based on the feature found.
+            let coordinates = e.features[0].geometry.coordinates[0];
+            const street_name = e.features[0].properties.name
+            let description = "";
+            if(street_name){
+                description = street_name + ": " + e.features[0].properties.cbi;}
+            else {
+                description = e.features[0].properties.label_sq + ": " + e.features[0].properties.cbi; }
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
         });
-
-        map.on('mouseleave', 'places', function () {
+        map.on('mouseleave', cbi_layer_id, function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
     });
+    let map_element = document.querySelector('#map');
+    function fly(city){
+        let coordinates = []
+        switch (city) {
+            case 'Stuttgart':
+                coordinates = [9.1783, 48.7761]
+                break;
+            case 'Augsburg':
+                coordinates = [10.89475, 48.36541]
+                break;
+            case 'Berlin':
+                coordinates = [13.3796, 52.5161]
+                break;
+        }
+        if (coordinates.length !== 0) map.flyTo({ center: coordinates, zoom: 12})
+    }
 </script>
