@@ -12,7 +12,7 @@ published: true
     <div id="object_info_wrapper">
         <details>
             <summary class="roboto big">CargoBikeIndex Infos</summary>
-            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder.</p>
+            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's <a href="2021/05/16/cargobikeindex.html">im Blogpost</a></p>
         </details>
         <div id="city_list">
         <select id="cities">
