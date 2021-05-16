@@ -171,7 +171,7 @@ figcaption {
     }
 }
 
-p, span {
+p, span, summary {
     &.small {
         font-size: 0.8rem;
     }
@@ -183,6 +183,10 @@ p, span {
     &.xxl {
         font-size: 2rem;
     }
+}
+
+summary.big {
+    font-weight: bold;
 }
 
 .flex {

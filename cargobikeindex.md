@@ -11,7 +11,7 @@ published: true
     <div id="object_info_wrapper">
         <details>
             <summary class="roboto big">CargoBikeIndex Infos</summary>
-            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt</p>
+            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder.</p>
         </details>
         <h2 class="roboto big">Wege-Informationen</h2>
         <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>

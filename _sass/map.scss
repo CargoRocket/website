@@ -44,6 +44,10 @@
     background-color: white;
     padding: 15px;
     border-top: solid 1px #c4c4c4;
+
+    @media screen and (min-width: $breakpoint-sm) {
+        display: none;
+    }
 }
 
 #object_info ul {

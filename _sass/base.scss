@@ -41,3 +41,7 @@ blockquote {
 h1:first-child {
     margin-top: 0.7rem;
 }
+
+summary {
+    cursor: pointer;
+}
