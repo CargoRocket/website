@@ -39,7 +39,7 @@ Die maximale Breite zum Durchkommen ist bei Barrieren leider selten in OSM angeg
 
 Die Bewertung der einzelnen Tags und die Berechnung des CargoBikeIndex befindet sich nun im Praxistest und werden im Laufe der nächsten Wochen und Monate weiterhin verfeinert und angepasst - **hier freuen wir uns über Feedback und Verbesserungsvorschläge!**
 
-Ein erster Prototyp der Visualisierung des **CargoBikeIndex für Stuttgart** gibt es [hier](https://cargorocket.de/cargobikeindexç). Neben dem Gesamt-Index gibt es Ansichten für die einzelnen Sub-Indizes.
+Ein erster Prototyp der Visualisierung des **CargoBikeIndex für Stuttgart** gibt es [hier](https://cargorocket.de/cargobikeindex). Neben dem Gesamt-Index gibt es Ansichten für die einzelnen Sub-Indizes.
 
 <div class="flex c">
 <a href= "https://cargorocket.de/cargobikeindex"> <img alt="CargoBikeIndex Stuttgart Screenshot" src="/assets/images/index_screenshot.png" width= "600"> </a>
