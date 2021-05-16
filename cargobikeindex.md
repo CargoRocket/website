@@ -1,19 +1,19 @@
 ---
 layout: blank
 title: CargoBikeIndex
-subpage-title: Map
+subpage-title: CargoBikeIndex
 description: Wir bewerten die Lastenradfreundlichkeit der Straßen in Deutschland.
 show-map: true
 published: true
 ---
 
 <div class="map-container">
-    <div class="info_window roboto">
-        <h2 class="bebas">CargoBikeIndex</h2>
-        <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt</p>
-    </div>
     <div id="object_info_wrapper">
-        <h2 class="bebas">Wege-Informationen</h2>
+        <details>
+            <summary class="roboto big">CargoBikeIndex Infos</summary>
+            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Informationen zum Vekehr sind im Index NICHT berücksichtigt, sondern werden hier nur zur Information angezeigt</p>
+        </details>
+        <h2 class="roboto big">Wege-Informationen</h2>
         <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
     </div>
     <div id="object_info_mobile_wrapper">
@@ -78,7 +78,7 @@ published: true
             if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
             attributes_list += '</ul>';
             document.getElementById('object_info').innerHTML = attributes_list
-            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbindex']
+            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbindex'] + "/5"
         });
         var popup = new mapboxgl.Popup({
             closeButton: false,
@@ -102,10 +102,4 @@ published: true
         });
     });
     let map_element = document.querySelector('#map');
-    let info_window = document.querySelector('.info_window');
-    hide_info_window = event => {
-        document.querySelector('.info_window').style.display = "none";
-    }
-    map_element.addEventListener('click', hide_info_window);
-    info_window.addEventListener('click', hide_info_window);
 </script>
