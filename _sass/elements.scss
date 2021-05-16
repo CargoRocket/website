@@ -74,6 +74,12 @@ a.n {
     display: inline-block;
     text-decoration: none;
     border-radius: 2rem;
+    cursor: pointer;
+
+    &.small {
+        margin: 0.4rem;
+        padding: 0.4rem;
+    }
 
     &.big {
         padding: 0.6rem 1.3rem;

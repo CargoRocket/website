@@ -19,9 +19,9 @@ published: true
         <div id="city_list">
             <h2 class="roboto big">Städte</h2>
             <ul class="roboto">
-                <li>Stuttgart <button onclick="fly('Stuttgart')">Zeige</button></li>
-                <li>Augsburg <button onclick="fly('Augsburg')">Zeige</button></li>
-                <li>Berlin <button onclick="fly('Berlin')">Zeige</button></li>
+                <li>Stuttgart <button class="button small secondary" onclick="fly('Stuttgart')">Flieg dorthin &#128640;</button></li>
+                <li>Augsburg <button class="button small secondary" onclick="fly('Augsburg')">Flieg dorthin &#128640;</button></li>
+                <li>Berlin <button class="button small secondary" onclick="fly('Berlin')">Flieg dorthin &#128640;</button></li>
             </ul>
         </div>
     </div>
