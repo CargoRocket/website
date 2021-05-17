@@ -49,7 +49,8 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
     });
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
-    let cbi_layer_id= "cbi-standard"
+    let cbi_layer_bw_id= "cbi-standard-bw"
+    let cbi_layer_id= "cbi-standard-cities"
     const attributes_description_mapping = {
         "car_traffic": "Autoverkehrs",
         "cbi": "CargoBikeIndex",
@@ -75,7 +76,7 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
     }
     map.on('load', function () {
         map.on('click', function (e) {
-            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_id]});
+            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_bw_id, cbi_layer_id]});
             // Limit the number of properties we're displaying for
             // legibility and performance
             var displayProperties = ['properties'];
@@ -101,7 +102,7 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
             closeButton: false,
             closeOnClick: false
         });
-        map.on('mouseenter', cbi_layer_id, function (e) {
+        function show_popup(e) {
             // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
             let coordinates = e.features[0].geometry.coordinates[0];
@@ -112,11 +113,15 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
             else {
                 description = e.features[0].properties.label_sq + ": " + e.features[0].properties.cbi; }
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
-        });
-        map.on('mouseleave', cbi_layer_id, function () {
+        }
+        function hide_popup() {
             map.getCanvas().style.cursor = '';
             popup.remove();
-        });
+        }
+        map.on('mouseenter', cbi_layer_id, show_popup);
+        map.on('mouseenter', cbi_layer_bw_id, show_popup);
+        map.on('mouseleave', cbi_layer_id, hide_popup);
+        map.on('mouseleave', cbi_layer_bw_id, hide_popup);
     });
     let map_element = document.querySelector('#map');
     function fly(city){
