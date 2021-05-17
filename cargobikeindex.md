@@ -43,8 +43,8 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
-        center: [9.1783, 48.7761],
-        zoom: 13.2,
+        center: [9.491, 48.656],
+        zoom: 7.5,
         hash: true
     });
     let nav = new mapboxgl.NavigationControl();
