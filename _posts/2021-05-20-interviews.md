@@ -14,6 +14,7 @@ Wir sind insbesondere an Erfahrungen zu **mehrspurigen und Schwerlastenrädern**
 Die aktuelle Version des CargoBikeIndex kannst du bereits [hier](https://cargorocket.de/cargobikeindex) sehen.
 
 Wenn du an dem Interview teilnehmen möchtest, kannst du dir hier für deine Stadt einen Termin diese und nächste Woche (Mai 2021) vereinbaren. Trage dafür bitte deine E-Mail Adresse in den entsprechenden Zeitslot der Stadt ein, damit wir dich kontaktieren können (Falls du deine E-Mail Adresse nicht bei Doodle angeben möchtest, kann du alternativ nur deinen Namen bei Doodle eintragen und uns eine Mail an team@cargorocket.de schicken).
+First come first serve - die noch freien Termine siehst du in den Doodle Links.
 
 [Termine für Stuttgart](https://doodle.com/poll/2ih73n5i33ktsq6e?utm_source=poll&utm_medium=link)
 
