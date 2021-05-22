@@ -84,3 +84,13 @@ The additional personal data collected during the sending process will be delete
 The user has the option of revoking his or her consent to the processing of personal data at any time. If the user contacts us by e-mail, he or she can object to the storage of his or her personal data at any time. In such a case, the conversation cannot be continued.
 
 All personal data stored in the course of contacting us will be deleted in this case.
+
+## Third-party content
+We have integrated third-party content in our services and apps. The data of these providers are loaded from servers of the third parties, where your devices are transferred technically necessary data to the services of the third parties. The processing of personal data is then based on the privacy policy of the respective third party.
+
+### Mapbox
+We use maps and map services provided by Mapbox, a service of Mapbox, Inc, 740 15th Street NW, 5th Floor, Washington, District of Columbia 20005 (hereinafter "Mapbox"). These services allow us to display geographic maps.  In order to use Mapbox's features, it is necessary to store your IP address. This information is usually transferred to a Mapbox server in the USA and stored there. The provider of this site has no influence on this data transmission.
+
+The display of maps and use of navigation is the core of our products. The transmission of this data is necessary for the purpose of displaying the page or for ensuring the function of the Mapbox service. This constitutes a legitimate interest within the meaning of Art. 6 para. 1 lit. f DSGVO. 
+
+You can find Mapbox's privacy policy <a href="https://www.mapbox.com/privacy/">here</a>.

@@ -81,7 +81,18 @@ Die sonstigen während des Absendevorgangs verarbeiteten personenbezogenen Daten
 Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten aus der Eingabemaske des Kontaktformulars und diejenigen, die per E-Mail übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist. 
 
 Die während des Absendevorgangs zusätzlich erhobenen personenbezogenen Daten werden spätestens nach einer Frist von sieben Tagen gelöscht.
+
 ### Widerspruchs- und Beseitigungsmöglichkeit
 Der Nutzer hat jederzeit die Möglichkeit, seine Einwilligung zur Verarbeitung der personenbezogenen Daten zu widerrufen. Nimmt der Nutzer per E-Mail Kontakt mit uns auf, so kann er der Speicherung seiner personenbezogenen Daten jederzeit widersprechen. In einem solchen Fall kann die Konversation nicht fortgeführt werden.
 
 Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert wurden, werden in diesem Fall gelöscht.
+
+## Drittinhalte
+Wir haben in unseren Services und Apps Inhalte von Dritten eingebunden. Die Daten dieser Anbieter werden von Servern der Dritten geladen, bei denen deine Geräte technisch notwendige Daten an die Dienste der Dritten übertragen werden. Die Verarbeitung der personenbezogenen basiert dann auf den Datenschutzerklärung der jeweiligen Dritten.
+
+### Mapbox
+Wir verwenden Karten und Kartendienste von Mapbox, einem Dienst von Mapbox, Inc., 740 15th Street NW, 5th Floor, Washington, District of Columbia 20005 (im folgenden “Mapbox”). Diese Dienste erlauben uns geografische Karten anzuzeigen.  Zur Nutzung der Funktionen von Mapbox ist es notwendig, Ihre IP Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Mapbox in den USA übertragen und dort gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung.
+
+Die Darstellung von Karten und Verwendung von Navigation ist Kern unserer Produkte. Die Übertragung dieser Daten ist zum Zwecke der Anzeige der Seite bzw. zur Gewährleistung der Funktion des Dienstes Mapbox erforderlich. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. 
+
+Die Datenschutzerklärung von Mapbox findest du <a href="https://www.mapbox.com/privacy/">hier</a>.
