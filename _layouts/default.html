@@ -14,12 +14,12 @@
                 </span>
                 <nav>
                     <ul>
-                        <li class="no-mobile"><a href="/#team">Team</a></li>
-                        <li class="no-mobile"><a href="/#project">Projekt</a></li>
-                        <li class="no-mobile"><a href="/#contact">Kontakt</a></li>
-                        <li><a href="/cargobikeindex">CargoBikeIndex</a></li>
-                        <li><a href="/ranking">Mapathon</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li class="no-mobile"><a href="/#team">{% translate nav.team %}</a></li>
+                        <li class="no-mobile"><a href="/#project">{% translate nav.project %}</a></li>
+                        <li class="no-mobile"><a href="/#contact">{% translate nav.contact %}</a></li>
+                        <li><a href="/cargobikeindex">{% translate nav.cargoBikeIndex %}</a></li>
+                        <li><a href="/ranking">{% translate nav.mapathon %}</a></li>
+                        <li><a href="/blog">{% translate nav.blog %}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,8 +32,8 @@
                     <img src="/assets/images/{{ page.present-img }}"/>
                 </div>
                 <div class="flex vertical c">
-                    <div class="headline big bebas c">{{ page.main-headline }}</div>
-                    <div class="headline small roboto c">{{ page.second-headline }}</div>
+                    <div class="headline big bebas c">{% translate main-headline %}</div>
+                    <div class="headline small roboto c">{% translate second-headline %}</div>
                     <!-- <a href="/blog" class="button primary big bebas">{{ page.main-button }}</a> -->
                 </div>
             </div>
