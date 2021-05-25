@@ -12,16 +12,26 @@
                     {% if layout.subpage-title %}{% assign subpage-title = layout.subpage-title  %}{% endif %}
                     {% if subpage-title %}<span class="subpage_title bebas xxl"><a href="{{ subpage_link }}">{{ subpage-title }}</a></span>{% endif %}
                 </span>
-                <nav>
-                    <ul>
-                        <li class="no-mobile"><a href="/#team">{% translate nav.team %}</a></li>
-                        <li class="no-mobile"><a href="/#project">{% translate nav.project %}</a></li>
-                        <li class="no-mobile"><a href="/#contact">{% translate nav.contact %}</a></li>
-                        <li><a href="/cargobikeindex">{% translate nav.cargoBikeIndex %}</a></li>
-                        <li><a href="/ranking">{% translate nav.mapathon %}</a></li>
-                        <li><a href="/blog">{% translate nav.blog %}</a></li>
-                    </ul>
-                </nav>
+                <div class="nav-container">
+                    <nav>
+                        <ul>
+                            <li class="no-mobile"><a href="/#team">{% translate nav.team %}</a></li>
+                            <li class="no-mobile"><a href="/#project">{% translate nav.project %}</a></li>
+                            <li class="no-mobile"><a href="/#contact">{% translate nav.contact %}</a></li>
+                            <li><a href="/cargobikeindex">{% translate nav.cargoBikeIndex %}</a></li>
+                            <li><a href="/ranking">{% translate nav.mapathon %}</a></li>
+                            <li><a href="/blog">{% translate nav.blog %}</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-container__seperator"></div>
+                    {% if site.lang == "en" %}
+                        <a class="nav-container__lang nav-container__lang--active" href="/en">en</a>
+                        <a class="nav-container__lang" href="/">de</a>
+                    {% elsif site.lang == "de" %}
+                        <a class="nav-container__lang" href="/en">en</a>
+                        <a class="nav-container__lang nav-container__lang--active" href="/">de</a>
+                    {% endif %}
+                </div>
             </div>
         </header>
 

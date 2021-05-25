@@ -43,6 +43,30 @@
     }
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    margin-right: $space-lg;
+
+    &__lang {
+        margin-left: $space-sm;
+        font-weight: bold;
+        font-size: $font-sm;
+        font-family: "Roboto";
+        color: $primary-color;
+
+        &--active {
+            color: rgba($primary-color, 0.5);
+        }
+    }
+
+    &__seperator {
+        height: 40%;
+        margin: $space-sm;
+        border-left: 1px solid aliceblue;
+    }
+}
+
 nav {
     align-self: center;
 

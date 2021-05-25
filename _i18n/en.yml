@@ -1,7 +1,9 @@
+main-headline: Cargobike Routing
+second-headline: Riding cargo-bikes smooth and efficient.
+main-button: Blog
 
-main-headline: Lastenfahrrad Routing
-second-headline: Für eine nachhaltige Mobilität
-main-button: Zum Blog
+privacy-policy: Privacy Policy
+imprint: Imprint
 
 nav:
   team: Team
@@ -12,47 +14,47 @@ nav:
   blog: Blog
 
 team:
-  headline: EN Das Team
-  description: EN Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit verschiedenen Themen zur nachhaltigen Mobilität beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet.
+  headline: Team
+  description: We are an interdisciplinary team, focusing on all about mobility. Operating as team CargoRocket since the MobiData BW Hackathon 2020.
 
 project:
-  headline: EN Das Projekt
-  description: EN CargoRocket macht das Fahren von Lastenfahrrädern so einfach wie möglich. Offenheit und Transparenz von Erkenntnissen, Datenquellen und Softwaretools sind uns wichtig. Daher begleiten wir  die Entwicklung unserer Arbeit in unserem Blog. Weiterverwendung der Ergebnisse ist ausdrücklich erwünscht!
+  headline: Project
+  description: Our mission is to make riding your cargobike as smooth and effective as possible. We consider being open minded and transparent as our core values. To give you more insight into our work we publish regularly on our Blog. Feel free to integrate our results into your project!
 
 members:
-  - name: EN David Prenninger
-    skills: EN Prototyper, kümmert sich um alle DevOps & App Themen.
+  - name: David Prenninger
+    skills: Application development and operations specialist.
     img: david.jpg
-  - name: EN Alexandra Kapp
-    skills: EN Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur.
+  - name: Alexandra Kapp
+    skills:  Geodata / GIS Expert. Giving data shape.
     img: alexandra.jpg
-  - name: EN Henri Chilla
-    skills: EN Fahrrad Enthusiast und OpenStreetMap Integrator.
+  - name: Henri Chilla
+    skills: Bike enthusiast and OpenStreetMap integrator.
     img: henri.jpg
 
 products: 
-  - name: EN CargoRocket App
+  - name: CargoRocket App
     img: 
-    description: EN Immer mehr Personen aber auch Logistikunternehmen setzen auf emissonsarme Lastenfahrräder. Der Bedarf an geeigneter Infrastruktur, wie flächendeckenden, breiten Radwegen, wird immer größer. Allerdings wird die Transformation unserer Städte noch viele Jahre benötigen. Deshalb möchten wir ein speziell auf die Bedürfnisse von Lastenräder angepasstes Routing entwickeln.
-  - name: EN CargoBikeIndex
+    description: The low-emission revolution is rolling. More and more individuals as well as logistic companies are starting to pedal. Still the desperately needed infrastructure, wide and connected cycleways are missing. Our mission is to help you to find the smoothest route through all the motorized traffic madness.
+  - name: CargoBikeIndex
     img: 
-    description: EN Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen in Baden-Württemberg darstellen.
+    description: narrow cycleways, barriers or curbs might annoy cyclists but stop cargobikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness.
 
 blog:
-    headline: EN Blog
+    headline: Blog
 contact:
-  headline: EN Kontakt
+  headline: Contact
   email: team@cargorocket.de
   twitter:
     handle: "cargo_rocket"
-    description: EN Wir sind auf Twitter!
+    description: Follow us on Twitter!
     icon: twitter.png
   github:
     icon: github.png
     url: https://github.com/CargoRocket
-    description: EN Wir entwickeln offen auf GitHub.
-  contactText: EN Du hast Anregungen, ein Unternehmen im Bereich Radlogistik oder Lust auf Zusammenarbeit? Schreib uns!
+    description: Our Code is 100% OpenSource.
+  contactText: You have suggestions / a company in the field of bike logistics and want to collaborate? Write us!
   contact-icon: mail.png
 funding:
-  headline: EN Förderung
-  description: EN Das Projekt CargoRocket wird vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.
+  headline: Supporters
+  description: The CargoRocket project is funded by the Ministry of Transport Baden-Württemberg for three months as part of a follow-up grant to the hackathon "MobiDataBW Hackathon 2020".

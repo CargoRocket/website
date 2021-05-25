@@ -1,7 +1,9 @@
-
 main-headline: Lastenfahrrad Routing
-second-headline: Für eine nachhaltige Mobilität
+second-headline: Stressfreies & Effizientes Lastenrad-Fahren
 main-button: Zum Blog
+
+privacy-policy: Datenschutz
+imprint: Impressum
 
 nav:
   team: Team
@@ -25,11 +27,11 @@ products:
     description: Immer mehr Personen aber auch Logistikunternehmen setzen auf emissonsarme Lastenfahrräder. Der Bedarf an geeigneter Infrastruktur, wie flächendeckenden, breiten Radwegen, wird immer größer. Allerdings wird die Transformation unserer Städte noch viele Jahre benötigen. Deshalb möchten wir ein speziell auf die Bedürfnisse von Lastenräder angepasstes Routing entwickeln.
   - name: CargoBikeIndex
     img: 
-    description: Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen in Baden-Württemberg darstellen.
+    description: Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen darstellen.
 
 members:
   - name: David Prenninger
-    skills: Prototyper, kümmert sich um alle DevOps & App Themen.
+    skills: Another Coconut, kümmert sich um DevOps & Anwendungsentwicklung.
     img: david.jpg
   - name: Alexandra Kapp
     skills: Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur.

@@ -74,19 +74,19 @@ layout: default
         <h1 class="headline bebas">{% translate contact.headline %}</h1>
         <div class="flex mobile-v">
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.contact-icon }}" height="40" />
+                <img src="../assets/icons/{% translate contact.contact-icon %}" height="40" />
                 <p>{% translate contact.contactText %}</p>
-                <a class="bebas big n" href="mailto:{{ page.contact.email }}">{% translate contact.email %}</a>
+                <a class="bebas big n" href="mailto:{% translate contact.email %}">{% translate contact.email %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.twitter.icon }}" height="40" />
+                <img src="../assets/icons/{% translate contact.twitter.icon %}" height="40" />
                 <p>{% translate contact.twitter.description %}</p>
-                <a class="bebas big n" href="https://twitter.com/{{ page.contact.twitter.handle }}">@{% translate contact.twitter.handle %}</a>
+                <a class="bebas big n" href="https://twitter.com/{% translate contact.twitter.handle %}">@{% translate contact.twitter.handle %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.github.icon }}" height="40" />
+                <img src="../assets/icons/{% translate contact.github.icon %}" height="40" />
                 <p>{% translate contact.github.description %}</p>
-                <a class="bebas big n" href="{{ page.contact.github.url }}">Github</a>
+                <a class="bebas big n" href="{% translate contact.github.url %}">Github</a>
             </div>
         </div>
     </div>
