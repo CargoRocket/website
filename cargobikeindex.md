@@ -8,7 +8,7 @@ show-map: true
 published: true
 socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
 click-info: Klicke auf eine Straße, die Eigenschaften erscheinen hier!
-description-cbi: Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's
+description-cbi: Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von (dunkel rot) 0 - für Lastenräder nicht passierbar, bis (dunkel grün) 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's
 city-list:
     - Stuttgart
     - Augsburg
@@ -19,8 +19,13 @@ city-list:
     <div id="object_info_wrapper">
         <details>
             <summary class="roboto big">CargoBikeIndex Infos</summary>
-            <p>{{ page.description-cbi }}<a href="2021/05/16/cargobikeindex.html">im Blogpost</a></p>
+            <p>{{ page.description-cbi }}<a href="2021/05/16/cargobikeindex.html"> im Blogpost</a></p>
         </details>
+        <div class="map_legend_wrapper flex">
+            <span>0</span>
+            <span class="map_legend"></span>
+            <span>5</span>
+        </div>
         <div id="city_list">
         <h2 class="roboto big">Städte (Auswahl)</h2>
         <select id="cities">
