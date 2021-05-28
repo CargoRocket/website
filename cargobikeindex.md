@@ -7,33 +7,45 @@ description: Der CargoBikeIndex bewertet die Lastenradfreundlichkeit von Straße
 show-map: true
 published: true
 socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
+click-info: Klicke auf eine Straße, die Eigenschaften erscheinen hier!
+description-cbi: Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von (dunkel rot) 0 - für Lastenräder nicht passierbar, bis (dunkel grün) 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's
+city-list:
+    - Stuttgart
+    - Augsburg
+    - Berlin
 ---
 
 <div class="map-container">
     <div id="object_info_wrapper">
         <details>
             <summary class="roboto big">CargoBikeIndex Infos</summary>
-            <p>Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von 0 - für Lastenräder nicht passierbar, bis 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's <a href="2021/05/16/cargobikeindex.html">im Blogpost</a></p>
+            <p>{{ page.description-cbi }}<a href="2021/05/16/cargobikeindex.html"> im Blogpost</a></p>
         </details>
+        <div class="map_legend_wrapper flex">
+            <span>0</span>
+            <span class="map_legend"></span>
+            <span>5</span>
+        </div>
         <div id="city_list">
+        <h2 class="roboto big">Städte (Auswahl)</h2>
         <select id="cities">
-            <option value="Stuttgart">Stuttgart</option>
-            <option value="Augsburg">Augsburg</option>
-            <option value="Berlin">Berlin</option>
+        {% for city in page.city-list %}
+            <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
         </select>
         <button class="button small secondary" onclick="fly(document.querySelector('#cities').value)">Flieg dorthin &#128640;</button>
         </div>
         <h2 class="roboto big">Wege-Informationen</h2>
-        <div id="object_info" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+        <div id="object_info" class="roboto">{{ page.click-info }}</div>
     </div>
     <div id="object_info_mobile_wrapper">
-        <div id="object_info_mobile" class="roboto">Klicke auf eine Straße, die Eigenschaften erscheinen hier!</div>
+        <div id="object_info_mobile" class="roboto">{{ page.click-info }}</div>
     </div>
     <div id="city_list_mobile_wrapper">
         <div id="city_list_mobile" class="roboto">
-            <button class="button small secondary" onclick="fly('Stuttgart')">Suttgart &#128640;</button>
-            <button class="button small secondary" onclick="fly('Augsburg')">Augsburg &#128640;</button>
-            <button class="button small secondary" onclick="fly('Berlin')">Berlin &#128640;</button>
+        {% for city in page.city-list %}
+            <button class="button small secondary" onclick="fly('{{ city }}')">{{ city }} &#128640;</button>
+        {% endfor %}
         </div>
     </div>
     <div id="map"></div>
@@ -79,11 +91,11 @@ socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
             var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_bw_id, cbi_layer_id]});
             // Limit the number of properties we're displaying for
             // legibility and performance
-            var displayProperties = ['properties'];
-            var displayFeatures = features.map(function (feat) {
-            var displayFeat = {};
+            const displayProperties = ['properties'];
+            const displayFeatures = features.map(function (feat) {
+            let displayFeat = {};
             displayProperties.forEach(function (prop) {
-            displayFeat[prop] = feat[prop];
+                displayFeat[prop] = feat[prop];
             });
                 return displayFeat;
             });

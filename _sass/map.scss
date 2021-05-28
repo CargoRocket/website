@@ -35,6 +35,10 @@
     padding: 15px;
     border-radius: 10px;
 
+    h2 {
+        margin: 0.3rem 0;
+    }
+
     @media screen and (max-width: $breakpoint-sm) {
         display: none;
     }
@@ -59,5 +63,21 @@
 #city_list_mobile {
     @media screen and (min-width: $breakpoint-sm) {
         display: none;
+    }
+}
+
+.map_legend_wrapper {
+    width: 100%;
+    height: 12px;
+    box-sizing: border-box;
+    align-items: center;
+
+    .map_legend {
+        height: 12px;
+        width: 100%;
+        display: inline-block;
+        background-image: linear-gradient(to right, #5b1815,  #b60202, #e76f51, #f4d03f, #258e82, #196159);
+        border: 1px solid #5e5e5e;
+        margin: 0 1rem;
     }
 }
