@@ -15,7 +15,7 @@ nav:
 
 team:
   headline: Team
-  description: We are an interdisciplinary team, focusing on all about mobility. Operating as team CargoRocket since the MobiData BW Hackathon 2020.
+  description: We are an interdisciplinary team, focusing on all about sustainable mobility. Operating as team CargoRocket since the MobiData BW Hackathon 2020.
 
 project:
   headline: Project
@@ -53,7 +53,7 @@ contact:
     icon: github.png
     url: https://github.com/CargoRocket
     description: Our Code is 100% OpenSource.
-  contactText: You have suggestions / a company in the field of bike logistics and want to collaborate? Write us!
+  contactText: You have suggestions or you are a company in the field of cargobike logistics and want to collaborate? Write us!
   contact-icon: mail.png
 funding:
   headline: Supporters
