@@ -1,5 +1,5 @@
-main-headline: Cargobike Routing
-second-headline: Riding cargo-bikes smooth and efficient.
+main-headline: Cargo bike Routing
+second-headline: Riding cargo bikes smooth and efficient.
 main-button: Blog
 
 privacy-policy: Privacy Policy
@@ -19,14 +19,14 @@ team:
 
 project:
   headline: Project
-  description: Our mission is to make riding your cargobike as smooth and effective as possible. We consider being open minded and transparent as our core values. To give you more insight into our work we publish regularly on our Blog. Feel free to integrate our results into your project!
+  description: Our mission is to make riding your cargo bike as smooth and effective as possible. We consider being open minded and transparent as our core values. To give you more insight into our work we publish regularly on our blog. Feel free to integrate our results into your project!
 
 members:
   - name: David Prenninger
     skills: Application development and operations specialist.
     img: david.jpg
   - name: Alexandra Kapp
-    skills:  Geodata / GIS Expert. Giving data shape.
+    skills:  Geodata / GIS Expert. Juggling the data.
     img: alexandra.jpg
   - name: Henri Chilla
     skills: Bike enthusiast and OpenStreetMap integrator.
@@ -38,7 +38,7 @@ products:
     description: The low-emission revolution is rolling. More and more individuals as well as logistic companies are starting to pedal. Still the desperately needed infrastructure, wide and connected cycleways are missing. Our mission is to help you to find the smoothest route through all the motorized traffic madness.
   - name: CargoBikeIndex
     img: 
-    description: narrow cycleways, barriers or curbs might annoy cyclists but stop cargobikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness.
+    description: narrow cycleways, barriers or curbs might annoy cyclists but stop cargo bikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness.
 
 blog:
     headline: Blog
@@ -53,7 +53,7 @@ contact:
     icon: github.png
     url: https://github.com/CargoRocket
     description: Our Code is 100% OpenSource.
-  contactText: You have suggestions or you are a company in the field of cargobike logistics and want to collaborate? Write us!
+  contactText: You have suggestions or you are a company in the field of cargo bike logistics and want to collaborate? Write us!
   contact-icon: mail.png
 funding:
   headline: Supporters
