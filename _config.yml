@@ -6,6 +6,7 @@ title: CargoRocket
 show_excerpts: true
 future: false
 url: https://cargorocket.de
+baseurl: ""
 languages: ["de", "en"]
-exclude_from_localizations: ["_posts", "_sass", "_includes"]
+exclude_from_localizations: ["_posts", "_sass", "_includes", "assets", "2021"]
 default_locale_in_subfolder: false
