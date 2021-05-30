@@ -10,7 +10,7 @@ layout: default
             {% for member in site.translations[site.lang].members %}
             <div class="c">
                 <figure>
-                    <img src="../assets/images/{{ member.img }}" class="portrait round border" />
+                    <img alt="Team member" src="../assets/images/{{ member.img }}" class="portrait round border" />
                     <figcaption class="b bebas big">{{ member.name }}</figcaption>
                 </figure>
                 <p class="pd-lr-sm">{{ member.skills }}</p>
@@ -31,7 +31,7 @@ layout: default
             <div class="c half pd-lr-lg">
                 <figure>
                     {% if product.img %}
-                    <img class="product" src="../assets/images/{{ product.img }}" />
+                        <img class="product" src="../assets/images/{{ product.img }}" />
                     {% endif %}
                     <figcaption class="bebas b c big">{{ product.name }}</figcaption>
                 </figure>
@@ -46,12 +46,14 @@ layout: default
 {%- if posts.size > 0 -%}
 <section id="blog">
     <div class="content">
-        <img class="blog-image" src="/assets/images/cargo_bike.svg"/>
+        <img alt="Girl on cargo bike" class="blog-image" src="/assets/images/cargo_bike.svg"/>
         <h1 class="headline bebas c">{% translate blog.headline %}</h1>
         <div class="blog-entries mobile-v">
             {%- for post in posts limit:4 -%}
             <div class="flex">
-                {% if post.image %}<img class="size-md pd-t-md" src="{{ post.image }}" />{% endif %}
+                {% if post.image %}
+                    <img alt="Thumbnail of blog post" class="size-md pd-t-md" src="{{ post.image }}" />
+                {% endif %}
                 <div class="pd-l-md">
                     <h2 class="bebas big"><a class="n" href="{{ post.url | relative_url }}"">{{ post.date | date_to_string }} - {{ post.title | escape }}</a></h2>
                     {%- if site.show_excerpts -%}
@@ -74,17 +76,17 @@ layout: default
         <h1 class="headline bebas">{% translate contact.headline %}</h1>
         <div class="flex mobile-v">
             <div class="pd-md third">
-                <img src="../assets/icons/{% translate contact.contact-icon %}" height="40" />
+                <img alt="E-mail Icon" src="../assets/icons/{% translate contact.contact-icon %}" height="40" />
                 <p>{% translate contact.contactText %}</p>
                 <a class="bebas big n" href="mailto:{% translate contact.email %}">{% translate contact.email %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{% translate contact.twitter.icon %}" height="40" />
+                <img alt="Twitter Icon" src="../assets/icons/{% translate contact.twitter.icon %}" height="40" />
                 <p>{% translate contact.twitter.description %}</p>
                 <a class="bebas big n" href="https://twitter.com/{% translate contact.twitter.handle %}">@{% translate contact.twitter.handle %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{% translate contact.github.icon %}" height="40" />
+                <img alt="Github Icon" src="../assets/icons/{% translate contact.github.icon %}" height="40" />
                 <p>{% translate contact.github.description %}</p>
                 <a class="bebas big n" href="{% translate contact.github.url %}">Github</a>
             </div>
@@ -97,8 +99,8 @@ layout: default
         <h1 class="headline c bebas">{% translate funding.headline %}</h1>
 
         <div class="flex space mobile-v vertical-c">
-            <img class="sponsor" src="../assets/images/BWVMLogo.png" />
-            <img class="sponsor" src="../assets/images/MobiDataLogo.png" />
+            <img alt="Logo Verkehsministerium BW" class="sponsor" src="../assets/images/BWVMLogo.png" />
+            <img alt="Logo MobiData" class="sponsor" src="../assets/images/MobiDataLogo.png" />
         </div>
         <p class="c">{% translate funding.description %}</p>
     </div>
