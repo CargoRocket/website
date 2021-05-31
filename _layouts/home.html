@@ -3,11 +3,11 @@ layout: default
 ---
 <section id="team">
     <div class="content">
-        <h1 class="headline c bebas">{{ page.team.headline }}</h1>
-        <p>{{page.team.description }}</p>
+        <h1 class="headline c bebas">{% translate team.headline %}</h1>
+        <p>{% translate team.description %}</p>
 
         <div class="members flex c mobile-v">
-            {% for member in page.team.members %}
+            {% for member in site.translations[site.lang].members %}
             <div class="c">
                 <figure>
                     <img src="../assets/images/{{ member.img }}" class="portrait round border" />
@@ -22,12 +22,12 @@ layout: default
 
 <section id="project">
     <div class="content">
-        <h1 class="headline c bebas">{{ page.project.headline }}</h1>
+        <h1 class="headline c bebas">{% translate project.headline %}</h1>
 
-        <p>{{page.project.description }}</p>
+        <p>{% translate project.description %}</p>
 
         <div class="products flex mobile-v">
-            {% for product in page.project.products %}
+            {% for product in site.translations[site.lang].products %}
             <div class="c half pd-lr-lg">
                 <figure>
                     {% if product.img %}
@@ -46,7 +46,8 @@ layout: default
 {%- if posts.size > 0 -%}
 <section id="blog">
     <div class="content">
-        <h1 class="headline bebas c">{{ page.blog.headline }}</h1>
+        <img class="blog-image" src="/assets/images/cargo_bike.svg"/>
+        <h1 class="headline bebas c">{% translate blog.headline %}</h1>
         <div class="blog-entries mobile-v">
             {%- for post in posts limit:4 -%}
             <div class="flex">
@@ -62,7 +63,7 @@ layout: default
             {%- endfor -%}
         </div>
         <div class="c">
-            <a href="/blog" class="button secondary big bebas">{{ page.main-button }}</a>
+            <a href="/blog" class="button secondary big bebas">{% translate main-button %}</a>
         </div>
     </div>
 </section>
@@ -70,22 +71,22 @@ layout: default
 
 <section id="contact">
     <div class="content c">
-        <h1 class="headline bebas">{{ page.contact.headline }}</h1>
+        <h1 class="headline bebas">{% translate contact.headline %}</h1>
         <div class="flex mobile-v">
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.contact-icon }}" height="40" />
-                <p>{{ page.contact.contactText }}</p>
-                <a class="bebas big n" href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a>
+                <img src="../assets/icons/{% translate contact.contact-icon %}" height="40" />
+                <p>{% translate contact.contactText %}</p>
+                <a class="bebas big n" href="mailto:{% translate contact.email %}">{% translate contact.email %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.twitter.icon }}" height="40" />
-                <p>{{ page.contact.twitter.description }}</p>
-                <a class="bebas big n" href="https://twitter.com/{{ page.contact.twitter.handle }}">@{{ page.contact.twitter.handle }}</a>
+                <img src="../assets/icons/{% translate contact.twitter.icon %}" height="40" />
+                <p>{% translate contact.twitter.description %}</p>
+                <a class="bebas big n" href="https://twitter.com/{% translate contact.twitter.handle %}">@{% translate contact.twitter.handle %}</a>
             </div>
             <div class="pd-md third">
-                <img src="../assets/icons/{{ page.contact.github.icon }}" height="40" />
-                <p>{{ page.contact.github.description }}</p>
-                <a class="bebas big n" href="{{ page.contact.github.url }}">Github</a>
+                <img src="../assets/icons/{% translate contact.github.icon %}" height="40" />
+                <p>{% translate contact.github.description %}</p>
+                <a class="bebas big n" href="{% translate contact.github.url %}">Github</a>
             </div>
         </div>
     </div>
@@ -93,13 +94,13 @@ layout: default
 
 <section id="funding">
     <div class="content">
-        <h1 class="headline c bebas">{{ page.funding.headline }}</h1>
+        <h1 class="headline c bebas">{% translate funding.headline %}</h1>
 
         <div class="flex space mobile-v vertical-c">
             <img class="sponsor" src="../assets/images/BWVMLogo.png" />
             <img class="sponsor" src="../assets/images/MobiDataLogo.png" />
         </div>
-        <p class="c">{{ page.funding.description }}</p>
+        <p class="c">{% translate funding.description %}</p>
     </div>
 </section>
 

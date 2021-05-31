@@ -7,10 +7,15 @@
 @import "ranking";
 @import "home";
 @import "spaces";
+@import "map";
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
 
 .logo {
-    width: 170px;
-    margin: 0.5rem 0 0 0;
+    width: 120px;
+    margin: 0 0.4rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 50px;
+    }
 }

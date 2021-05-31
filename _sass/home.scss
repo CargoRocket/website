@@ -1,6 +1,9 @@
 @import "variables";
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 900px;
     margin: auto;
 }
@@ -9,32 +12,25 @@
     .present {
         background-image: url("../../assets/images/present-bg.svg");
         background-repeat: no-repeat;
-        background-size: 85%;
+        background-size: contain;
         background-position: center;
-        padding: 0 2rem;
-
-        img {
-            max-width: 90%;
-        }
+        padding: 0 3rem;
 
         @media screen and (min-width: $breakpoint-lg){
             max-width: 80%;
         }
 
-        @media screen and (max-width: $breakpoint-lg){
-            margin-left: -50%;
-            max-height: 20rem;
-
+        @media screen and (max-width: $breakpoint-md) and (min-width: $breakpoint-sm){
             img {
                 max-height: 20rem;
             }
         }
 
         @media screen and (max-width: $breakpoint-sm){
-            display: none;
+            padding: 0 1rem;
 
             img {
-                display: none;
+                max-width: 100%; 
             }
         }
     }
@@ -95,6 +91,11 @@ footer {
     a:active {
         color: $primary-color;
     }
+}
+
+.blog-image {
+    height: 300px;
+    max-width: 100%;
 }
 
 blockquote {

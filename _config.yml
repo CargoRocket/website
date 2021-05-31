@@ -1,5 +1,11 @@
 plugins:
   - jekyll-feed
+  - jekyll-multiple-languages-plugin
 
+title: CargoRocket
 show_excerpts: true
 future: false
+url: https://cargorocket.de
+languages: ["de", "en"]
+# exclude_from_localizations: ["_posts", "_sass", "_includes"]
+default_locale_in_subfolder: false

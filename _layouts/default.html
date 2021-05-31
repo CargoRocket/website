@@ -7,32 +7,43 @@
         <header>
             <div class="first-line">
                 <span class="logo flex vertical-c c">
-                    <a href="/" ><img src="/assets/images/cargorocket-logo.svg" class="logo" /></a>
+                    <a href="/"><span title="CargoRocket" class="logo-bg"></span></a>
                     {% if page.subpage-title %}{% assign subpage-title = page.subpage-title  %}{% endif %}
                     {% if layout.subpage-title %}{% assign subpage-title = layout.subpage-title  %}{% endif %}
-                    {% if subpage-title %}<span class="bebas xxl"><a href="/blog">{{ subpage-title }}</a></span>{% endif %}
+                    {% if subpage-title %}<span class="subpage_title bebas xxl"><a href="{{ subpage_link }}">{{ subpage-title }}</a></span>{% endif %}
                 </span>
-                <nav>
-                    <ul>
-                        <li class="no-mobile"><a href="/#team">Team</a></li>
-                        <li class="no-mobile"><a href="/#project">Projekt</a></li>
-                        <li class="no-mobile"><a href="/#contact">Kontakt</a></li>
-                        <li><a href="/ranking">Mapathon</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                    </ul>
-                </nav>
+                <div class="nav-container">
+                    <nav>
+                        <ul>
+                            <li class="no-mobile"><a href="{{site.baseurl}}/#team">{% translate nav.team %}</a></li>
+                            <li class="no-mobile"><a href="{{site.baseurl}}/#project">{% translate nav.project %}</a></li>
+                            <li class="no-mobile"><a href="{{site.baseurl}}/#contact">{% translate nav.contact %}</a></li>
+                            <li><a href="{{site.baseurl}}/cargobikeindex">{% translate nav.cargoBikeIndex %}</a></li>
+                            <li><a href="{{site.baseurl}}/ranking">{% translate nav.mapathon %}</a></li>
+                            <li><a href="{{site.baseurl}}/blog">{% translate nav.blog %}</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-container__seperator"></div>
+                    {% if site.lang == "en" %}
+                        <a class="nav-container__lang nav-container__lang--active" href="/en">en</a>
+                        <a class="nav-container__lang" href="/">de</a>
+                    {% elsif site.lang == "de" %}
+                        <a class="nav-container__lang" href="/en">en</a>
+                        <a class="nav-container__lang nav-container__lang--active" href="/">de</a>
+                    {% endif %}
+                </div>
             </div>
         </header>
 
         {% if page.hero %}
         <section id="hero">
-            <div class="flex c">
+            <div class="flex c mobile-v">
                 <div class="present">
                     <img src="/assets/images/{{ page.present-img }}"/>
                 </div>
                 <div class="flex vertical c">
-                    <div class="headline big bebas c">{{ page.main-headline }}</div>
-                    <div class="headline small roboto c">{{ page.second-headline }}</div>
+                    <div class="headline big bebas c">{% translate main-headline %}</div>
+                    <div class="headline small roboto c">{% translate second-headline %}</div>
                     <!-- <a href="/blog" class="button primary big bebas">{{ page.main-button }}</a> -->
                 </div>
             </div>

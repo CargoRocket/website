@@ -1,0 +1,154 @@
+---
+layout: blank
+title: CargoBikeIndex
+subpage-title: CargoBikeIndex
+subpage_link: "/cargobikeindex"
+description: Der CargoBikeIndex bewertet die Lastenradfreundlichkeit von Straßen & Wegen in Deutschland.
+show-map: true
+published: true
+socialmedia-banner: "cargorocket_cargobikeindex_banner.png"
+click-info: Klicke auf eine Straße, die Eigenschaften erscheinen hier!
+description-cbi: Der Index berechnet sich aus den Werten zur Straßenqualität und Barrieren. Er reicht von (dunkel rot) 0 - für Lastenräder nicht passierbar, bis (dunkel grün) 5 - optimale Bedingungen für Lastenräder. Mehr Infos zur Bewertung gibt's
+city-list:
+    - Stuttgart
+    - Augsburg
+    - Berlin
+---
+
+<div class="map-container">
+    <div id="object_info_wrapper">
+        <details>
+            <summary class="roboto big">CargoBikeIndex Infos</summary>
+            <p>{{ page.description-cbi }}<a href="2021/05/16/cargobikeindex.html"> im Blogpost</a></p>
+        </details>
+        <div class="map_legend_wrapper flex">
+            <span>0</span>
+            <span class="map_legend"></span>
+            <span>5</span>
+        </div>
+        <div id="city_list">
+        <h2 class="roboto big">Städte (Auswahl)</h2>
+        <select id="cities">
+        {% for city in page.city-list %}
+            <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
+        </select>
+        <button class="button small secondary" onclick="fly(document.querySelector('#cities').value)">Flieg dorthin &#128640;</button>
+        </div>
+        <h2 class="roboto big">Wege-Informationen</h2>
+        <div id="object_info" class="roboto">{{ page.click-info }}</div>
+    </div>
+    <div id="object_info_mobile_wrapper">
+        <div id="object_info_mobile" class="roboto">{{ page.click-info }}</div>
+    </div>
+    <div id="city_list_mobile_wrapper">
+        <div id="city_list_mobile" class="roboto">
+        {% for city in page.city-list %}
+            <button class="button small secondary" onclick="fly('{{ city }}')">{{ city }} &#128640;</button>
+        {% endfor %}
+        </div>
+    </div>
+    <div id="map"></div>
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucmk5NyIsImEiOiJ1bElfcS1rIn0.6kD_Z9ML35sB-N9XF-pQlQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
+        center: [9.491, 48.656],
+        zoom: 7.5,
+        hash: true
+    });
+    let nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+    let cbi_layer_bw_id= "cbi-standard-bw"
+    let cbi_layer_id= "cbi-standard-cities"
+    const attributes_description_mapping = {
+        "car_traffic": "Autoverkehrs",
+        "cbi": "CargoBikeIndex",
+        "cbindex_cycleways": "CBI Radweg",
+        "cbi_sq": "Straßenqualitäts-Index",
+        "cbindex_surface": "CBI Straßenoberfläche",
+        "cbi_b": "Barriere-Index",
+        "label_sq": "Wegeart",
+        "label_b": "Barriere-Art",
+        "maxspeed": "Höchstgeschwindigkeit",
+        "name": "Straßenname",
+        "osm_id": "OpenStreetMap ID",
+        "surface_combined":
+        "Straßenoberfläche Gemeinsam",
+        "dismount_necessary": "Absteigen notwendig",
+        "min_maxwidth": "Maximal mögliche Breite",
+        "pedestrian_traffic": "Fußverkehrsfaktor",
+        "segregated": "Getrennter Fuß-/Radweg",
+        "smoothness_combined": "Straßenoberfläche gemeinsam",
+        "cycleway_combined": "Radweg kombiniert",
+        "cycleway_width_combined": "Radwegsbreite",
+        "cycleway_oneway_combined": "???"
+    }
+    map.on('load', function () {
+        map.on('click', function (e) {
+            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_bw_id, cbi_layer_id]});
+            // Limit the number of properties we're displaying for
+            // legibility and performance
+            const displayProperties = ['properties'];
+            const displayFeatures = features.map(function (feat) {
+            let displayFeat = {};
+            displayProperties.forEach(function (prop) {
+                displayFeat[prop] = feat[prop];
+            });
+                return displayFeat;
+            });
+            let map_element = displayFeatures[0].properties;
+            let attributes_list = '<ul>';
+            for(element in map_element){
+                if (map_element[element] != undefined && map_element[element] != "")
+                attributes_list += '<li>' + attributes_description_mapping[element] + ': ' + map_element[element]+'</li>'
+            }
+            if(map_element.length == 0) attributes_list = "Nichts ausgewählt"
+            attributes_list += '</ul>';
+            document.getElementById('object_info').innerHTML = attributes_list
+            document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbi'] + "/5"
+        });
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+        function show_popup(e) {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+            let coordinates = e.features[0].geometry.coordinates[0];
+            const street_name = e.features[0].properties.name
+            let description = "";
+            if(street_name){
+                description = street_name + ": " + e.features[0].properties.cbi;}
+            else {
+                description = e.features[0].properties.label_sq + ": " + e.features[0].properties.cbi; }
+            popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        }
+        function hide_popup() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        }
+        map.on('mouseenter', cbi_layer_id, show_popup);
+        map.on('mouseenter', cbi_layer_bw_id, show_popup);
+        map.on('mouseleave', cbi_layer_id, hide_popup);
+        map.on('mouseleave', cbi_layer_bw_id, hide_popup);
+    });
+    let map_element = document.querySelector('#map');
+    function fly(city){
+        let coordinates = []
+        switch (city) {
+            case 'Stuttgart':
+                coordinates = [9.1783, 48.7761]
+                break;
+            case 'Augsburg':
+                coordinates = [10.89475, 48.36541]
+                break;
+            case 'Berlin':
+                coordinates = [13.3796, 52.5161]
+                break;
+        }
+        if (coordinates.length !== 0) map.flyTo({ center: coordinates, zoom: 12})
+    }
+</script>

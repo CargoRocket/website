@@ -6,3 +6,7 @@ workspace.code-workspace
 
 # mac specific
 .DS_Store
+
+vendor/
+
+.bundle/
