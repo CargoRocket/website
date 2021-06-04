@@ -21,12 +21,12 @@ project:
   headline: Das Projekt
   description: CargoRocket macht das Fahren von Lastenfahrrädern so einfach wie möglich. Offenheit und Transparenz von Erkenntnissen, Datenquellen und Softwaretools sind uns wichtig. Daher begleiten wir  die Entwicklung unserer Arbeit in unserem Blog. Weiterverwendung der Ergebnisse ist ausdrücklich erwünscht!
 
-products: 
+products:
   - name: CargoRocket App
-    img: 
+    img:
     description: Immer mehr Personen aber auch Logistikunternehmen setzen auf emissonsarme Lastenfahrräder. Der Bedarf an geeigneter Infrastruktur, wie flächendeckenden, breiten Radwegen, wird immer größer. Allerdings wird die Transformation unserer Städte noch viele Jahre benötigen. Deshalb möchten wir ein speziell auf die Bedürfnisse von Lastenräder angepasstes Routing entwickeln.
   - name: CargoBikeIndex
-    img: 
+    img:
     description: Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen darstellen.
 
 members:
@@ -57,4 +57,4 @@ contact:
   contact-icon: mail.png
 funding:
   headline: Förderung
-  description: Das Projekt CargoRocket wird vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.
+  description: Das Projekt CargoRocket wurde im Jahr 2021 vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.

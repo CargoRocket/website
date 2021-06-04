@@ -32,12 +32,12 @@ members:
     skills: Bike enthusiast and OpenStreetMap integrator.
     img: henri.jpg
 
-products: 
+products:
   - name: CargoRocket App
-    img: 
+    img:
     description: The low-emission revolution is rolling. More and more individuals as well as logistic companies are starting to pedal. Still the desperately needed infrastructure, wide and connected cycleways are missing. Our mission is to help you to find the smoothest route through all the motorized traffic madness.
   - name: CargoBikeIndex
-    img: 
+    img:
     description: narrow cycleways, barriers or curbs might annoy cyclists but stop cargo bikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness.
 
 blog:
@@ -57,4 +57,4 @@ contact:
   contact-icon: mail.png
 funding:
   headline: Supporters
-  description: The CargoRocket project is funded by the Ministry of Transport Baden-Württemberg for three months as part of a follow-up grant to the hackathon "MobiDataBW Hackathon 2020".
+  description: The CargoRocket project was funded by the Ministry of Transport Baden-Württemberg for three months in 2021 as part of a follow-up grant to the hackathon "MobiDataBW Hackathon 2020".
