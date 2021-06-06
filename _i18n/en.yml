@@ -35,10 +35,13 @@ members:
 products:
   - name: CargoRocket App
     img:
-    description: The low-emission revolution is rolling. More and more individuals as well as logistic companies are starting to pedal. Still the desperately needed infrastructure, wide and connected cycleways are missing. Our mission is to help you to find the smoothest route through all the motorized traffic madness.
+    description: "The low-emission revolution is rolling. More and more individuals as well as logistic companies are starting to pedal. Still the desperately needed infrastructure, wide and connected cycleways are missing. Our mission is to help you to find the smoothest route through all the motorized traffic madness."
   - name: CargoBikeIndex
     img:
-    description: narrow cycleways, barriers or curbs might annoy cyclists but stop cargo bikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness.
+    description: "Narrow cycleways, barriers or curbs might annoy cyclists but stop cargo bikers. Our CargoBikeIndex categorizes all streets on their cargobike-friendliness."
+  - name: CargoRocket API
+    img:
+    description: "For using our services such like routing, we provide an easy to use API. This can be integrated in external applications and services."
 
 blog:
     headline: Blog

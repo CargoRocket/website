@@ -14,20 +14,24 @@ nav:
   blog: Blog
 
 team:
-  headline: Das Team
-  description: Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit verschiedenen Themen zur nachhaltigen Mobilität beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet.
+  headline: "Das Team"
+  description: "Wir sind ein interdisziplinäres Team, das sich am liebsten den ganzen Tag mit verschiedenen Themen zur nachhaltigen Mobilität beschäftigt. Wir haben uns beim MobiData BW Hackathon zusammengefunden und dort das Projekt CargoRocket gemeinsam gestartet."
 
 project:
   headline: Das Projekt
-  description: CargoRocket macht das Fahren von Lastenfahrrädern so einfach wie möglich. Offenheit und Transparenz von Erkenntnissen, Datenquellen und Softwaretools sind uns wichtig. Daher begleiten wir  die Entwicklung unserer Arbeit in unserem Blog. Weiterverwendung der Ergebnisse ist ausdrücklich erwünscht!
+  description: "CargoRocket möchte den Trend zu mehr Lastenradlogistik und damit einer nachhaltigeren Mobilität maßgeblich unterstützen. Dafür entwickeln wir maßgeschneiderte Lösungen für die Verwendung von Lastenräder, und dabei insbesondere für gewerbliche Unternehmer:innen. Denn derzeit existiert Radinfrastruktur derzeit nicht oder nicht entsprechenden Standards, welchen Lastenrädern genügen.
+  Unser erklärtes Ziel ist deshalb: Stressfreies & Effizientes Lastenrad-Fahren, insbesondere im Urbanen Raum. Damit möchte CargoRocket das Fahren von Lastenfahrrädern so einfach wie möglich machen. Offenheit und Transparenz von Erkenntnissen, Datenquellen und Softwaretools sind uns wichtig. Daher begleiten wir die Entwicklung unserer Arbeit in unserem Blog."
 
 products:
   - name: CargoRocket App
     img:
-    description: Immer mehr Personen aber auch Logistikunternehmen setzen auf emissonsarme Lastenfahrräder. Der Bedarf an geeigneter Infrastruktur, wie flächendeckenden, breiten Radwegen, wird immer größer. Allerdings wird die Transformation unserer Städte noch viele Jahre benötigen. Deshalb möchten wir ein speziell auf die Bedürfnisse von Lastenräder angepasstes Routing entwickeln.
+    description: "Für das Ausprobieren und Verwenden unserer Lastenrad-Routinglösung gibt es eine Android Smartphone App. Eine iOS App ist in Entwicklung. Damit machen wir gute Infrastruktur erfahrbar."
   - name: CargoBikeIndex
     img:
-    description: Zu schmale Radwege, Barrieren oder Bordsteine, können für Fahrräder lästig aber für Lastenräder unpassierbar sein. Mithilfe des CargoBike Index wollen wir auf einer Karte die für Lastenräder (weniger) geeigneten Straßen darstellen.
+    description: "Als Basis für unsere Lastenrad-Anwendungen entwickeln wir unseren CargoBikeIndex ständig weiter. Dieser beweret Straßen & Wege nach ihrer Lastenradfreundlichkeit. Somit machen wir auf potentielle Infrastrukturprobleme aufmerksam und können gleichzeitig die beste Infrastruktur für Personen empfehlen."
+  - name: CargoRocket API
+    img:
+    description: "Ergänzend zur CargoRocket App gibt es eine CargoRocket API, welche unsere Dienste zusammenfasst. Somit können unsere Lastenrad-Anwendungen direkt in externe Applikationen und Dienste integriert werden."
 
 members:
   - name: David Prenninger
