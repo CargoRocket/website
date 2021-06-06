@@ -54,15 +54,15 @@ city-list:
     <div id="map"></div>
 </div>
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucmk5NyIsImEiOiJ1bElfcS1rIn0.6kD_Z9ML35sB-N9XF-pQlQ';
-    var map = new mapboxgl.Map({
+	maplibregl.accessToken = 'pk.eyJ1IjoiaGVucmk5NyIsImEiOiJ1bElfcS1rIn0.6kD_Z9ML35sB-N9XF-pQlQ';
+    var map = new maplibregl.Map({
         container: 'map',
         style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
         center: [10.5, 51],
         zoom: 5.5,
         hash: true
     });
-    let nav = new mapboxgl.NavigationControl();
+    let nav = new maplibregl.NavigationControl();
     map.addControl(nav, 'top-right');
     let cbi_layer_ids = ['cbi-north', 'cbi-south', 'cbi-westphalia'];
     const attributes_description_mapping = {
@@ -112,7 +112,7 @@ city-list:
             document.getElementById('object_info').innerHTML = attributes_list
             document.getElementById('object_info_mobile').innerHTML = "CargoBikeIndex: " + map_element['cbi'] + "/5"
         });
-        var popup = new mapboxgl.Popup({
+        var popup = new maplibregl.Popup({
             closeButton: false,
             closeOnClick: false
         });
