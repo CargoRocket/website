@@ -13,6 +13,9 @@ city-list:
     - Stuttgart
     - Augsburg
     - Berlin
+    - Freiburg i.B.
+    - Leipzig
+    - Köln
 ---
 
 <div class="map-container">
@@ -55,14 +58,13 @@ city-list:
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/henri97/ckm8eucf25b6i17nw08qg8wsz',
-        center: [9.491, 48.656],
-        zoom: 7.5,
+        center: [10.5, 51],
+        zoom: 5.5,
         hash: true
     });
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
-    let cbi_layer_bw_id= "cbi-standard-bw"
-    let cbi_layer_id= "cbi-standard-cities"
+    let cbi_layer_ids = ['cbi-north', 'cbi-south', 'cbi-westphalia'];
     const attributes_description_mapping = {
         "car_traffic": "Autoverkehrs",
         "cbi": "CargoBikeIndex",
@@ -88,7 +90,7 @@ city-list:
     }
     map.on('load', function () {
         map.on('click', function (e) {
-            var features = map.queryRenderedFeatures(e.point, {layers: [cbi_layer_bw_id, cbi_layer_id]});
+            var features = map.queryRenderedFeatures(e.point, {layers: cbi_layer_ids});
             // Limit the number of properties we're displaying for
             // legibility and performance
             const displayProperties = ['properties'];
@@ -130,10 +132,10 @@ city-list:
             map.getCanvas().style.cursor = '';
             popup.remove();
         }
-        map.on('mouseenter', cbi_layer_id, show_popup);
-        map.on('mouseenter', cbi_layer_bw_id, show_popup);
-        map.on('mouseleave', cbi_layer_id, hide_popup);
-        map.on('mouseleave', cbi_layer_bw_id, hide_popup);
+        for (layer of cbi_layer_ids) {
+            map.on('mouseenter', layer, show_popup);
+            map.on('mouseleave', layer, hide_popup);
+        }
     });
     let map_element = document.querySelector('#map');
     function fly(city){
@@ -147,6 +149,15 @@ city-list:
                 break;
             case 'Berlin':
                 coordinates = [13.3796, 52.5161]
+                break;
+            case 'Freiburg i.B.':
+                coordinates = [7.8554, 47.993]
+                break;
+            case 'Leipzig':
+                coordinates = [12.386, 51.335]
+                break;
+            case 'Köln':
+                coordinates = [6.935, 50.95]
                 break;
         }
         if (coordinates.length !== 0) map.flyTo({ center: coordinates, zoom: 12})
