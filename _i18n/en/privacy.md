@@ -22,7 +22,7 @@ As a matter of principle, we process personal data of our users only insofar as 
 ### Legal basis for the processing of personal data
 Insofar as we obtain the consent of the data subject for processing operations of personal data, Art. 6 (1) lit. a EU General Data Protection Regulation (DSGVO) serves as the legal basis.
 When processing personal data that is necessary for the performance of a contract to which the data subject is a party, Art. 6 (1) (b) DSGVO serves as the legal basis. This also applies to processing operations that are necessary for the performance of pre-contractual measures.
-Insofar as the processing of personal data is necessary for the fulfilment of a legal obligation to which our company is subject, Art. 6 (1) c DSGVO serves as the legal basis.
+Insofar as the processing of personal data is necessary for the fulfillment of a legal obligation to which our company is subject, Art. 6 (1) c DSGVO serves as the legal basis.
 In the event that vital interests of the data subject or another natural person make processing of personal data necessary, Art. 6 (1) (d) DSGVO serves as the legal basis.
 If the processing is necessary to protect a legitimate interest of our company or a third party and the interests, fundamental rights and freedoms of the data subject do not override the first-mentioned interest, Art. 6 (1) lit. f DSGVO serves as the legal basis for the processing.
 
@@ -54,6 +54,7 @@ These purposes are also our legitimate interest in data processing according to 
 ### Duration of storage
 The data is deleted as soon as it is no longer required to achieve the purpose for which it was collected. In the case of the collection of data for the provision of the website, this is the case when the respective session has ended. 
 
+In the case of storage of data in log files, this is the case after 31 days at the latest. Storage beyond this period is possible. In this case, the IP addresses of the users are deleted or alienated, so that an assignment of the calling client is no longer possible.
 ### Possibility of objection and removal
 The collection of data for the provision of the website and the storage of the data in log files is absolutely necessary for the operation of the website. Consequently, there is no possibility for the user to object.
 
