@@ -1,8 +1,4 @@
----
-layout: simple
-title: Privacy Policy
----
-
+# Privacy Policy
 ## Responsible
 The responsible person within the meaning of the General Data Protection Regulation and other national data protection laws of the member states as well as other data protection regulations is:
 
@@ -79,7 +75,7 @@ The other personal data processed during the sending process serve to prevent mi
 ### Duration of storage
 The data is deleted as soon as it is no longer required to achieve the purpose for which it was collected. For the personal data from the input mask of the contact form and those sent by e-mail, this is the case when the respective conversation with the user has ended. The conversation is ended when the circumstances indicate that the matter in question has been conclusively clarified. 
 
-The additional personal data collected during the sending process will be deleted after a period of seven days at the latest.
+The additional personal data collected during the sending process will be deleted after a period of 31 days at the latest.
 ### Possibility of objection and removal
 The user has the option of revoking his or her consent to the processing of personal data at any time. If the user contacts us by e-mail, he or she can object to the storage of his or her personal data at any time. In such a case, the conversation cannot be continued.
 
