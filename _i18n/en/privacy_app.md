@@ -1,4 +1,4 @@
-# Privacy policy
+# Privacy policy CargoRocket App
 ### Responsible
 The responsible party within the meaning of the General Data Protection Regulation and other national data protection laws of the member states as well as other data protection regulations is:
 
