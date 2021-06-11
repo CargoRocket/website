@@ -25,7 +25,7 @@ project:
 products:
   - name: CargoRocket App
     img:
-    description: "Für das Ausprobieren und Verwenden unserer Lastenrad-Routinglösung gibt es eine Android Smartphone App. Eine iOS App ist in Entwicklung. Damit machen wir gute Infrastruktur erfahrbar."
+    description: "Für das Ausprobieren und Verwenden unserer Lastenrad-Routinglösung gibt es eine [Android Smartphone App](https://play.google.com/store/apps/details?id=de.cargorocket). Eine iOS App ist in Entwicklung. Damit machen wir gute Infrastruktur erfahrbar."
   - name: CargoBikeIndex
     img:
     description: "Als Basis für unsere Lastenrad-Anwendungen entwickeln wir unseren CargoBikeIndex ständig weiter. Dieser beweret Straßen & Wege nach ihrer Lastenradfreundlichkeit. Somit machen wir auf potentielle Infrastrukturprobleme aufmerksam und können gleichzeitig die beste Infrastruktur für Personen empfehlen."

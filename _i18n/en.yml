@@ -20,7 +20,7 @@ team:
 project:
   headline: Project
   description: "CargoRocket wants to significantly support the trend towards more cargo bike logistics and thus more sustainable mobility. To this end, we develop customised solutions for the use of cargo bikes, especially for commercial entrepreneurs. At the moment, the bicycle infrastructure does not exist or does not meet the standards that cargo bicycles require.
-  Our declared goal is therefore: stress-free & efficient cargo bike riding, especially in urban areas. CargoRocket wants to make it as easy as possible to ride cargo bikes. Openness and transparency of findings, data sources and software tools are important to us. Therefore, we accompany the development of our work in our blog."
+  Our declared goal is therefore: seamless & efficient cargo bike riding, especially in urban areas. CargoRocket wants to make it as easy as possible to ride cargo bikes. Openness and transparency of findings, data sources and software tools are important to us. Therefore, we accompany the development of our work in our blog."
 
 members:
   - name: David Prenninger
@@ -36,7 +36,7 @@ members:
 products:
   - name: CargoRocket App
     img:
-    description: "There is an Android smartphone app for trying out and using our cargo bike routing solution. An iOS app is in development. With it, we make good infrastructure tangible."
+    description: "There is an [Android smartphone app]((https://play.google.com/store/apps/details?id=de.cargorocket)) for trying out and using our cargo bike routing solution. An iOS app is in development. With it, we make good infrastructure tangible."
   - name: CargoBikeIndex
     img:
     description: "As a basis for our cargo bike applications, we are constantly developing our CargoBikeIndex. It rates roads and paths according to their cargo bike friendliness. In this way, we draw attention to potential infrastructure problems and can at the same time recommend the best infrastructure for people."
