@@ -1,5 +1,5 @@
-main-headline: Cargo bike Routing
-second-headline: Riding cargo bikes smooth and efficient.
+main-headline: "Cargo bike Routing"
+second-headline: "Riding cargo bikes smooth and efficient."
 main-button: Blog
 
 privacy-policy: Privacy Policy
@@ -15,7 +15,7 @@ nav:
 
 team:
   headline: Team
-  description: We are an interdisciplinary team, focusing on all about sustainable mobility. Operating as team CargoRocket since the MobiData BW Hackathon 2020.
+  description: "We are an interdisciplinary team, focusing on all about sustainable mobility. Operating as team CargoRocket since the MobiData BW Hackathon 2020."
 
 project:
   headline: Project
@@ -24,13 +24,13 @@ project:
 
 members:
   - name: David Prenninger
-    skills: Application development and operations specialist.
+    skills: "Application development and operations specialist."
     img: david.jpg
   - name: Alexandra Kapp
-    skills:  Geodata / GIS Expert. Juggling the data.
+    skills:  "Geodata / GIS Expert. Juggling the data."
     img: alexandra.jpg
   - name: Henri Chilla
-    skills: Bike enthusiast and OpenStreetMap integrator.
+    skills: "Bike enthusiast and OpenStreetMap integrator."
     img: henri.jpg
 
 products:
@@ -51,14 +51,14 @@ contact:
   email: team@cargorocket.de
   twitter:
     handle: "cargo_rocket"
-    description: Follow us on Twitter!
+    description: "Follow us on Twitter!"
     icon: twitter.png
   github:
     icon: github.png
     url: https://github.com/CargoRocket
-    description: Our Code is 100% OpenSource.
-  contactText: You have suggestions or you are a company in the field of cargo bike logistics and want to collaborate? Write us!
+    description: "Our Code is 100% Open Source."
+  contactText: "You have suggestions or you are a company in the field of cargo bike logistics and want to collaborate? Write us!"
   contact-icon: mail.png
 funding:
   headline: Funding
-  description: The CargoRocket project was funded by the Ministry of Transport Baden-Württemberg for three months in 2021 as part of a follow-up grant to the hackathon "MobiDataBW Hackathon 2020".
+  description: "The CargoRocket project was funded by the Ministry of Transport Baden-Württemberg for three months in 2021 as part of a follow-up grant to the hackathon "MobiDataBW Hackathon 2020"."

@@ -1,6 +1,6 @@
-main-headline: Lastenfahrrad Routing
-second-headline: Stressfreies & Effizientes Lastenrad-Fahren
-main-button: Zum Blog
+main-headline: "Lastenfahrrad Routing"
+second-headline: "Stressfreies & Effizientes Lastenrad-Fahren"
+main-button: "Zum Blog"
 
 privacy-policy: Datenschutz
 imprint: Impressum
@@ -35,13 +35,13 @@ products:
 
 members:
   - name: David Prenninger
-    skills: Another Coconut, kümmert sich um DevOps & Anwendungsentwicklung.
+    skills: "Another Coconut, kümmert sich um DevOps & Anwendungsentwicklung."
     img: david.jpg
   - name: Alexandra Kapp
-    skills: Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur.
+    skills: "Geodaten und GIS Profi. Verleiht Daten und Projekt Struktur."
     img: alexandra.jpg
   - name: Henri Chilla
-    skills: Fahrrad Enthusiast und OpenStreetMap Integrator.
+    skills: "Fahrrad Enthusiast und OpenStreetMap Integrator."
     img: henri.jpg
 
 blog:
@@ -51,14 +51,14 @@ contact:
   email: team@cargorocket.de
   twitter:
     handle: "cargo_rocket"
-    description: Wir sind auf Twitter!
+    description: "Wir sind auf Twitter!"
     icon: twitter.png
   github:
     icon: github.png
     url: https://github.com/CargoRocket
-    description: Wir entwickeln offen auf GitHub.
-  contactText:  Du hast Anregungen, bist ein Unternehmen im Bereich Radlogistik oder grundsätzlich Lust auf Zusammenarbeit? Schreib uns!
+    description: "Wir entwickeln offen auf GitHub."
+  contactText: "Du hast Anregungen, bist ein Unternehmen im Bereich Radlogistik oder grundsätzlich Lust auf Zusammenarbeit? Schreib uns!"
   contact-icon: mail.png
 funding:
   headline: Förderung
-  description: Das Projekt CargoRocket wurde im Jahr 2021 vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert.
+  description: "Das Projekt CargoRocket wurde im Jahr 2021 vom Ministerium für Verkehr Baden-Württemberg im Rahmen einer Anschlussförderung des Hackathon “MobiDataBW Hackathon 2020” für drei Monate gefördert."
