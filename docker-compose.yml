@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  cargorocket_de:
+    image: "cargorocket_de:latest"
+    build: .
+    container_name: "cargorocket_de"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cargorocket_de.rule=Host(`cargorocket.de`)"
+      - "traefik.http.routers.cargorocket_de.entrypoints=websecure"
+      - "traefik.http.routers.cargorocket_de.tls=true"
+      - "traefik.http.routers.cargorocket_de.tls.certResolver=lets_encrypt"
