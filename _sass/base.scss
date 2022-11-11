@@ -1,5 +1,15 @@
 @import "variables";
 
+@font-face {
+    font-family: "BebasNeue";
+    src: local("Bebas Neue"), local("BebasNeue"),  url(/assets/fonts/BebasNeue-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto"),   url(/assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+
 html, body {
     padding: 0;
     margin: 0;

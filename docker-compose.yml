@@ -5,6 +5,7 @@ services:
     image: "cargorocket_de:latest"
     build: .
     container_name: "cargorocket_de"
+    restart: always
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.cargorocket_de.rule=Host(`cargorocket.de`) || Host(`www.cargorocket.de`)"
