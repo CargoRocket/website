@@ -27,7 +27,8 @@
 
     <!-- SEO -->
     <meta name="keywords" content="lastenrad,routing,cargobike,kurrierdienst,app">
-    <meta name="robots" content="index, follow">
+    {% if page.noindex != true %}<meta name="robots" content="index, follow">{% endif %}
+    {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="German">
     <meta name="revisit-after" content="5 days">
@@ -57,5 +58,5 @@
         })();
     </script>
     <!-- End Matomo Code -->
-  
+
 </head>
