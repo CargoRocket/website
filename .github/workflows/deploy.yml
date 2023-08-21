@@ -25,6 +25,5 @@ jobs:
 
       - name: Deploy to Docker Host
         run: |
-            /tmp/docker-compose -H ssh://${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} pull
             /tmp/docker-compose -H ssh://${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} up --build -d
 
