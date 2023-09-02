@@ -7,6 +7,7 @@ WORKDIR /app
 RUN mkdir .jekyll-cache
 RUN mkdir _site
 COPY . .
+RUN bundler
 RUN jekyll build
 
 # production stage
