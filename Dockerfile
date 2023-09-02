@@ -1,5 +1,8 @@
 # build stage
-FROM jekyll/jekyll:latest as build-stage
+FROM ruby:latest as build-stage
+RUN gem install bundler
+RUN gem install jekyll
+RUN jekyll --version
 WORKDIR /app
 RUN mkdir .jekyll-cache
 RUN mkdir _site
