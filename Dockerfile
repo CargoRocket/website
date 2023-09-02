@@ -8,7 +8,7 @@ RUN mkdir .jekyll-cache
 RUN mkdir _site
 COPY . .
 RUN bundler
-RUN jekyll build
+RUN bundler exec jekyll build
 
 # production stage
 FROM nginx:stable-alpine as production-stage
