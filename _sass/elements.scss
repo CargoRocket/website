@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .headline {
     font-size: $font-lg;
 
@@ -118,11 +120,11 @@ a.n {
 }
 
 .bebas {
-    font-family: 'BebasNeue';
+    font-family: "BebasNeue";
 }
 
 .roboto {
-    font-family: 'Roboto';
+    font-family: "Roboto";
 }
 
 .container {
@@ -145,14 +147,14 @@ img.portrait {
     }
 
     &.small {
-        width: $portrait-size / 2;
-        height: $portrait-size / 2;
+        width: math.div($portrait-size, 2);
+        height: math.div($portrait-size, 2);
     }
 }
 
 img.sponsor {
     width: 50%;
-    @media screen and (min-width: $breakpoint-sm){
+    @media screen and (min-width: $breakpoint-sm) {
         width: 30%;
     }
 }
@@ -168,7 +170,7 @@ figcaption {
 }
 
 @each $size, $i in $general-sizes {
-    img.size-#{$size}{
+    img.size-#{$size} {
         width: $i * 6;
         height: $i * 6;
         min-width: $i * 6;
@@ -177,7 +179,9 @@ figcaption {
     }
 }
 
-p, span, summary {
+p,
+span,
+summary {
     &.small {
         font-size: 0.8rem;
     }
@@ -197,13 +201,13 @@ summary.big {
 
 .flex {
     .half {
-        @media screen and (min-width: $breakpoint-lg){
+        @media screen and (min-width: $breakpoint-lg) {
             width: 50%;
         }
     }
 
     .third {
-        @media screen and (min-width: $breakpoint-lg){
+        @media screen and (min-width: $breakpoint-lg) {
             width: 33.3%;
         }
     }
@@ -219,7 +223,7 @@ img.float {
         margin: 1rem 0rem 1rem 2rem;
     }
 }
-@media screen and (max-width: $breakpoint-sm){
+@media screen and (max-width: $breakpoint-sm) {
     img.float {
         display: block;
 
