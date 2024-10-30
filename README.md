@@ -3,7 +3,7 @@
     <h1>CargoRocket Website</h1>
 </div>
 
-This is the Website of CargoRocket. It's build with Jekyll. To get started [you'll need Ruby](https://jekyllrb.com/docs/installation/). First install Jekyll:
+This is the Website of CargoRocket. It's build with Jekyll. To get started [you'll need Ruby](https://jekyllrb.com/docs/installation/) and sometimes ruby-erb. First install Jekyll:
 
 ```sh
 # Install Jekyll gem and dependencies

@@ -1,5 +1,5 @@
 # build stage
-FROM ruby:latest as build-stage
+FROM ruby:3.2 as build-stage
 RUN gem install bundler
 RUN gem install jekyll
 RUN jekyll --version
