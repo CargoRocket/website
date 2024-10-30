@@ -9,12 +9,11 @@ This is the Website of CargoRocket. It's build with Jekyll. To get started [you'
 # Install Jekyll gem and dependencies
 $ bundle
 
-# Start Jekyll server 
+# Start Jekyll server
 $ jekyll serve --livereload
 
 # Go to http://localhost:4000
 ```
-
 
 Setup Jekyll for Mac M1:
 [Workaround needed](https://keng.blog/blog/jekyll-on-apple-silicon)
