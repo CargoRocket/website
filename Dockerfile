@@ -1,8 +1,7 @@
 # build stage
-FROM ruby:3.2 as build-stage
+FROM ruby:3.2 AS build-stage
 RUN gem install bundler
 RUN gem install jekyll
-RUN jekyll --version
 WORKDIR /app
 RUN mkdir .jekyll-cache
 RUN mkdir _site
@@ -11,7 +10,7 @@ RUN bundler
 RUN bundler exec jekyll build
 
 # production stage
-FROM nginx:stable-alpine as production-stage
+FROM nginx:stable-alpine AS production-stage
 COPY --from=build-stage /app/_site /srv/www
 COPY ./nginx.conf /etc/nginx/custom.conf
 EXPOSE 80
